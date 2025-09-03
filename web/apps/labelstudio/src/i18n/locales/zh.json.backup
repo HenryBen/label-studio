@@ -1,0 +1,1072 @@
+{
+  "isRequired": "是必填的",
+  "storage": {
+    "cloudStorage": "云存储",
+    "description": "使用云存储或数据库存储作为标注任务的数据源或已完成标注的目标存储。",
+    "sourceCloudStorage": "源云存储",
+    "addSourceStorage": "添加源存储",
+    "targetCloudStorage": "目标云存储",
+    "addTargetStorage": "添加目标存储",
+    "connectSourceStorage": "连接源存储",
+    "importDataFromCloudStorage": "从云存储提供商导入您的数据",
+    "selectProvider": "选择提供商",
+    "configureConnection": "配置连接",
+    "importSettingsPreview": "导入设置和预览",
+    "reviewConfirm": "审查和确认",
+    "chooseCloudStorageProvider": "选择您的云存储提供商",
+    "selectCloudStorageService": "选择存储您数据的云存储服务",
+    "storageProvider": "存储提供商",
+    "amazonS3": "Amazon S3",
+    "googleCloudStorage": "Google 云存储",
+    "azureBlobStorage": "Azure Blob 存储",
+    "redisStorage": "Redis 存储",
+    "localFiles": "本地文件",
+    "previous": "上一步",
+    "next": "下一步",
+    "testConnection": "测试连接",
+    "connectionVerified": "连接已验证",
+    "loadPreview": "加载预览",
+    "previewLoaded": "✓ 预览已加载",
+    "save": "保存",
+    "saveSync": "保存并同步",
+    "testConnectionBeforeContinuing": "继续之前请先测试连接",
+    "connectTargetStorage": "连接目标存储",
+    "editSourceStorage": "编辑源存储",
+    "editTargetStorage": "编辑目标存储",
+    "storageTitle": "存储标题",
+    "storageTitleDescription": "此名称将帮助您在项目中识别此连接",
+    "storageTitlePlaceholder": "输入描述性名称（例如，'法律文档'，'训练数据'）",
+    "canDeleteObjects": "可以从存储中删除对象",
+    "canDeleteObjectsDescription": "如果未选中，标注将不会从存储中删除",
+    "amazonS3Description": "配置您的 AWS S3 连接以及所有必需的 Label Studio 设置",
+    "bucketName": "存储空间名称",
+    "regionName": "区域名称",
+    "s3Endpoint": "S3 端点",
+    "bucketPrefix": "存储桶前缀",
+    "accessKeyId": "访问密钥 ID",
+    "secretAccessKey": "秘密访问密钥",
+    "sessionToken": "会话令牌",
+    "usePresignedUrls": "使用预签名 URL（开启）/ 通过平台代理（关闭）",
+    "usePresignedUrlsDescription": "启用预签名 URL 时，所有数据都会绕过平台，用户浏览器直接从存储读取数据",
+    "expirePresignedUrls": "预签名 URL 过期时间（分钟）",
+    "bucketNamePlaceholder": "my-storage-bucket",
+    "bucketNameRequired": "存储空间名称是必需的",
+    "regionNamePlaceholder": "us-east-1（默认）",
+    "s3EndpointPlaceholder": "https://s3.amazonaws.com（默认）",
+    "bucketPrefixPlaceholder": "path/to/files",
+    "accessKeyIdPlaceholder": "AKIAIOSFODNN7EXAMPLE",
+    "accessKeyIdRequired": "访问密钥 ID 是必需的",
+    "secretAccessKeyPlaceholder": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+    "secretAccessKeyRequired": "秘密访问密钥是必需的",
+    "sessionTokenPlaceholder": "会话令牌（可选）",
+    "redisStorageDescription": "配置您的 Redis 存储连接以及所有必需的 Label Studio 设置",
+    "databaseNumber": "数据库编号 (db)",
+    "databaseNumberPlaceholder": "1",
+    "password": "密码",
+    "redisPasswordPlaceholder": "您的 redis 密码",
+    "host": "主机",
+    "redisHostPlaceholder": "redis://example.com",
+    "hostRequired": "主机是必需的",
+    "port": "端口",
+    "redisPortPlaceholder": "6379",
+    "googleCloudStorageDescription": "配置您的 Google 云存储连接以及所有必需的 Label Studio 设置",
+    "googleApplicationCredentials": "Google 应用程序凭据",
+    "googleApplicationCredentialsDescription": "将 credentials.json 的内容粘贴到此字段中，或留空以使用 ADC。",
+    "googleProjectId": "Google 项目 ID",
+    "googleProjectIdDescription": "留空以从 Google 应用程序凭据继承。",
+    "azureBlobStorageDescription": "配置您的 Azure Blob 存储连接以及所有必需的 Label Studio 设置",
+    "containerName": "容器名称",
+    "azureContainerPlaceholder": "my-azure-container",
+    "containerNameRequired": "容器名称是必需的",
+    "accountName": "账户名称",
+    "azureAccountNamePlaceholder": "mystorageaccount",
+    "accountKey": "账户密钥",
+    "azureAccountKeyPlaceholder": "您的存储账户密钥",
+    "localFilesDescription": "配置您的本地文件存储连接以及所有必需的 Label Studio 设置",
+    "absoluteLocalPath": "绝对本地路径",
+    "localPathPlaceholder": "/data/my-folder/",
+    "pathRequired": "路径是必需的",
+    "path": "路径",
+    "successfullyConnected": "连接成功！",
+    "connectionFailed": "连接失败",
+    "checkConnection": "检查连接",
+    "testStorageConnection": "测试存储连接",
+    "addStorage": "添加存储",
+    "saveStorageSettings": "保存存储设置",
+    "deletingStorage": "删除存储",
+    "deleteStorageConfirmation": "此操作无法撤销。您确定吗？",
+    "edit": "编辑",
+    "delete": "删除",
+    "copied": "已复制！",
+    "copy": "复制",
+    "tasksAddedHelp": "在上次同步期间添加了 {{count}} 个新任务。",
+    "tasksExistedHelp": "已找到并同步的 {{count}} 个任务不会再次添加到项目中。",
+    "tasksTotalHelp": "此存储总共添加了 {{count}} 个任务。",
+    "annotationsHelp": "在上次同步期间成功保存了 {{count}} 个标注。",
+    "totalAnnotationsHelp": "在同步时项目中总共看到 {{count}} 个标注。",
+    "errorLogsFor": "{{exportPrefix}}{{type}} 存储 {{id}} 在项目 {{project}} 和作业 {{job}} 中的错误日志",
+    "storageSyncErrorLog": "存储同步错误日志",
+    "seeDocs": "查看文档",
+    "troubleshootingTips": "获取云存储连接故障排除提示。",
+    "close": "关闭",
+    "status": "状态",
+    "statusInitialized": "已初始化：存储已添加，但从未同步；足以启动 URI 链接解析",
+    "statusQueued": "已排队：同步作业在队列中，但尚未开始",
+    "statusInProgress": "进行中：同步作业正在运行",
+    "statusFailed": "失败：同步作业停止，发生了一些错误",
+    "statusCompletedWithErrors": "完成但有错误：同步作业已完成，但某些任务有验证错误",
+    "statusCompleted": "已完成：同步作业成功完成",
+    "viewLogs": "查看日志",
+    "allTasksCompleted": "队列中的所有任务都已完成",
+    "annotations": "标注",
+    "tasks": "任务",
+    "total": "总计",
+    "new": "新增",
+    "lastSync": "上次同步",
+    "notSyncedYet": "尚未同步",
+    "type": "类型",
+    "bucket": "存储空间",
+    "container": "容器"
+  },
+  "menubar": {
+    "home": "首页",
+    "projects": "项目",
+    "organization": "组织",
+    "api": "API",
+    "docs": "文档",
+    "github": "GitHub",
+    "slackCommunity": "Slack社区",
+    "pinMenu": "固定菜单",
+    "unpinMenu": "取消固定菜单",
+    "keyboardShortcuts": "键盘快捷键",
+    "accountSettings": "账户与设置",
+    "logOut": "退出登录",
+    "newsletterNotification": "请在账户与设置页面查看新的通知设置",
+    "logoAlt": "Label Studio标志"
+  },
+  "homepage": {
+    "title": "首页",
+    "welcome": "欢迎 👋",
+    "getStarted": "让我们开始吧。",
+    "createProject": "创建项目",
+    "invitePeople": "邀请成员",
+    "recentProjects": "最近项目",
+    "viewAll": "查看全部",
+    "cantLoadProjects": "无法加载项目",
+    "createFirstProject": "创建您的第一个项目",
+    "createFirstProjectDesc": "导入您的数据并设置标注界面以开始标注",
+    "resources": "资源",
+    "resourcesDesc": "学习、探索和获取帮助",
+    "documentation": "文档",
+    "apiDocumentation": "API文档",
+    "releaseNotes": "发布说明",
+    "blog": "Label Studio博客",
+    "slackCommunity": "Slack社区",
+    "versionInfo": "Label Studio版本：社区版",
+    "tasksProgress": "{{已完成}} / {{总计}} 任务 ({{百分比}}%)"
+  },
+  "language": {
+    "switchLanguage": "切换语言",
+    "english": "英语",
+    "chinese": "中文"
+  },
+  "accountSettings": {
+    "personalInfo": "个人信息",
+    "hotkeysTitle": "快捷键",
+    "emailPreferences": "邮件偏好",
+    "subscribeToNewsletters": "订阅HumanSignal新闻和Heidi的提示",
+    "subscribeForNews": "订阅新闻和提示",
+    "membershipInfo": "会员信息",
+    "userId": "用户ID",
+    "registrationDate": "注册日期",
+    "annotationsSubmitted": "已提交标注",
+    "projectsContributedTo": "参与的项目",
+    "organization": "组织",
+    "myRole": "我的角色",
+    "organizationId": "组织ID",
+    "owner": "所有者",
+    "created": "创建时间",
+    "roleOwner": "所有者",
+    "roleDeactivated": "已停用",
+    "roleAdministrator": "管理员",
+    "roleManager": "管理者",
+    "roleAnnotator": "标注员",
+    "roleReviewer": "审核员",
+    "rolePending": "待处理",
+    "personalAccessToken": "个人访问令牌",
+    "legacyToken": "旧版令牌",
+    "accessToken": "访问令牌",
+    "exampleCurlRequest": "示例CURL请求",
+    "copy": "复制",
+    "copied": "已复制！",
+    "reset": "重置",
+    "authenticateDescription": "使用您的个人访问令牌通过我们的API进行身份验证。",
+    "seeText": "查看",
+    "docsLink": "文档",
+    "firstName": "名字",
+    "lastName": "姓氏",
+    "email": "邮箱",
+    "phone": "电话",
+    "save": "保存",
+    "delete": "删除",
+    "hotkeysDescription": "自定义您的键盘快捷键以加快工作流程。点击下面的任何快捷键来分配最适合您的新键组合。",
+    "uploadImage": "上传图片",
+    "noFileSelected": "未选择文件",
+    "errorUpdatingAvatar": "更新头像时出错",
+    "errorUpdatingUser": "更新用户时出错",
+    "hotkeysManager": {
+      "import": "导入",
+      "export": "导出",
+      "resetToDefaults": "重置为默认",
+      "save": "保存",
+      "cancel": "取消",
+      "apply": "应用",
+      "allowDuplicate": "允许重复",
+      "noHotkeysInSection": "此部分没有快捷键",
+      "clickToEditHotkey": "点击编辑快捷键",
+      "pressKeysNow": "现在按键...",
+      "clickToSetShortcut": "点击设置快捷键",
+      "enable": "启用",
+      "disable": "禁用",
+      "duplicateHotkeyDetected": "警告：检测到重复快捷键",
+      "duplicateHotkeyMessage": "快捷键组合\"{键}\"已被使用：",
+      "duplicateHotkeyWarning": "重复的快捷键可能导致冲突和意外行为。您确定要继续吗？",
+      "hotkeysSavedSuccessfully": "{部分}快捷键保存成功",
+      "failedToSave": "保存失败：{错误}",
+      "errorSaving": "保存错误：{错误}",
+      "hotkeysImportedSuccessfully": "快捷键导入成功",
+      "errorImportingHotkeys": "导入快捷键错误：{错误}",
+      "importHotkeys": "导入快捷键",
+      "importDescription": "在下面粘贴您导出的快捷键JSON。这将替换您当前的快捷键。确保JSON包含具有必需字段的快捷键对象数组。",
+      "hotkeysJson": "快捷键JSON",
+      "importError": "导入错误",
+      "importHotkeysButton": "导入快捷键",
+      "pleaseEnterJsonData": "请输入要导入的JSON数据",
+      "invalidHotkeyObject": "无效的快捷键对象",
+      "missingRequiredFields": "缺少必需字段：{fields}",
+      "invalidFormat": "无效格式：期望快捷键数组或具有快捷键属性的对象",
+      "noHotkeysFound": "在导入的数据中未找到快捷键",
+      "hotkeyAtIndex": "索引{index}处的快捷键：{error}",
+      "settings": "设置"
+    },
+    "sections": {
+      "annotation": {
+        "title": "标注操作",
+        "description": "常见标注任务的快捷键，如提交、跳过、撤销和重做"
+      },
+      "data_manager": {
+        "title": "数据管理器",
+        "description": "在项目数据管理器中导航和管理任务的快捷键"
+      },
+      "regions": {
+        "title": "区域管理",
+        "description": "创建、选择和操作标注区域的快捷键"
+      },
+      "tools": {
+        "title": "工具",
+        "description": "标注图像时控制工具面板的快捷键"
+      },
+      "audio": {
+        "title": "音频控制",
+        "description": "控制音频播放和导航的快捷键"
+      },
+      "video": {
+        "title": "视频控制",
+        "description": "控制视频播放和导航的快捷键"
+      },
+      "timeseries": {
+        "title": "时间序列控制",
+        "description": "操作时间序列数据区域的快捷键"
+      },
+      "image_gallery": {
+        "title": "图像库导航",
+        "description": "在多图像任务中导航图像的快捷键"
+      },
+      "paragraphs": {
+        "title": "段落导航",
+        "description": "在段落/对话视图中导航短语和区域的快捷键"
+      }
+    }
+  },
+  "exportPage": {
+    "title": "导出",
+    "preparingFiles": "准备文件中...",
+    "exportButton": "导出",
+    "formatInfo": "格式信息",
+    "cantFindFormat": "找不到您需要的格式？",
+    "letUsKnow": "请告诉我们",
+    "slack": "Slack",
+    "orSubmitIssue": "或提交问题",
+    "repository": "代码仓库"
+  },
+  "createProject": {
+    "title": "创建项目",
+    "projectName": "项目名称",
+    "description": "描述",
+    "descriptionPlaceholder": "请输入项目描述...",
+    "workspace": "工作空间",
+    "workspaceSelectPlaceholder": "选择工作空间",
+    "workspaceDescription": "工作空间描述",
+    "learnMore": "了解更多",
+    "tabs": {
+      "projectName": "项目名称",
+      "dataImport": "数据导入",
+      "labelingSetup": "标注设置"
+    },
+    "buttons": {
+      "cancel": "取消",
+      "save": "保存"
+    },
+    "aria": {
+      "cancelProjectCreation": "取消项目创建"
+    }
+  },
+  "importData": {
+    "title": "导入数据",
+    "datasetUrl": "数据集URL",
+    "addUrl": "添加URL",
+    "uploadFiles": "上传文件",
+    "uploadMoreFiles": "上传更多文件",
+    "treatCsvAs": "将CSV视为",
+    "listOfTasks": "任务列表",
+    "timeSeriesOrWholeText": "时间序列或完整文本",
+    "dragDropFiles": "拖拽文件到此处",
+    "orClickToBrowse": "或点击浏览",
+    "supportedFormats": {
+      "images": "图片",
+      "audio": "音频",
+      "video": "视频",
+      "htmlHypertext": "HTML/超文本",
+      "text": "文本",
+      "structuredData": "结构化数据",
+      "pdf": "PDF"
+    },
+    "tips": {
+      "important": "重要提示：",
+      "cloudStorageRecommended": "建议使用云存储处理大型数据集",
+      "pdfMultiImage": "PDF文件将转换为多个图片",
+      "importPreannotated": "您可以导入预标注数据"
+    },
+    "files": "文件",
+    "filename": "文件名",
+    "status": "状态",
+    "size": "大小",
+    "sample": "示例",
+    "expectedInputPreview": "预期输入预览",
+    "sampleDataError": "示例数据错误",
+    "viewJsonFormat": "查看JSON格式",
+    "setupLabelingConfigFirst": "请先设置标注配置",
+    "labelingConfiguration": "标注配置",
+    "toPreviewJsonFormat": "以预览JSON格式",
+    "import": "导入",
+    "cancel": "取消",
+    "aria": {
+      "uploadFile": "上传文件",
+      "videoFormatSupport": "视频格式支持",
+      "cancelImport": "取消导入",
+      "finishImport": "完成导入"
+    },
+    "videoFormatSupportTooltip": "视频格式支持取决于您的浏览器。点击了解更多。",
+    "filesUploaded": "已上传 {{count}} 个文件"
+  },
+  "languageSwitcher": {
+    "switchLanguage": "切换语言"
+  },
+  "themeToggle": {
+    "auto": "自动",
+    "light": "浅色",
+    "dark": "深色",
+    "beta": "测试版"
+  },
+  "projects": {
+    "title": "项目",
+    "emptyTitle": "暂无项目",
+    "emptyDescription": "创建您的第一个项目开始使用",
+    "createProject": "创建项目",
+    "settings": "设置",
+    "label": "标注",
+    "projectOptions": "项目选项",
+    "create": "创建"
+  },
+  "organization": {
+    "title": "组织",
+    "people": "成员",
+    "models": "模型",
+    "closeUserDetails": "关闭用户详情",
+    "createdProjects": "创建的项目",
+    "contributedTo": "参与的项目",
+    "lastActivityOn": "最后活动时间",
+    "email": "邮箱",
+    "name": "姓名",
+    "lastActivity": "最后活动",
+    "createModel": "创建模型",
+    "buildModelDescription": "构建和部署机器学习模型",
+    "createNewModelAriaLabel": "创建新模型",
+    "apiTokensSettings": "API令牌设置",
+    "apiTokenSettingsSaved": "API令牌设置已保存",
+    "showApiTokenSettings": "显示API令牌设置",
+    "addPeople": "添加成员",
+    "inviteNewMember": "邀请新成员"
+  },
+  "inviteModal": {
+    "title": "邀请成员",
+    "description": "邀请成员加入您的Label Studio实例。您邀请的成员可以完全访问您的所有项目。",
+    "learnMore": "了解更多",
+    "resetLink": "重置链接",
+    "copyLink": "复制链接",
+    "copied": "已复制！",
+    "resetLinkAriaLabel": "刷新邀请链接",
+    "copyLinkAriaLabel": "复制邀请链接"
+  },
+  "model": {
+    "title": "模型",
+    "emptyState": {
+      "title": "让我们连接您的第一个模型",
+      "description": "连接机器学习模型以生成预测。这些预测可以并排比较，用于高效的预标注，并有助于主动学习，引导用户完成最有影响力的标注任务。",
+      "buttonText": "连接模型",
+      "buttonAriaLabel": "添加机器学习模型",
+      "needHelp": "需要帮助？",
+      "learnMore": "在我们的文档中了解更多关于连接模型的信息"
+    },
+    "instructions": {
+      "intro": "检测到已连接的模型！如果您希望从此模型获取预测，请按照以下步骤操作：",
+      "step1": "1. 导航到数据管理器。",
+      "step2": "2. 选择所需的任务。",
+      "step3": "3. 从操作菜单中点击批量预测。",
+      "prelabelingNote": "如果您想使用模型预测进行预标注，请在",
+      "annotationSettings": "标注设置"
+    },
+    "modal": {
+      "startTraining": "开始模型训练",
+      "testRequest": "测试请求",
+      "editModel": "编辑模型",
+      "connectModel": "连接模型"
+    },
+    "status": {
+      "disconnected": "已断开",
+      "connected": "已连接",
+      "error": "错误",
+      "training": "训练中",
+      "predicting": "预测中"
+    },
+    "configuration": {
+      "title": "配置",
+      "autoTraining": {
+        "label": "在标注提交时开始模型训练",
+        "description": "此选项将向/train发送包含标注信息的请求。您可以使用此功能启用主动学习循环。您也可以通过模型卡片中的模型菜单手动开始训练。"
+      }
+    },
+    "form": {
+      "name": "名称",
+      "enterName": "输入名称",
+      "backendUrl": "后端 URL",
+      "selectAuthMethod": "选择认证方式",
+      "noAuthentication": "无认证",
+      "basicAuthentication": "基础认证",
+      "basicAuthUser": "基础认证用户名",
+      "basicAuthPass": "基础认证密码",
+      "extraParams": "模型连接时传递的额外参数",
+      "interactivePreannotations": "交互式预标注",
+      "interactiveDescription": "启用后，某些标注工具将在标注过程中向机器学习后端发送交互式请求。",
+      "validateAndSave": "验证并保存",
+      "saveAriaLabel": "保存机器学习表单",
+      "failedToSave": "{{action}}机器学习后端失败。",
+      "save": "保存",
+      "addNew": "添加新的",
+      "autoTraining": {
+        "label": "在标注提交时开始模型训练",
+        "description": "此选项将向/train发送包含标注信息的请求。您可以使用此功能启用主动学习循环。您也可以通过模型卡片中的模型菜单手动开始训练。"
+      }
+    }
+  },
+  "labelingConfig": {
+    "title": "标注配置",
+    "description": "配置您的标注界面和任务设置",
+    "save": "保存",
+    "cancel": "取消",
+    "preview": "预览",
+    "uiPreview": "界面预览",
+    "code": "代码",
+    "visual": "可视化",
+    "xmlConfig": "XML配置",
+    "configurationError": "配置错误",
+    "invalidXml": "无效的XML配置",
+    "previewNotAvailable": "预览不可用",
+    "outliner": {
+      "title": "大纲视图",
+      "emptyState": {
+        "header": "已标注的区域将显示在这里",
+        "description": "开始标注并使用此面板跟踪您的结果",
+        "learnMore": "了解更多"
+      },
+      "allRegionsHidden": "所有区域已隐藏",
+      "adjustFilters": "调整或移除筛选器以查看",
+      "hiddenRegions": "有 {{count}} 个隐藏区域",
+      "adjustFiltersToView": "调整或移除筛选器以查看"
+    },
+    "annotationHistory": {
+      "emptyState": {
+        "header": "查看注释活动",
+        "description": "查看此注释的用户操作日志"
+      }
+    },
+    "viewControls": {
+      "grouping": {
+        "manual": {
+          "label": "手动分组",
+          "selectedLabel": "手动",
+          "selectedLabelLegacy": "手动分组",
+          "tooltip": "手动分组"
+        },
+        "label": {
+          "label": "按标签分组",
+          "selectedLabel": "按标签",
+          "selectedLabelLegacy": "按标签分组",
+          "tooltip": "按标签分组"
+        },
+        "type": {
+          "label": "按工具分组",
+          "selectedLabel": "按工具",
+          "selectedLabelLegacy": "按工具分组",
+          "tooltip": "按工具分组"
+        }
+      },
+      "ordering": {
+        "date": {
+          "label": "按时间排序",
+          "selectedLabel": "按时间"
+        },
+        "score": {
+          "label": "按分数排序",
+          "selectedLabel": "按分数"
+        }
+      },
+      "visibility": {
+        "showAll": "显示所有区域",
+        "hideAll": "隐藏所有区域"
+      }
+    },
+    "sidePanels": {
+      "history": "历史",
+      "regions": "区域",
+      "relations": "关系",
+      "info": "信息",
+      "comments": "评论",
+      "outliner": "大纲",
+      "details": "详情"
+    },
+    "detailsPanel": {
+      "relations": {
+        "emptyState": {
+          "header": "创建区域间关系",
+          "description": "链接区域以定义它们之间的关系",
+          "learnMore": "了解更多"
+        }
+      },
+      "info": {
+        "emptyState": {
+          "header": "查看区域详情",
+          "description": "选择一个区域以查看其属性、元数据和可用操作"
+        }
+      }
+    },
+    "add": "添加",
+    "addChoices": "添加选项",
+    "addLabelNames": "添加标签名称",
+    "useNewLineSeparator": "使用换行符分隔",
+    "choices": "选项",
+    "labels": "标签",
+    "configureSettings": "配置设置",
+    "configureWithTags": "使用标签配置",
+    "seeAllTags": "查看所有标签",
+    "labelingInterface": "标注界面",
+    "browseTemplates": "浏览模板",
+    "saved": "已保存",
+    "saving": "保存中...",
+    "emptyTitle": "您的标注配置为空，需要配置后才能开始标注数据。",
+    "emptyDescription": "您可以从我们的预定义模板开始，或在代码面板中创建自己的配置。标注配置基于XML格式，您可以",
+    "documentationLink": "在我们的文档中了解可用的标签",
+    "aria": {
+      "addLabels": "添加标签",
+      "browseTemplates": "浏览模板",
+      "saveConfiguration": "保存配置"
+    }
+  },
+  "apiToken": {
+    "title": "API令牌",
+    "description": "管理您的API访问令牌",
+    "createToken": "创建令牌",
+    "tokenName": "令牌名称",
+    "tokenValue": "令牌值",
+    "createdAt": "创建时间",
+    "lastUsed": "最后使用",
+    "never": "从未",
+    "delete": "删除",
+    "copy": "复制",
+    "copied": "已复制！",
+    "confirmDelete": "确认删除",
+    "deleteTokenConfirmation": "您确定要删除此令牌吗？此操作无法撤销。",
+    "accessToken": "访问令牌",
+    "copyTokenInstructions": "从下方复制您的新访问令牌并确保其安全。",
+    "createNewToken": "创建新令牌",
+    "expiresOn": "过期时间：{{date}}",
+    "loading": "加载中...",
+    "manageTokensSecurely": "安全管理您的访问令牌",
+    "newAuthToken": "新认证令牌",
+    "oneActiveTokenTooltip": "您只能拥有一个活跃令牌",
+    "personalAccessToken": "个人访问令牌",
+    "revoke": "撤销",
+    "revokeConfirmation": "您确定要删除此访问令牌吗？使用此令牌的任何应用程序都需要新令牌才能访问Label Studio",
+    "revokeToken": "撤销令牌",
+    "securityWarning": "请勿与任何人分享此密钥。如果您怀疑任何密钥已被泄露，应立即撤销并创建新的密钥。",
+    "tokenExpiryDate": "令牌过期日期",
+    "unableToLoadTokens": "无法加载令牌列表"
+  },
+  "tokenSettings": {
+    "title": "令牌设置",
+    "description": "配置API令牌的全局设置",
+    "tokenExpiration": "令牌过期时间",
+    "neverExpire": "永不过期",
+    "customExpiration": "自定义过期时间",
+    "days": "天",
+    "hours": "小时",
+    "minutes": "分钟",
+    "save": "保存设置",
+    "settingsSaved": "设置已保存",
+    "enableIncreasedSecurity": "启用增强的令牌认证安全性",
+    "enableLegacyTokens": "启用传统访问令牌，这些令牌不会过期",
+    "errorLoadingSettings": "加载设置时出错。",
+    "legacyTokens": "传统令牌",
+    "personalAccessTokens": "个人访问令牌",
+    "saveChanges": "保存更改",
+    "timeToLive": "生存时间（可选，仅限个人访问令牌）",
+    "ttlDescription": "创建后令牌有效的天数。在此时间段后，用户需要创建新的访问令牌"
+  },
+  "generalSettings": {
+    "title": "常规设置",
+    "description": "配置应用程序的常规设置",
+    "language": "语言",
+    "theme": "主题",
+    "notifications": "通知",
+    "emailNotifications": "邮件通知",
+    "browserNotifications": "浏览器通知",
+    "save": "保存",
+    "settingsSaved": "设置已保存",
+    "color": "颜色",
+    "learnMore": "了解更多",
+    "projectName": "项目名称",
+    "randomDescription": "任务按均匀随机选择",
+    "randomSampling": "随机采样",
+    "saved": "已保存！",
+    "selectOption": "选择一个选项",
+    "sequentialDescription": "任务按任务ID排序",
+    "sequentialSampling": "顺序采样",
+    "taskSampling": "任务采样",
+    "uncertaintyDescription": "根据模型不确定性分数选择任务（主动学习模式）。了解更多",
+    "uncertaintySampling": "不确定性采样",
+    "workspace": "工作区",
+    "workspaceDescription": "通过将项目组织到工作区中来简化项目管理。了解更多"
+  },
+  "dataImport": {
+    "title": "数据导入",
+    "description": "导入您的数据进行标注",
+    "selectFiles": "选择文件",
+    "dragDrop": "拖放文件到此处",
+    "supportedFormats": "支持的格式",
+    "uploadProgress": "上传进度",
+    "importing": "导入中...",
+    "importComplete": "导入完成",
+    "importFailed": "导入失败",
+    "retry": "重试",
+    "emptyState": {
+      "connectCloudStorage": "连接云存储",
+      "description": "连接您的云存储或从计算机上传文件",
+      "import": "导入",
+      "seeDocsOnImporting": "查看数据导入文档",
+      "title": "导入数据以开始您的项目"
+    }
+  },
+  "dataManager": {
+    "settings": "设置",
+    "title": "数据管理器",
+    "description": "管理您的标注任务和数据",
+    "tasks": "任务",
+    "annotations": "标注",
+    "predictions": "预测",
+    "filters": {
+      "addAnotherFilter": "添加另一个筛选器",
+      "addFilter": "添加筛选器",
+      "isEmpty": "为空",
+      "no": "否",
+      "noFiltersApplied": "未应用筛选器",
+      "yes": "是"
+    },
+    "search": "搜索",
+    "selectAll": "全选",
+    "deselectAll": "取消全选",
+    "bulkActions": "批量操作",
+    "delete": "删除",
+    "export": "导出",
+    "assign": "分配",
+    "unassign": "取消分配",
+    "dialogs": {
+      "confirmAction": "确认操作",
+      "createAnnotationsFromPredictions": {
+        "choosePredictions": "选择预测",
+        "text": "使用选定的预测集为每个选定任务创建标注。您的账户将被指定为这些标注的所有者。",
+        "title": "从预测创建标注"
+      },
+      "deleteAnnotations": {
+        "allPlaceholder": "全部",
+        "annotatorLabel": "Annotator",
+        "text": "您即将删除选定的标注。此操作无法撤销。",
+        "title": "删除选定的标注？"
+      },
+      "deleteTasks": {
+        "text": "您即将删除选定的任务。此操作无法撤销。",
+        "title": "删除选定的任务？"
+      },
+      "destructiveAction": "破坏性操作",
+      "deleteSelected": "删除选中的",
+      "items": "项目",
+      "deleteWarning": "您即将删除选中的{{objectType}}。\n\n此操作无法撤销。",
+      "deleteButton": "删除{{objectType}}",
+      "removeDuplicatedTasks": {
+        "text": "确认您要根据相同的数据字段移除重复任务。重复的任务将被删除，所有标注将移动到重复任务中的第一个任务。如果至少有一个重复任务有存储链接，源存储链接也将被恢复。警告：任务分配（仅限企业版）不会被保存。",
+        "title": "移除重复任务"
+      },
+      "retrievePredictions": {
+        "text": "将选定的任务发送到连接到项目的所有ML后端。此操作可能因超时而突然中断。建议使用Label Studio API更新任务来开始预测。请确认您的操作。",
+        "title": "检索预测"
+      },
+      "labelingConfiguration": {
+        "title": "配置标注任务",
+        "text": "请先配置标注界面和标签，然后开始数据标注",
+        "goToSetup": "开始配置"
+      }
+    },
+    "errors": {
+      "invalidJSON": "错误：无效JSON"
+    },
+    "grid": {
+      "selectTask": "选择任务",
+      "unselectTask": "取消选择任务"
+    },
+    "gridPreview": {
+      "description": "预览模式 - 浏览任务",
+      "escapeToClose": "按Escape键关闭",
+      "scrollAndDrag": "滚动和拖拽以移动",
+      "spaceToSelect": "按空格键选择/取消选择",
+      "useArrowKeys": "使用方向键导航"
+    },
+    "mediaPlayer": {
+      "unableToPlay": "无法播放"
+    },
+    "modal": {
+      "cancel": "取消",
+      "ok": "确定"
+    },
+    "pagination": {
+      "perPage": "每页"
+    },
+    "summary": {
+      "filteredTasks": "已筛选任务",
+      "predictions": "预测",
+      "storageSync": "存储同步",
+      "submittedAnnotations": "已提交标注",
+      "tasks": "任务",
+      "totalTasks": "此项目中的总任务数"
+    },
+    "table": {
+      "failedToSyncData": "数据同步失败",
+      "checkStorageSettings": "请检查您的存储设置。您可能需要重新创建此数据集",
+      "nothingFound": "未找到任何内容",
+      "tryAdjustingFilters": "请尝试调整筛选器或相似性搜索参数",
+      "recordsSyncing": "请稍候！记录正在后台同步中",
+      "pressButtonToSeeRecords": "点击下方按钮查看已同步的记录",
+      "refresh": "刷新"
+    },
+    "tabs": {
+      "close": "关闭",
+      "duplicate": "复制",
+      "rename": "重命名",
+      "save": "保存"
+    },
+    "toolbar": {
+      "actions": "操作",
+      "columns": "列",
+      "createAnnotationsFromPredictions": "从预测创建标注",
+      "default": "默认",
+      "deleteAnnotations": "删除标注",
+      "deletePredictions": "删除预测",
+      "deleteTasks": "删除任务",
+      "export": "导出",
+      "filters": "筛选器",
+      "import": "导入",
+      "labelAllTasks": "标注所有任务",
+      "labelTasks": "标注任务",
+      "labelTasksAsDisplayed": "标注显示的任务",
+      "loadingActions": "加载操作中...",
+      "orderBy": "排序方式",
+      "record": "记录",
+      "refresh": "刷新数据",
+      "removeDuplicatedTasks": "移除重复任务",
+      "retrievePredictions": "检索预测",
+      "selectedItems": "已选择{{count}}个{{type}}",
+      "sortAscending": "升序排序",
+      "sortDescending": "降序排序",
+      "task": "任务",
+      "tasksActions": "任务操作",
+      "listView": "列表视图",
+      "gridView": "网格视图",
+      "switchToListView": "切换到列表视图",
+      "switchToGridView": "切换到网格视图",
+      "tasks": "任务",
+      "annotations": "标注",
+      "columnsCount": "列数：{{count}}",
+      "decreaseColumns": "减少列数",
+      "increaseColumns": "增加列数",
+      "fitImagesToWidth": "图片适应宽度",
+      "gridSettings": "网格设置"
+    },
+    "filtersTitle": "筛选器",
+    "emptyState": {
+      "noTasksFound": "未找到任务",
+      "noTasksAvailableForReview": "没有可供审核或标注的任务",
+      "tasksImportedWillAppear": "导入到此项目的任务将显示在这里",
+      "startLabelingTasks": "开始标注任务",
+      "tasksLabeledWillAppear": "您已标注的任务将显示在这里",
+      "labelAllTasks": "标注所有任务",
+      "noTasksAvailable": "没有可用任务",
+      "tasksAssignedWillAppear": "分配给您的任务将显示在这里",
+      "tasksWillAppearWhenAvailable": "任务可用时将显示在这里"
+    },
+    "backToProjects": "返回项目"
+  },
+  "sidebarMenu": {
+    "projects": "项目",
+    "dataManager": "数据管理器",
+    "labeling": "标注",
+    "settings": "设置",
+    "models": "模型",
+    "organization": "组织",
+    "help": "帮助",
+    "documentation": "文档",
+    "support": "支持",
+    "logout": "退出登录",
+    "annotation": "标注",
+    "cloudStorage": "云存储",
+    "dangerZone": "危险区域",
+    "generalSettings": "常规设置",
+    "labelingInterface": "标注界面",
+    "model": "模型",
+    "predictions": "预测",
+    "webhooks": "Webhooks"
+  },
+  "annotationSettings": {
+    "title": "标注设置",
+    "description": "配置标注界面和行为",
+    "autoSave": "自动保存",
+    "autoSaveInterval": "自动保存间隔",
+    "showPredictions": "显示预测",
+    "showAnnotations": "显示标注",
+    "enableHotkeys": "启用快捷键",
+    "showLabels": "显示标签",
+    "showTooltips": "显示工具提示",
+    "save": "保存设置",
+    "labelingInstructions": {
+      "description1": "编写说明以帮助用户完成标注任务。",
+      "description2": "说明字段支持HTML标记，并允许使用图片、iframe（PDF）。",
+      "showBeforeLabeling": "标注前显示",
+      "title": "标注说明"
+    },
+    "prelabeling": {
+      "description": "启用并选择用于预标注的预测集合。",
+      "models": "模型",
+      "noModelAvailable": "无可用模型或预测",
+      "predictions": "预测",
+      "selectModel": "选择您要使用的预测或模型：",
+      "selectModelPlaceholder": "请选择模型或预测",
+      "title": "预标注",
+      "usePredictions": "使用预测来预标注任务"
+    },
+    "saveAriaLabel": "保存标注设置",
+    "saved": "已保存！"
+  },
+  "predictionsSettings": {
+    "title": "预测设置",
+    "description": "配置机器学习预测的显示和行为",
+    "showPredictions": "显示预测",
+    "predictionThreshold": "预测阈值",
+    "autoAcceptPredictions": "自动接受预测",
+    "highlightPredictions": "高亮预测",
+    "save": "保存设置",
+    "emptyState": {
+      "description": "预测可以用来预标注数据或验证模型。您可以上传和选择来自多个模型版本的预测。您也可以在模型选项卡中连接实时模型。",
+      "learnMore": "在我们的文档中了解更多关于如何上传预测的信息",
+      "needHelp": "需要帮助？",
+      "title": "尚未上传预测"
+    },
+    "predictionsList": {
+      "delete": "删除",
+      "deleteConfirm": {
+        "body": "此操作无法撤销。您确定吗？",
+        "title": "删除预测"
+      },
+      "description": "项目中可用预测的列表。每张卡片都与单独的模型版本相关联。要了解如何导入预测，",
+      "lastPredictionCreated": "最后创建的预测",
+      "seeDocumentation": "查看文档",
+      "title": "预测列表",
+      "undefinedVersionTooltip": "模型版本未定义。这可能意味着导入预测时缺少model_version字段。"
+    }
+  },
+  "dangerZone": {
+    "title": "危险区域",
+    "description": "这些操作是不可逆的，请谨慎操作",
+    "deleteProject": {
+      "label": "删除项目",
+      "help": "删除项目将从数据库中移除所有任务、标注和项目数据。"
+    },
+    "deleteProjectDescription": "永久删除此项目及其所有数据",
+    "deleteAllAnnotations": "删除所有标注",
+    "deleteAllAnnotationsDescription": "删除此项目中的所有标注",
+    "resetProject": "重置项目",
+    "resetProjectDescription": "重置项目到初始状态",
+    "confirmAction": "确认操作",
+    "typeProjectName": "请输入项目名称以确认",
+    "cannotBeUndone": "此操作无法撤销",
+    "confirmation": {
+      "body": "您即将删除所有内容。此操作无法撤销。",
+      "proceed": "继续",
+      "title": "操作确认"
+    },
+    "deleteAnnotations": {
+      "label": "删除{{count}}个标注"
+    },
+    "deletePredictions": {
+      "label": "删除{{count}}个预测"
+    },
+    "deleteTasks": {
+      "label": "删除{{count}}个任务"
+    },
+    "dropTabs": {
+      "help": "如果数据管理器未加载，删除所有数据管理器选项卡可能会有帮助。",
+      "label": "删除所有选项卡"
+    },
+    "resetCache": {
+      "help": "重置缓存可能在以下情况下有帮助：如果由于现有标签的验证错误而无法修改标注配置，但您确信这些标签不存在。您可以使用此操作重置缓存并重试。",
+      "label": "重置缓存"
+    }
+  },
+  "settings": {
+    "title": "设置",
+    "general": "常规",
+    "labelingInterface": "标注界面",
+    "annotation": "标注",
+    "model": "模型",
+    "predictions": "预测",
+    "cloudStorage": "云存储",
+    "webhooks": "Webhooks",
+    "dangerZone": "危险区域"
+  },
+  "webhooks": {
+    "title": "Webhooks",
+    "addWebhook": "添加 Webhook",
+    "newWebhook": "新建 Webhook",
+    "editWebhook": "编辑 Webhook",
+    "deleteWebhook": "删除 Webhook",
+    "payloadUrl": "负载 URL",
+    "isActive": "是否激活",
+    "headers": "请求头",
+    "addHeader": "添加请求头",
+    "removeHeader": "移除请求头",
+    "headerPlaceholder": "请求头",
+    "valuePlaceholder": "值",
+    "payload": "负载",
+    "sendPayload": "发送负载",
+    "sendForAllActions": "为所有操作发送",
+    "sendPayloadFor": "发送负载给",
+    "cancel": "取消",
+    "saveChanges": "保存更改",
+    "created": "创建时间",
+    "edit": "编辑",
+    "delete": "删除",
+    "deleteConfirmTitle": "删除",
+    "deleteConfirmMessage": "您确定要删除此 webhook 吗？此操作无法撤销。",
+    "footerDescription1": "Webhooks 允许在特定事件发生时通知外部服务。当指定事件发生时，会向您提供的每个 URL 发送 POST 请求。",
+    "footerDescription2": "在文档中了解更多",
+    "aria": {
+      "addWebhook": "添加 webhook",
+      "editWebhook": "编辑 webhook",
+      "cancelWebhookEdit": "取消编辑 webhook",
+      "saveWebhook": "保存 webhook",
+      "confirmWebhookDeletion": "确认删除 webhook",
+      "cancelWebhookDeletion": "取消删除 webhook",
+      "addHeaderTooltip": "添加请求头",
+      "removeHeaderTooltip": "移除请求头"
+    }
+  },
+  "bottombar": {
+    "instructions": "说明",
+    "showInstructions": "显示说明",
+    "settings": "设置"
+  },
+  "spectrogram": {
+    "settings": "频谱图设置"
+  },
+  "hotkeys": {
+    "annotation:submit": {
+      "label": "提交标注",
+      "description": "提交当前标注"
+    },
+    "annotation:skip": {
+      "label": "跳过任务",
+      "description": "跳过当前任务"
+    },
+    "annotation:undo": {
+      "label": "撤销",
+      "description": "撤销最后操作"
+    },
+    "annotation:redo": {
+      "label": "重做",
+      "description": "重做之前撤销的操作"
+    },
+    "dm:focus-previous": {
+      "label": "聚焦上一个任务",
+      "description": "将焦点移动到上一个任务"
+    },
+    "dm:focus-next": {
+      "label": "聚焦下一个任务",
+      "description": "将焦点移动到下一个任务"
+    },
+    "dm:close-labeling": {
+      "label": "聚焦已关闭任务",
+      "description": "聚焦在已关闭任务列"
+    },
+    "dm:open-labeling": {
+      "label": "聚焦打开任务",
+      "description": "焦点移动到打开的任务列"
+    },
+    "dm:toggle-selected": {
+      "label": "切换任务选择",
+      "description": "切换聚焦任务的选择状态"
+    },
+    "dm:select-all": {
+      "label": "选择所有任务",
+      "description": "选择所有可见任务"
+    },
+    "dm:deselect-all": {
+      "label": "取消选择所有任务",
+      "description": "取消选择所有选定任务"
+    },
+    "dm:toggle-bulk-sidebar-minimization": {
+      "label": "切换批量侧边栏",
+      "description": "最小化或展开批量操作侧边栏"
+    }
+  },
+  "common": {
+    "unknownError": "未知错误",
+    "required": "必填",
+    "cancel": "取消"
+  }
+}

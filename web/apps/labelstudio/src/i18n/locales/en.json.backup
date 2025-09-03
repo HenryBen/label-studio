@@ -1,0 +1,1069 @@
+{
+  "isRequired": "is required",
+  "storage": {
+    "cloudStorage": "Cloud Storage",
+    "description": "Use cloud storage or database storage as a data source for labeling tasks or as a target storage for completed annotations.",
+    "sourceCloudStorage": "Source Cloud Storage",
+    "addSourceStorage": "Add Source Storage",
+    "targetCloudStorage": "Target Cloud Storage",
+    "addTargetStorage": "Add Target Storage",
+    "connectSourceStorage": "Connect Source Storage",
+    "importDataFromCloudStorage": "Import your data from cloud storage providers",
+    "selectProvider": "Select Provider",
+    "configureConnection": "Configure Connection",
+    "importSettingsPreview": "Import Settings & Preview",
+    "reviewConfirm": "Review & Confirm",
+    "chooseCloudStorageProvider": "Choose your cloud storage provider",
+    "selectCloudStorageService": "Select the cloud storage service where your data is stored",
+    "storageProvider": "Storage Provider",
+    "amazonS3": "Amazon S3",
+    "googleCloudStorage": "Google Cloud Storage",
+    "azureBlobStorage": "Azure Blob Storage",
+    "redisStorage": "Redis Storage",
+    "localFiles": "Local Files",
+    "previous": "Previous",
+    "next": "Next",
+    "testConnection": "Test Connection",
+    "connectionVerified": "Connection Verified",
+    "loadPreview": "Load Preview",
+    "previewLoaded": "✓ Preview Loaded",
+    "save": "Save",
+    "saveSync": "Save & Sync",
+    "testConnectionBeforeContinuing": "Test connection before continuing",
+    "connectTargetStorage": "Connect Target Storage",
+    "editSourceStorage": "Edit Source Storage",
+    "editTargetStorage": "Edit Target Storage",
+    "storageTitle": "Storage Title",
+    "storageTitleDescription": "This name will help you identify this connection in your project",
+    "storageTitlePlaceholder": "Enter a descriptive name (e.g., 'Legal Documents', 'Training Data')",
+    "canDeleteObjects": "Can delete objects from storage",
+    "canDeleteObjectsDescription": "If unchecked, annotations will not be deleted from storage",
+    "amazonS3Description": "Configure your AWS S3 connection with all required Label Studio settings",
+    "bucketName": "Bucket Name",
+    "regionName": "Region Name",
+    "s3Endpoint": "S3 Endpoint",
+    "bucketPrefix": "Bucket prefix",
+    "accessKeyId": "Access Key ID",
+    "secretAccessKey": "Secret Access Key",
+    "sessionToken": "Session Token",
+    "usePresignedUrls": "Use pre-signed URLs (On) / Proxy through the platform (Off)",
+    "usePresignedUrlsDescription": "When pre-signed URLs are enabled, all data bypasses the platform and user browsers directly read data from storage",
+    "expirePresignedUrls": "Expire pre-signed URLs (minutes)",
+    "bucketNamePlaceholder": "my-storage-bucket",
+    "bucketNameRequired": "Bucket name is required",
+    "regionNamePlaceholder": "us-east-1 (default)",
+    "s3EndpointPlaceholder": "https://s3.amazonaws.com (default)",
+    "bucketPrefixPlaceholder": "path/to/files",
+    "accessKeyIdPlaceholder": "AKIAIOSFODNN7EXAMPLE",
+    "accessKeyIdRequired": "Access Key ID is required",
+    "secretAccessKeyPlaceholder": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+    "secretAccessKeyRequired": "Secret Access Key is required",
+    "sessionTokenPlaceholder": "Session token (optional)",
+    "redisStorageDescription": "Configure your Redis storage connection with all required Label Studio settings",
+    "databaseNumber": "Database Number (db)",
+    "databaseNumberPlaceholder": "1",
+    "password": "Password",
+    "redisPasswordPlaceholder": "Your redis password",
+    "host": "Host",
+    "redisHostPlaceholder": "redis://example.com",
+    "hostRequired": "Host is required",
+    "port": "Port",
+    "redisPortPlaceholder": "6379",
+    "googleCloudStorageDescription": "Configure your Google Cloud Storage connection with all required Label Studio settings",
+    "googleApplicationCredentials": "Google Application Credentials",
+    "googleApplicationCredentialsDescription": "Paste the contents of credentials.json in this field OR leave it blank to use ADC.",
+    "googleProjectId": "Google Project ID",
+    "googleProjectIdDescription": "Leave blank to inherit from Google Application Credentials.",
+    "azureBlobStorageDescription": "Configure your Azure Blob Storage connection with all required Label Studio settings",
+    "containerName": "Container Name",
+    "azureContainerPlaceholder": "my-azure-container",
+    "containerNameRequired": "Container name is required",
+    "accountName": "Account Name",
+    "azureAccountNamePlaceholder": "mystorageaccount",
+    "accountKey": "Account Key",
+    "azureAccountKeyPlaceholder": "Your storage account key",
+    "localFilesDescription": "Configure your local file storage connection with all required Label Studio settings",
+    "absoluteLocalPath": "Absolute local path",
+    "localPathPlaceholder": "/data/my-folder/",
+    "pathRequired": "Path is required",
+    "path": "Path",
+    "successfullyConnected": "Successfully connected!",
+    "connectionFailed": "Connection failed",
+    "checkConnection": "Check Connection",
+    "testStorageConnection": "Test storage connection",
+    "addStorage": "Add Storage",
+    "saveStorageSettings": "Save storage settings",
+    "deletingStorage": "Deleting storage",
+    "deleteStorageConfirmation": "This action cannot be undone. Are you sure?",
+    "edit": "Edit",
+    "delete": "Delete",
+    "copied": "Copied!",
+    "copy": "Copy",
+    "tasksAddedHelp": "{{count}} new tasks added during the last sync.",
+    "tasksExistedHelp": "{{count}} tasks that have been found and already synced will not be added to the project again.",
+    "tasksTotalHelp": "{{count}} tasks have been added in total for this storage.",
+    "annotationsHelp": "{{count}} annotations successfully saved during the last sync.",
+    "totalAnnotationsHelp": "{{count}} total annotations seen in the project at the sync moment.",
+    "errorLogsFor": "Error logs for {{exportPrefix}}{{type}} storage {{id}} in project {{project}} and job {{job}}",
+    "storageSyncErrorLog": "Storage Sync Error Log",
+    "seeDocs": "See docs",
+    "troubleshootingTips": "for troubleshooting tips on cloud storage connections.",
+    "close": "Close",
+    "status": "Status",
+    "statusInitialized": "Initialized: storage was added, but never synced; sufficient for starting URI link resolving",
+    "statusQueued": "Queued: sync job is in the queue, but not yet started",
+    "statusInProgress": "In progress: sync job is running",
+    "statusFailed": "Failed: sync job stopped, some errors occurred",
+    "statusCompletedWithErrors": "Completed with errors: sync job completed but some tasks had validation errors",
+    "statusCompleted": "Completed: sync job completed successfully",
+    "viewLogs": "View Logs",
+    "allTasksCompleted": "All tasks in the queue have been completed",
+    "annotations": "Annotations",
+    "tasks": "Tasks",
+    "total": "total",
+    "new": "new",
+    "lastSync": "Last Sync",
+    "notSyncedYet": "Not synced yet",
+    "type": "Type",
+    "bucket": "Bucket",
+    "container": "Container"
+  },
+  "menubar": {
+    "home": "Home",
+    "projects": "Projects",
+    "organization": "Organization",
+    "api": "API",
+    "docs": "Docs",
+    "github": "GitHub",
+    "slackCommunity": "Slack Community",
+    "pinMenu": "Pin menu",
+    "unpinMenu": "Unpin menu",
+    "keyboardShortcuts": "Keyboard Shortcuts",
+    "accountSettings": "Account & Settings",
+    "logOut": "Log Out",
+    "newsletterNotification": "Please check new notification settings in the Account & Settings page",
+    "logoAlt": "Label Studio Logo"
+  },
+  "homepage": {
+    "title": "Home",
+    "welcome": "Welcome 👋",
+    "getStarted": "Let's get you started.",
+    "createProject": "Create Project",
+    "invitePeople": "Invite People",
+    "recentProjects": "Recent Projects",
+    "viewAll": "View All",
+    "cantLoadProjects": "can't load projects",
+    "createFirstProject": "Create your first project",
+    "createFirstProjectDesc": "Import your data and set up the labeling interface to start annotating",
+    "resources": "Resources",
+    "resourcesDesc": "Learn, explore and get help",
+    "documentation": "Documentation",
+    "apiDocumentation": "API Documentation",
+    "releaseNotes": "Release Notes",
+    "blog": "LabelStud.io Blog",
+    "slackCommunity": "Slack Community",
+    "versionInfo": "Label Studio Version: Community",
+    "tasksProgress": "{{finished}} of {{total}} Tasks ({{percentage}}%)"
+  },
+  "language": {
+    "switchLanguage": "Switch Language",
+    "english": "English",
+    "chinese": "Chinese"
+  },
+  "accountSettings": {
+    "personalInfo": "Personal Info",
+    "hotkeysTitle": "Hotkeys",
+    "emailPreferences": "Email Preferences",
+    "subscribeToNewsletters": "Subscribe to HumanSignal news and tips from Heidi",
+    "subscribeForNews": "Subscribe for news and tips",
+    "membershipInfo": "Membership Info",
+    "userId": "User ID",
+    "registrationDate": "Registration Date",
+    "annotationsSubmitted": "Annotations Submitted",
+    "projectsContributedTo": "Projects Contributed To",
+    "organization": "Organization",
+    "myRole": "My Role",
+    "organizationId": "Organization ID",
+    "owner": "Owner",
+    "created": "Created",
+    "roleOwner": "Owner",
+    "roleDeactivated": "Deactivated",
+    "roleAdministrator": "Administrator",
+    "roleManager": "Manager",
+    "roleAnnotator": "Annotator",
+    "roleReviewer": "Reviewer",
+    "rolePending": "Pending",
+    "personalAccessToken": "Personal Access Token",
+    "legacyToken": "Legacy Token",
+    "accessToken": "Access Token",
+    "exampleCurlRequest": "Example CURL Request",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "reset": "Reset",
+    "authenticateDescription": "Authenticate with our API using your personal access token.",
+    "seeText": "See",
+    "docsLink": "Docs",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "E-mail",
+    "phone": "Phone",
+    "save": "Save",
+    "delete": "Delete",
+    "hotkeysDescription": "Customize your keyboard shortcuts to speed up your workflow. Click on any hotkey below to assign a new key combination that works best for you.",
+    "uploadImage": "Upload Image",
+    "noFileSelected": "No file selected",
+    "errorUpdatingAvatar": "Error updating avatar",
+    "errorUpdatingUser": "Error updating user",
+    "hotkeysManager": {
+      "import": "Import",
+      "export": "Export",
+      "resetToDefaults": "Reset to Defaults",
+      "save": "Save",
+      "cancel": "Cancel",
+      "apply": "Apply",
+      "allowDuplicate": "Allow Duplicate",
+      "noHotkeysInSection": "No hotkeys in this section",
+      "clickToEditHotkey": "Click to edit hotkey",
+      "pressKeysNow": "Press keys now...",
+      "clickToSetShortcut": "Click to set shortcut",
+      "enable": "Enable",
+      "disable": "Disable",
+      "duplicateHotkeyDetected": "Warning: Duplicate Hotkey Detected",
+      "duplicateHotkeyMessage": "The hotkey combination \"{key}\" is already being used by:",
+      "duplicateHotkeyWarning": "Having duplicate hotkeys may cause conflicts and unexpected behavior. Are you sure you want to proceed?",
+      "hotkeysSavedSuccessfully": "{sectionName} hotkeys saved successfully",
+      "failedToSave": "Failed to save: {error}",
+      "errorSaving": "Error saving: {error}",
+      "hotkeysImportedSuccessfully": "Hotkeys imported successfully",
+      "errorImportingHotkeys": "Error importing hotkeys: {error}",
+      "importHotkeys": "Import Hotkeys",
+      "importDescription": "Paste your exported hotkeys JSON below. This will replace your current hotkeys. Make sure the JSON contains an array of hotkey objects with the required fields.",
+      "hotkeysJson": "Hotkeys JSON",
+      "importError": "Import Error",
+      "importHotkeysButton": "Import Hotkeys",
+      "pleaseEnterJsonData": "Please enter JSON data to import",
+      "invalidHotkeyObject": "Invalid hotkey object",
+      "missingRequiredFields": "Missing required fields: {fields}",
+      "invalidFormat": "Invalid format: expected an array of hotkeys or an object with a hotkeys property",
+      "noHotkeysFound": "No hotkeys found in the imported data",
+      "hotkeyAtIndex": "Hotkey at index {index}: {error}",
+      "settings": "Settings"
+    },
+    "sections": {
+      "annotation": {
+        "title": "Annotation Actions",
+        "description": "Shortcuts for common annotation tasks like submit, skip, undo and redo"
+      },
+      "data_manager": {
+        "title": "Data Manager",
+        "description": "Shortcuts for navigating and managing tasks in Project's Data Manager"
+      },
+      "regions": {
+        "title": "Region Management",
+        "description": "Shortcuts for creating, selecting and manipulating annotation regions"
+      },
+      "tools": {
+        "title": "Tools",
+        "description": "Shortcuts for controlling tools panel when labeling images"
+      },
+      "audio": {
+        "title": "Audio Controls",
+        "description": "Shortcuts for controlling audio playback and navigation"
+      },
+      "video": {
+        "title": "Video Controls",
+        "description": "Shortcuts for controlling video playback and navigation"
+      },
+      "timeseries": {
+        "title": "Time Series Controls",
+        "description": "Shortcuts for manipulating time series data regions"
+      },
+      "image_gallery": {
+        "title": "Image Gallery Navigation",
+        "description": "Shortcuts for navigating between images in multi-image tasks"
+      },
+      "paragraphs": {
+        "title": "Paragraph Navigation",
+        "description": "Shortcuts for navigating phrases and regions in paragraph/dialogue view"
+      }
+    }
+  },
+  "exportPage": {
+    "title": "Export",
+    "preparingFiles": "Preparing files...",
+    "exportButton": "Export",
+    "formatInfo": "Format information",
+    "cantFindFormat": "Can't find the format you need?",
+    "letUsKnow": "Let us know",
+    "slack": "Slack",
+    "orSubmitIssue": "or submit an issue",
+    "repository": "repository"
+  },
+  "createProject": {
+    "title": "Create Project",
+    "projectName": "Project Name",
+    "description": "Description",
+    "descriptionPlaceholder": "Enter project description...",
+    "workspace": "Workspace",
+    "workspaceSelectPlaceholder": "Select workspace",
+    "workspaceDescription": "Workspace description",
+    "learnMore": "Learn more",
+    "tabs": {
+      "projectName": "Project Name",
+      "dataImport": "Data Import",
+      "labelingSetup": "Labeling Setup"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "aria": {
+      "cancelProjectCreation": "Cancel project creation"
+    }
+  },
+  "importData": {
+    "title": "Import Data",
+    "datasetUrl": "Dataset URL",
+    "addUrl": "Add URL",
+    "uploadFiles": "Upload Files",
+    "uploadMoreFiles": "Upload More Files",
+    "treatCsvAs": "Treat CSV as",
+    "listOfTasks": "List of tasks",
+    "timeSeriesOrWholeText": "Time series or whole text",
+    "dragDropFiles": "Drag and drop files here",
+    "orClickToBrowse": "or click to browse",
+    "supportedFormats": {
+      "images": "Images",
+      "audio": "Audio",
+      "video": "Video",
+      "htmlHypertext": "HTML/Hypertext",
+      "text": "Text",
+      "structuredData": "Structured Data",
+      "pdf": "PDF"
+    },
+    "tips": {
+      "important": "Important:",
+      "cloudStorageRecommended": "Cloud storage is recommended for large datasets",
+      "pdfMultiImage": "PDF files will be converted to multiple images",
+      "importPreannotated": "You can import pre-annotated data"
+    },
+    "files": "Files",
+    "filename": "Filename",
+    "status": "Status",
+    "size": "Size",
+    "sample": "Sample",
+    "expectedInputPreview": "Expected Input Preview",
+    "sampleDataError": "Sample data error",
+    "viewJsonFormat": "View JSON format",
+    "setupLabelingConfigFirst": "Setup labeling config first",
+    "labelingConfiguration": "Labeling Configuration",
+    "toPreviewJsonFormat": "to preview JSON format",
+    "import": "Import",
+    "cancel": "Cancel",
+    "aria": {
+      "uploadFile": "Upload file",
+      "videoFormatSupport": "Video format support",
+      "cancelImport": "Cancel import",
+      "finishImport": "Finish import"
+    },
+    "videoFormatSupportTooltip": "Video format support depends on your browser. Click to learn more.",
+    "filesUploaded": "{{count}} file uploaded",
+    "filesUploaded_other": "{{count}} files uploaded"
+  },
+  "languageSwitcher": {
+    "switchLanguage": "Switch Language"
+  },
+  "themeToggle": {
+    "auto": "Auto",
+    "light": "Light",
+    "dark": "Dark",
+    "beta": "Beta"
+  },
+  "projects": {
+    "title": "Projects",
+    "emptyTitle": "No projects yet",
+    "emptyDescription": "Create your first project to get started",
+    "createProject": "Create Project",
+    "settings": "Settings",
+    "label": "Label",
+    "projectOptions": "Project options",
+    "create": "Create"
+  },
+  "organization": {
+    "title": "Organization",
+    "people": "People",
+    "models": "Models",
+    "closeUserDetails": "Close user details",
+    "createdProjects": "Created Projects",
+    "contributedTo": "Contributed To",
+    "lastActivityOn": "Last activity on",
+    "email": "Email",
+    "name": "Name",
+    "lastActivity": "Last Activity",
+    "createModel": "Create Model",
+    "buildModelDescription": "Build and deploy machine learning models",
+    "createNewModelAriaLabel": "Create new model",
+    "apiTokensSettings": "API Tokens Settings",
+    "apiTokenSettingsSaved": "API token settings saved",
+    "showApiTokenSettings": "Show API token settings",
+    "addPeople": "Add People",
+    "inviteNewMember": "Invite new member"
+  },
+  "inviteModal": {
+    "title": "Invite people",
+    "description": "Invite people to join your Label Studio instance. People that you invite have full access to all of your projects.",
+    "learnMore": "Learn more",
+    "resetLink": "Reset Link",
+    "copyLink": "Copy link",
+    "copied": "Copied!",
+    "resetLinkAriaLabel": "Refresh invite link",
+    "copyLinkAriaLabel": "Copy invite link"
+  },
+  "labelingConfig": {
+    "addChoices": "Add Choices",
+    "addLabelNames": "Add Label Names",
+    "useNewLineSeparator": "Use new line separator",
+    "add": "Add",
+    "choices": "Choices",
+    "labels": "Labels",
+    "configureSettings": "Configure Settings",
+    "configureWithTags": "Configure with Tags",
+    "seeAllTags": "See All Tags",
+    "labelingInterface": "Labeling Interface",
+    "browseTemplates": "Browse Templates",
+    "code": "Code",
+    "visual": "Visual",
+    "saved": "Saved",
+    "saving": "Saving...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "configurationError": "Configuration Error",
+    "description": "Configure your labeling interface and task settings",
+    "invalidXml": "Invalid XML configuration",
+    "preview": "Preview",
+    "uiPreview": "UI Preview",
+    "previewNotAvailable": "Preview not available",
+    "outliner": {
+      "title": "Outliner",
+      "emptyState": {
+        "header": "Labeled regions will appear here",
+        "description": "Start labeling and track your results using this panel",
+        "learnMore": "Learn more"
+      },
+      "allRegionsHidden": "All regions hidden",
+      "adjustFilters": "Adjust or remove the filters to view",
+      "hiddenRegions": "There are {{count}} hidden region(s)",
+      "adjustFiltersToView": "Adjust or remove filters to view"
+    },
+    "annotationHistory": {
+      "emptyState": {
+        "header": "View annotation activity",
+        "description": "See a log of user actions for this annotation"
+      }
+    },
+    "viewControls": {
+      "grouping": {
+        "manual": {
+          "label": "Group Manually",
+          "selectedLabel": "Manual",
+          "selectedLabelLegacy": "Manual Grouping",
+          "tooltip": "Manually Grouped"
+        },
+        "label": {
+          "label": "Group by Label",
+          "selectedLabel": "By Label",
+          "selectedLabelLegacy": "Grouped by Label",
+          "tooltip": "Grouped by Label"
+        },
+        "type": {
+          "label": "Group by Tool",
+          "selectedLabel": "By Tool",
+          "selectedLabelLegacy": "Grouped by Tool",
+          "tooltip": "Grouped by Tool"
+        }
+      },
+      "ordering": {
+        "date": {
+          "label": "Order by Time",
+          "selectedLabel": "By Time"
+        },
+        "score": {
+          "label": "Order by Score",
+          "selectedLabel": "By Score"
+        }
+      },
+      "visibility": {
+        "showAll": "Show all regions",
+        "hideAll": "Hide all regions"
+      }
+    },
+    "sidePanels": {
+      "history": "History",
+      "regions": "Regions",
+      "relations": "Relations",
+      "info": "Info",
+      "comments": "Comments",
+      "outliner": "Outliner",
+      "details": "Details"
+    },
+    "detailsPanel": {
+      "relations": {
+        "emptyState": {
+          "header": "Create relations between regions",
+          "description": "Link regions to define relationships between them",
+          "learnMore": "Learn more"
+        }
+      },
+      "info": {
+        "emptyState": {
+          "header": "View region details",
+          "description": "Select a region to view its properties, metadata and available actions"
+        }
+      }
+    },
+    "title": "Labeling Configuration",
+    "xmlConfig": "XML Configuration",
+    "emptyTitle": "Your labeling configuration is empty. It is required to label your data.",
+    "emptyDescription": "Start from one of our predefined templates or create your own config on the Code panel. The labeling config is XML-based and you can",
+    "documentationLink": "read about the available tags in our documentation",
+    "aria": {
+      "addLabels": "Add labels",
+      "browseTemplates": "Browse templates",
+      "saveConfiguration": "Save configuration"
+    }
+  },
+  "apiToken": {
+    "revokeToken": "Revoke Token",
+    "revokeConfirmation": "Are you sure you want to delete this access token? Any application using this token will need a new token to be able to access Label Studio",
+    "revoke": "Revoke",
+    "newAuthToken": "New Auth Token",
+    "loading": "loading...",
+    "accessToken": "Access Token",
+    "expiresOn": "Expires on {{date}}",
+    "personalAccessToken": "Personal access token",
+    "unableToLoadTokens": "Unable to load tokens list",
+    "oneActiveTokenTooltip": "You can only have one active token",
+    "createNewToken": "Create New Token",
+    "copyTokenInstructions": "Copy your new access token from below and keep it secure.",
+    "copied": "Copied!",
+    "copy": "Copy",
+    "tokenExpiryDate": "Token Expiry Date",
+    "manageTokensSecurely": "Manage your access tokens securely",
+    "securityWarning": "Do not share this key with anyone. If you suspect any keys have been compromised, you should revoke them and create new ones.",
+    "confirmDelete": "Confirm Delete",
+    "createToken": "Create Token",
+    "createdAt": "Created At",
+    "delete": "Delete",
+    "deleteTokenConfirmation": "Are you sure you want to delete this token? This action cannot be undone.",
+    "description": "Manage your API access tokens",
+    "lastUsed": "Last Used",
+    "never": "Never",
+    "title": "API Tokens",
+    "tokenName": "Token Name",
+    "tokenValue": "Token Value"
+  },
+  "tokenSettings": {
+    "errorLoadingSettings": "Error loading settings.",
+    "personalAccessTokens": "Personal Access Tokens",
+    "enableIncreasedSecurity": "Enable increased token authentication security",
+    "legacyTokens": "Legacy Tokens",
+    "enableLegacyTokens": "Enable legacy access tokens, these do not expire",
+    "timeToLive": "Time-to-Live (optional, Personal Access Token only)",
+    "ttlDescription": "The number of days, after creation, that the token will be valid for. After this time period a user will need to create a new access token",
+    "saveChanges": "Save Changes",
+    "customExpiration": "Custom Expiration",
+    "days": "Days",
+    "description": "Configure global settings for API tokens",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "neverExpire": "Never Expire",
+    "save": "Save Settings",
+    "settingsSaved": "Settings Saved",
+    "title": "Token Settings",
+    "tokenExpiration": "Token Expiration"
+  },
+  "generalSettings": {
+    "title": "General Settings",
+    "projectName": "Project Name",
+    "description": "Description",
+    "workspace": "Workspace",
+    "selectOption": "Select an option",
+    "workspaceDescription": "Simplify project management by organizing projects into workspaces. Learn more",
+    "learnMore": "Learn more",
+    "color": "Color",
+    "taskSampling": "Task Sampling",
+    "sequentialSampling": "Sequential sampling",
+    "sequentialDescription": "Tasks are ordered by Task ID",
+    "randomSampling": "Random sampling",
+    "randomDescription": "Tasks are chosen with uniform random",
+    "uncertaintySampling": "Uncertainty sampling",
+    "uncertaintyDescription": "Tasks are chosen according to model uncertainty score (active learning mode). Learn more",
+    "saved": "Saved!",
+    "save": "Save",
+    "browserNotifications": "Browser Notifications",
+    "emailNotifications": "Email Notifications",
+    "language": "Language",
+    "notifications": "Notifications",
+    "settingsSaved": "Settings Saved",
+    "theme": "Theme"
+  },
+  "dataImport": {
+    "emptyState": {
+      "title": "Import data to get your project started",
+      "description": "Connect your cloud storage or upload files from your computer",
+      "connectCloudStorage": "Connect Cloud Storage",
+      "import": "Import",
+      "seeDocsOnImporting": "See docs on importing data"
+    },
+    "description": "Import your data for labeling",
+    "dragDrop": "Drag and drop files here",
+    "importComplete": "Import Complete",
+    "importFailed": "Import Failed",
+    "importing": "Importing...",
+    "retry": "Retry",
+    "selectFiles": "Select Files",
+    "supportedFormats": "Supported Formats",
+    "title": "Data Import",
+    "uploadProgress": "Upload Progress"
+  },
+  "dataManager": {
+    "settings": "Settings",
+    "toolbar": {
+      "actions": "Actions",
+      "loadingActions": "Loading actions...",
+      "columns": "Columns",
+      "filters": "Filters",
+      "orderBy": "Order by",
+      "default": "Default",
+      "import": "Import",
+      "export": "Export",
+      "refresh": "Refresh data",
+      "labelAllTasks": "Label All Tasks",
+      "labelTasks": "Label Tasks",
+      "labelTasksAsDisplayed": "Label Tasks As Displayed",
+      "record": "record",
+      "task": "task",
+      "tasksActions": "Tasks actions",
+      "selectedItems": "{{count}} {{type}}s selected",
+      "sortAscending": "Sort ascending",
+      "sortDescending": "Sort descending",
+      "retrievePredictions": "Retrieve Predictions",
+      "createAnnotationsFromPredictions": "Create Annotations From Predictions",
+      "removeDuplicatedTasks": "Remove Duplicated Tasks",
+      "deleteTasks": "Delete Tasks",
+      "deleteAnnotations": "Delete Annotations",
+      "deletePredictions": "Delete Predictions",
+      "listView": "List view",
+      "gridView": "Grid view",
+      "switchToListView": "Switch to list view",
+      "switchToGridView": "Switch to grid view",
+      "tasks": "Tasks",
+      "annotations": "Annotations",
+      "columnsCount": "Columns: {{count}}",
+      "decreaseColumns": "Decrease columns number",
+      "increaseColumns": "Increase columns number",
+      "fitImagesToWidth": "Fit images to width",
+      "gridSettings": "Grid settings"
+    },
+    "dialogs": {
+      "retrievePredictions": {
+        "title": "Retrieve Predictions",
+        "text": "Send the selected tasks to all ML backends connected to the project.\n\nThis operation might be abruptly interrupted due to a timeout. The recommended way to get predictions is to update tasks using the Label Studio API.\n\nPlease confirm your action."
+      },
+      "createAnnotationsFromPredictions": {
+        "title": "Create Annotations From Predictions",
+        "text": "Create annotations from predictions using selected predictions set for each selected task. Your account will be assigned as an owner to those annotations.",
+        "choosePredictions": "Choose predictions"
+      },
+      "removeDuplicatedTasks": {
+        "title": "Remove Duplicated Tasks",
+        "text": "Confirm that you want to remove duplicated tasks with the same data fields. Duplicated tasks will be deleted and all annotations will be moved to the first task from duplicated tasks. Also Source Storage Links will be restored if at least one duplicated task has a storage link. Warning: Task assignments (enterprise only) won't be saved."
+      },
+      "deleteTasks": {
+        "title": "Delete selected tasks?",
+        "text": "You are about to delete the selected tasks.\n\nThis can't be undone."
+      },
+      "deleteAnnotations": {
+        "title": "Delete selected annotations?",
+        "text": "You are about to delete the selected annotations.\n\nThis can't be undone.",
+        "annotatorLabel": "Annotator",
+        "allPlaceholder": "All"
+      },
+      "labelingConfiguration": {
+        "title": "You're almost there!",
+        "text": "Before you can annotate the data, set up labeling configuration",
+        "goToSetup": "Go to setup"
+      },
+      "confirmAction": "Confirm action",
+      "destructiveAction": "Destructive action",
+      "deleteSelected": "Delete selected",
+      "items": "items",
+      "deleteWarning": "You are about to delete the selected {{objectType}}.\n\nThis can't be undone.",
+      "deleteButton": "Delete {{objectType}}"
+    },
+    "tabs": {
+      "rename": "Rename",
+      "duplicate": "Duplicate",
+      "save": "Save",
+      "close": "Close"
+    },
+    "summary": {
+      "tasks": "Tasks",
+      "filteredTasks": "Filtered tasks",
+      "totalTasks": "Total tasks in the project",
+      "submittedAnnotations": "Submitted annotations",
+      "predictions": "Predictions",
+      "storageSync": "Storage sync"
+    },
+    "filters": {
+      "noFiltersApplied": "No filters applied",
+      "addFilter": "Add Filter",
+      "addAnotherFilter": "Add Another Filter",
+      "yes": "Yes",
+      "no": "No",
+      "isEmpty": "Is empty"
+    },
+    "modal": {
+      "cancel": "Cancel",
+      "ok": "OK"
+    },
+    "grid": {
+      "selectTask": "Select task",
+      "unselectTask": "Unselect task"
+    },
+    "gridPreview": {
+      "description": "Preview mode - navigate through tasks",
+      "useArrowKeys": "Use arrow keys to navigate",
+      "escapeToClose": "Press Escape to close",
+      "spaceToSelect": "Press Space to select/unselect",
+      "scrollAndDrag": "Scroll and drag to move around"
+    },
+    "table": {
+      "failedToSyncData": "Failed to sync data",
+      "checkStorageSettings": "Check your storage settings. You may need to recreate this dataset",
+      "nothingFound": "Nothing found",
+      "tryAdjustingFilters": "Try adjusting the filter or similarity search parameters",
+      "recordsSyncing": "Hang tight! Records are syncing in the background",
+      "pressButtonToSeeRecords": "Press the button below to see any synced records",
+      "refresh": "Refresh"
+    },
+    "mediaPlayer": {
+      "unableToPlay": "Unable to play"
+    },
+    "errors": {
+      "invalidJSON": "Error: Invalid JSON"
+    },
+    "pagination": {
+      "perPage": "per page"
+    },
+    "annotations": "Labeling",
+    "assign": "Assign",
+    "bulkActions": "Bulk Actions",
+    "delete": "Delete",
+    "description": "Manage your labeling tasks and data",
+    "deselectAll": "Deselect All",
+    "export": "Export",
+    "filtersTitle": "Filters",
+    "predictions": "Predictions",
+    "search": "Search",
+    "selectAll": "Select All",
+    "tasks": "Tasks",
+    "title": "Data Manager",
+    "unassign": "Unassign",
+    "emptyState": {
+      "noTasksFound": "No tasks found",
+      "noTasksAvailableForReview": "No tasks available for review or labeling",
+      "tasksImportedWillAppear": "Tasks imported to this project will appear here",
+      "startLabelingTasks": "Start labeling tasks",
+      "tasksLabeledWillAppear": "Tasks you've labeled will appear here",
+      "labelAllTasks": "Label All Tasks",
+      "noTasksAvailable": "No tasks available",
+      "tasksAssignedWillAppear": "Tasks assigned to you will appear here",
+      "tasksWillAppearWhenAvailable": "Tasks will appear here when they become available"
+    },
+    "backToProjects": "Back to projects"
+  },
+  "sidebarMenu": {
+    "settings": "Settings",
+    "generalSettings": "General Settings",
+    "labelingInterface": "Labeling Interface",
+    "annotation": "Annotation",
+    "model": "Model",
+    "predictions": "Predictions",
+    "cloudStorage": "Cloud Storage",
+    "webhooks": "Webhooks",
+    "dangerZone": "Danger Zone",
+    "dataManager": "Data Manager",
+    "documentation": "Documentation",
+    "help": "Help",
+    "labeling": "Labeling",
+    "logout": "Logout",
+    "models": "Models",
+    "organization": "Organization",
+    "projects": "Projects",
+    "support": "Support"
+  },
+  "annotationSettings": {
+    "title": "Annotation Settings",
+    "labelingInstructions": {
+      "title": "Labeling Instructions",
+      "description1": "Write instructions to help users complete labeling tasks.",
+      "description2": "The instruction field supports HTML markup and it allows use of images, iframes (pdf).",
+      "showBeforeLabeling": "Show before labeling"
+    },
+    "prelabeling": {
+      "title": "Prelabeling",
+      "usePredictions": "Use predictions to prelabel tasks",
+      "description": "Enable and select which set of predictions to use for prelabeling.",
+      "selectModel": "Select which predictions or which model you want to use:",
+      "noModelAvailable": "No model or predictions available",
+      "selectModelPlaceholder": "Please select model or predictions",
+      "models": "Models",
+      "predictions": "Predictions"
+    },
+    "save": "Save",
+    "saved": "Saved!",
+    "saveAriaLabel": "Save annotation settings",
+    "autoSave": "Auto Save",
+    "autoSaveInterval": "Auto Save Interval",
+    "description": "Configure labeling interface and behavior",
+    "enableHotkeys": "Enable Hotkeys",
+    "showAnnotations": "Show Annotations",
+    "showLabels": "Show Labels",
+    "showPredictions": "Show Predictions",
+    "showTooltips": "Show Tooltips"
+  },
+  "predictionsSettings": {
+    "title": "Predictions",
+    "predictionsList": {
+      "title": "Predictions List",
+      "description": "List of predictions available in the project. Each card is associated with a separate model version. To learn about how to import predictions,",
+      "seeDocumentation": "see the documentation",
+      "deleteConfirm": {
+        "title": "Delete Predictions",
+        "body": "This action cannot be undone. Are you sure?"
+      },
+      "undefinedVersionTooltip": "Model version is undefined. Likely means that model_version field was missing when predictions were imported.",
+      "lastPredictionCreated": "Last prediction created",
+      "delete": "Delete"
+    },
+    "emptyState": {
+      "title": "No predictions yet uploaded",
+      "description": "Predictions could be used to prelabel the data, or validate the model. You can upload and select predictions from multiple model versions. You can also connect live models in the Model tab.",
+      "needHelp": "Need help?",
+      "learnMore": "Learn more on how to upload predictions in our docs"
+    },
+    "autoAcceptPredictions": "Auto Accept Predictions",
+    "description": "Configure display and behavior of machine learning predictions",
+    "highlightPredictions": "Highlight Predictions",
+    "predictionThreshold": "Prediction Threshold",
+    "save": "Save Settings",
+    "showPredictions": "Show Predictions"
+  },
+  "dangerZone": {
+    "title": "Danger Zone",
+    "description": "Perform these actions at your own risk. Actions you take on this page can't be reverted. Make sure your data is backed up.",
+    "confirmation": {
+      "title": "Action confirmation",
+      "body": "You're about to delete all things. This action cannot be undone.",
+      "proceed": "Proceed"
+    },
+    "deleteAnnotations": {
+      "label": "Delete {{count}} Annotations"
+    },
+    "deleteTasks": {
+      "label": "Delete {{count}} Tasks"
+    },
+    "deletePredictions": {
+      "label": "Delete {{count}} Predictions"
+    },
+    "resetCache": {
+      "label": "Reset Cache",
+      "help": "Reset Cache may help in cases like if you are unable to modify the labeling configuration due to validation errors concerning existing labels, but you are confident that the labels don't exist. You can use this action to reset the cache and try again."
+    },
+    "dropTabs": {
+      "label": "Drop All Tabs",
+      "help": "If the Data Manager is not loading, dropping all Data Manager tabs can help."
+    },
+    "deleteProject": {
+      "label": "Delete Project",
+      "help": "Deleting a project removes all tasks, annotations, and project data from the database."
+    },
+    "cannotBeUndone": "This action cannot be undone",
+    "confirmAction": "Confirm Action",
+    "deleteAllAnnotations": "Delete All Annotations",
+    "deleteAllAnnotationsDescription": "Delete all annotations in this project",
+    "deleteProjectDescription": "Permanently delete this project and all its data",
+    "resetProject": "Reset Project",
+    "resetProjectDescription": "Reset project to initial state",
+    "typeProjectName": "Please enter project name to confirm"
+  },
+  "model": {
+    "title": "Model",
+    "emptyState": {
+      "title": "Let's connect your first model",
+      "description": "Connect a machine learning model to generate predictions. These predictions can be compared side by side, used for efficient pre‒labeling and, to aid in active learning, directing users to the most impactful labeling tasks.",
+      "buttonText": "Connect Model",
+      "buttonAriaLabel": "Add machine learning model",
+      "needHelp": "Need help?",
+      "learnMore": "Learn more about connecting models in our docs"
+    },
+    "instructions": {
+      "intro": "A connected model has been detected! If you wish to fetch predictions from this model, please follow these steps:",
+      "step1": "1. Navigate to the Data Manager.",
+      "step2": "2. Select the desired tasks.",
+      "step3": "3. Click on Batch predictions from the Actions menu.",
+      "prelabelingNote": "If you want to use the model predictions for prelabeling, please configure this in the",
+      "annotationSettings": "Annotation settings"
+    },
+    "modal": {
+      "startTraining": "Start Model Training",
+      "testRequest": "Test Request",
+      "editModel": "Edit Model",
+      "connectModel": "Connect Model"
+    },
+    "status": {
+      "disconnected": "Disconnected",
+      "connected": "Connected",
+      "error": "Error",
+      "training": "Training",
+      "predicting": "Predicting"
+    },
+    "configuration": {
+      "title": "Configuration",
+      "autoTraining": {
+        "label": "Start model training on annotation submission",
+        "description": "This option will send a request to /train with information about annotations. You can use this to enable an Active Learning loop. You can also manually start training through model menu in its card."
+      }
+    },
+    "form": {
+      "name": "Name",
+      "enterName": "Enter a name",
+      "backendUrl": "Backend URL",
+      "selectAuthMethod": "Select authentication method",
+      "noAuthentication": "No Authentication",
+      "basicAuthentication": "Basic Authentication",
+      "basicAuthUser": "Basic auth user",
+      "basicAuthPass": "Basic auth pass",
+      "extraParams": "Any extra params to pass during model connection",
+      "interactivePreannotations": "Interactive preannotations",
+      "interactiveDescription": "If enabled some labeling tools will send requests to the ML Backend interactively during the annotation process.",
+      "validateAndSave": "Validate and Save",
+      "saveAriaLabel": "Save machine learning form",
+      "failedToSave": "Failed to {{action}} ML backend.",
+      "save": "save",
+      "addNew": "add new"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "general": "General",
+    "labelingInterface": "Labeling Interface",
+    "annotation": "Annotation",
+    "model": "Model",
+    "predictions": "Predictions",
+    "cloudStorage": "Cloud Storage",
+    "webhooks": "Webhooks",
+    "dangerZone": "Danger Zone"
+  },
+  "webhooks": {
+    "title": "Webhooks",
+    "addWebhook": "Add Webhook",
+    "newWebhook": "New Webhook",
+    "editWebhook": "Edit Webhook",
+    "deleteWebhook": "Delete Webhook",
+    "payloadUrl": "Payload URL",
+    "isActive": "Is Active",
+    "headers": "Headers",
+    "addHeader": "Add Header",
+    "removeHeader": "Remove Header",
+    "headerPlaceholder": "header",
+    "valuePlaceholder": "value",
+    "payload": "Payload",
+    "sendPayload": "Send payload",
+    "sendForAllActions": "Send for all actions",
+    "sendPayloadFor": "Send Payload for",
+    "cancel": "Cancel",
+    "saveChanges": "Save Changes",
+    "created": "Created",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleteConfirmTitle": "Delete",
+    "deleteConfirmMessage": "Are you sure you want to delete the webhook? This action cannot be undone.",
+    "footerDescription1": "Webhooks allow external services to be notified when certain events happen. When the specified events occur, a POST request is sent to each of the URLs you provide.",
+    "footerDescription2": "Read more in the documentation",
+    "aria": {
+      "addWebhook": "Add webhook",
+      "editWebhook": "Edit webhook",
+      "cancelWebhookEdit": "Cancel webhook edit",
+      "saveWebhook": "Save webhook",
+      "confirmWebhookDeletion": "Confirm webhook deletion",
+      "cancelWebhookDeletion": "Cancel webhook deletion",
+      "addHeaderTooltip": "Add Header",
+      "removeHeaderTooltip": "Remove Header"
+    }
+  },
+  "bottombar": {
+    "instructions": "Instructions",
+    "showInstructions": "Show Instructions",
+    "settings": "Settings"
+  },
+  "spectrogram": {
+    "settings": "Spectrogram Settings"
+  },
+  "hotkeys": {
+    "annotation:submit": {
+      "label": "Submit Annotation",
+      "description": "Submit the current annotation"
+    },
+    "annotation:skip": {
+      "label": "Skip Task",
+      "description": "Skip the current task"
+    },
+    "annotation:undo": {
+      "label": "Undo",
+      "description": "Undo last action"
+    },
+    "annotation:redo": {
+      "label": "Redo",
+      "description": "Redo previously undone action"
+    },
+    "dm:focus-previous": {
+      "label": "Focus Previous Task",
+      "description": "Move focus to the previous task"
+    },
+    "dm:focus-next": {
+      "label": "Focus Next Task",
+      "description": "Move focus to the next task"
+    },
+    "dm:close-labeling": {
+      "label": "Focus Closed Task",
+      "description": "Focus on the closed task column"
+    },
+    "dm:open-labeling": {
+      "label": "Focus Open Task",
+      "description": "Focus on the open task column"
+    },
+    "dm:toggle-selected": {
+      "label": "Toggle Task Selection",
+      "description": "Toggle selection of the focused task"
+    },
+    "dm:select-all": {
+      "label": "Select All Tasks",
+      "description": "Select all visible tasks"
+    },
+    "dm:deselect-all": {
+      "label": "Deselect All Tasks",
+      "description": "Deselect all selected tasks"
+    },
+    "dm:toggle-bulk-sidebar-minimization": {
+      "label": "Toggle Bulk Sidebar",
+      "description": "Minimize or expand bulk actions sidebar"
+    }
+  },
+  "common": {
+    "unknownError": "Unknown error",
+    "required": "Required",
+    "cancel": "Cancel"
+  }
+}

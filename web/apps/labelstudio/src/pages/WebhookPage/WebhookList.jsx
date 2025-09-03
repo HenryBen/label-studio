@@ -1,0 +1,89 @@
+import { useCallback } from "react";
+import { IconCross, IconPencil } from "@humansignal/icons";
+import { Button, Toggle } from "@humansignal/ui";
+import { Block, Elem } from "../../utils/bem";
+import "./WebhookPage.scss";
+import { format } from "date-fns";
+import { useAPI } from "../../providers/ApiProvider";
+import { useTranslation } from "react-i18next";
+import { WebhookDeleteModal } from "./WebhookDeleteModal";
+
+const WebhookList = ({ onSelectActive, onAddWebhook, webhooks, fetchWebhooks }) => {
+  const api = useAPI();
+  const { t } = useTranslation();
+
+  if (webhooks === null) return <></>;
+
+  const onActiveChange = useCallback(async (event) => {
+    const value = event.target.checked;
+
+    await api.callApi("updateWebhook", {
+      params: {
+        pk: event.target.name,
+      },
+      body: {
+        is_active: value,
+      },
+    });
+    await fetchWebhooks();
+  }, []);
+
+  return (
+    <Block name="webhook">
+      <h1>{t('webhooks.title')}</h1>
+      <Elem name="controls">
+        <Button onClick={onAddWebhook} aria-label={t('webhooks.aria.addWebhook')}>
+           {t('webhooks.addWebhook')}
+         </Button>
+      </Elem>
+      <Elem>
+        {webhooks.length === 0 ? null : (
+          <Block name="webhook-list">
+            {webhooks.map((obj) => (
+              <Elem key={obj.id} name="item">
+                <Elem name="info-wrap">
+                  <Elem name="url-wrap">
+                    <Elem name="item-active">
+                      <Toggle name={obj.id} checked={obj.is_active} onChange={onActiveChange} />
+                    </Elem>
+                    <Elem name="item-url" onClick={() => onSelectActive(obj.id)}>
+                      {obj.url}
+                    </Elem>
+                  </Elem>
+                  <Elem name="item-date">{t('webhooks.created')} {format(new Date(obj.created_at), "dd MMM yyyy, HH:mm")}</Elem>
+                </Elem>
+                <Elem name="item-control">
+                  <Button
+                    look="outlined"
+                    onClick={() => onSelectActive(obj.id)}
+                    icon={<IconPencil />}
+                    aria-label={t('webhooks.edit')}
+                  >
+                    {t('webhooks.edit')}
+                  </Button>
+                  <Button
+                    onClick={() =>
+                      WebhookDeleteModal({
+                        onDelete: async () => {
+                          await api.callApi("deleteWebhook", { params: { pk: obj.id } });
+                          await fetchWebhooks();
+                        },
+                      })
+                    }
+                    variant="negative"
+                    look="outlined"
+                    icon={<IconCross />}
+                  >
+                    {t('webhooks.delete')}
+                  </Button>
+                </Elem>
+              </Elem>
+            ))}
+          </Block>
+        )}
+      </Elem>
+    </Block>
+  );
+};
+
+export default WebhookList;
