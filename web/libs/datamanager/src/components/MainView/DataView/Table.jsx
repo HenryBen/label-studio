@@ -380,7 +380,7 @@ export const DataView = injector(
       if (highlighted && !highlighted.isSelected) store.startLabeling(highlighted);
     });
 
-    useShortcut("hotkeys.dm:toggle-bulk-sidebar-minimization", () => {
+    useShortcut("dm:toggle-bulk-sidebar-minimization", () => {
       if (document.activeElement !== document.body) return;
 
       const viewsStore = getRoot(view).viewsStore;

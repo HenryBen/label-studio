@@ -1,5 +1,4 @@
 import { useMemo, useCallback } from "react";
-import { useTranslation } from "react-i18next";
 // @ts-ignore
 import { modal } from "apps/labelstudio/src/components/Modal/Modal";
 import clsx from "clsx";
@@ -7,7 +6,7 @@ import { KeyboardKey } from "./Key";
 // @ts-ignore
 import { HOTKEY_SECTIONS, URL_TO_SECTION_MAPPING } from "./defaults";
 import type { Hotkey, Section } from "./utils";
-import { getTypedDefaultHotkeys } from "./utils";
+import { getTranslatedHotkeys } from "./utils";
 
 // Type definitions for imported constants
 interface UrlMapping {
@@ -36,7 +35,7 @@ const urlMappings = URL_TO_SECTION_MAPPING as UrlMapping[];
  */
 const useCurrentHotkeys = (): Hotkey[] => {
   return useMemo(() => {
-    const defaultHotkeys = getTypedDefaultHotkeys();
+    const defaultHotkeys = getTranslatedHotkeys();
     const customHotkeys = window.APP_SETTINGS?.user?.customHotkeys || {};
 
     return defaultHotkeys.map((hotkey: Hotkey) => {
@@ -60,19 +59,7 @@ const useCurrentHotkeys = (): Hotkey[] => {
  * Renders shortcuts organized by sections and subgroups
  */
 const HotkeyHelpModal = ({ sectionsToShow }: HotkeyHelpModalProps) => {
-  const { t } = useTranslation();
   const hotkeys = useCurrentHotkeys();
-
-  // Helper function to get translation with fallback
-  const getTranslation = (key: string): string => {
-    const translatedText = t(key);
-    return translatedText !== key ? translatedText : key;
-  };
-
-  // Helper function to get hotkey translation key
-  const getHotkeyTranslationKey = (hotkey: Hotkey, type: 'label' | 'description'): string => {
-    return `hotkeys.${hotkey.element}.${type}`;
-  };
 
   /**
    * Navigates to hotkey customization page
@@ -114,8 +101,8 @@ const HotkeyHelpModal = ({ sectionsToShow }: HotkeyHelpModalProps) => {
         <div key={sectionId} className="border border-neutral-border rounded-lg">
           {/* Section Header */}
           <div className="px-4 py-3 border-b border-neutral-border">
-            <h3 className="font-medium">{t(section.title)}</h3>
-            <p className="text-sm text-neutral-content-subtler">{section.description ? t(section.description) : ''}</p>
+            <h3 className="font-medium">{section.title}</h3>
+            <p className="text-sm text-neutral-content-subtler">{section.description}</p>
           </div>
 
           {/* Section Content */}
@@ -136,54 +123,24 @@ const HotkeyHelpModal = ({ sectionsToShow }: HotkeyHelpModalProps) => {
                       </div>
                       {sections.find((s: Section) => s.id === subgroup)?.description && (
                         <div className="text-xs text-neutral-content-subtler">
-                          {sections.find((s: Section) => s.id === subgroup)!.description!}
+                          {sections.find((s: Section) => s.id === subgroup)?.description}
                         </div>
                       )}
                     </div>
                   )}
 
                   {/* Hotkey Items */}
-                  {groupedHotkeys[subgroup].map((hotkey: Hotkey) => {
-                    const labelKey = getHotkeyTranslationKey(hotkey, 'label');
-                    const descriptionKey = getHotkeyTranslationKey(hotkey, 'description');
-                    const translatedLabel = getTranslation(labelKey) !== labelKey ? getTranslation(labelKey) : (hotkey.label && !hotkey.label.includes('.label') ? hotkey.label : hotkey.element);
-                    
-                    // Fix translation key handling for description
-                    let translatedDescription;
-                    if (hotkey.description) {
-                      // First try to get translation using the standard key format: hotkeys.element.description
-                      const standardTranslation = getTranslation(descriptionKey);
-                      if (standardTranslation !== descriptionKey) {
-                        translatedDescription = standardTranslation;
-                      } else {
-                        // Try to get translation using the nested object format: hotkeys[element].description
-                        const nestedKey = `hotkeys.${hotkey.element}.description`;
-                        const nestedTranslation = getTranslation(nestedKey);
-                        if (nestedTranslation !== nestedKey) {
-                          translatedDescription = nestedTranslation;
-                        } else if (hotkey.description.startsWith('hotkeys.') && hotkey.description.includes('.description')) {
-                          // If description is already a translation key, try to translate it directly
-                          const directTranslation = getTranslation(hotkey.description);
-                          translatedDescription = directTranslation !== hotkey.description ? directTranslation : undefined;
-                        } else if (!hotkey.description.includes('.description')) {
-                          // If it's not a translation key, use it directly
-                          translatedDescription = hotkey.description;
-                        }
-                      }
-                    }
-                    
-                    return (
-                      <div key={`${section.id}-${hotkey.element}`} className="flex items-center justify-between py-2">
-                        <div>
-                          <div className="font-medium text-neutral-content">{translatedLabel}</div>
-                          {translatedDescription && (
-                            <div className="text-sm text-neutral-content-subtler">{translatedDescription}</div>
-                          )}
-                        </div>
-                        <KeyboardKey>{hotkey.key}</KeyboardKey>
+                  {groupedHotkeys[subgroup].map((hotkey: Hotkey) => (
+                    <div key={`${section.id}-${hotkey.element}`} className="flex items-center justify-between py-2">
+                      <div>
+                        <div className="font-medium text-neutral-content">{hotkey.label}</div>
+                        {hotkey.description && (
+                          <div className="text-sm text-neutral-content-subtler">{hotkey.description}</div>
+                        )}
                       </div>
-                    );
-                  })}
+                      <KeyboardKey>{hotkey.key}</KeyboardKey>
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>

@@ -1,4 +1,5 @@
 import { DEFAULT_HOTKEYS } from "./defaults";
+import { translate, getCurrentLocale } from "./translate";
 
 // Type definitions - centralized here to avoid duplication
 export interface Hotkey {
@@ -74,6 +75,15 @@ export const getTypedDefaultHotkeys = (): Hotkey[] => {
   return (DEFAULT_HOTKEYS as RawHotkey[]).map((hotkey) => ({
     ...hotkey,
     id: String(hotkey.id), // Convert numeric id to string
+  }));
+};
+
+// Get translated hotkeys - call this when you need current language translations
+export const getTranslatedHotkeys = (): Hotkey[] => {
+  return getTypedDefaultHotkeys().map((hotkey) => ({
+    ...hotkey,
+    label: translate(hotkey.label, getCurrentLocale()),
+    description: hotkey.description ? translate(hotkey.description, getCurrentLocale()) : undefined,
   }));
 };
 

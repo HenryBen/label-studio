@@ -7,14 +7,21 @@ import {
   type ApiResponse,
   type ExportData,
   getTypedDefaultHotkeys,
+  getTranslatedHotkeys,
   type Hotkey,
   type HotkeySettings,
   type ImportData,
   type SaveResult,
 } from "../sections/Hotkeys/utils";
 
-// Type the imported defaults and convert numeric ids to strings
-const typedDefaultHotkeys: Hotkey[] = getTypedDefaultHotkeys();
+// Global type declarations
+declare global {
+  interface Window {
+    Htx?: {
+      Hotkey?: any;
+    };
+  }
+}
 
 export const useHotkeys = () => {
   const toast = useToast();
@@ -108,19 +115,19 @@ export const useHotkeys = () => {
       setIsLoading(true);
 
       // Use proper API endpoint name from the config
-      const response = await api.callApi("hotkeys" as any);
+      const response = await (api as any).callApi("hotkeys");
 
       if (response && (response as ApiResponse).custom_hotkeys) {
         // Use API data
         const apiResponse = response as ApiResponse;
-        const updatedHotkeys = updateHotkeysWithCustomSettings(typedDefaultHotkeys, apiResponse.custom_hotkeys || {});
+        const updatedHotkeys = updateHotkeysWithCustomSettings(getTranslatedHotkeys(), apiResponse.custom_hotkeys || {});
         setHotkeys(updatedHotkeys);
         // Store current settings from API response
         setHotkeySettings(apiResponse.hotkey_settings || {});
       } else {
         // Fallback to window.APP_SETTINGS
         const customHotkeys = window.APP_SETTINGS?.user?.customHotkeys || {};
-        const updatedHotkeys = updateHotkeysWithCustomSettings(typedDefaultHotkeys, customHotkeys);
+        const updatedHotkeys = updateHotkeysWithCustomSettings(getTranslatedHotkeys(), customHotkeys);
         setHotkeys(updatedHotkeys);
         // No settings available in fallback
         setHotkeySettings({});
@@ -130,7 +137,7 @@ export const useHotkeys = () => {
 
       // Fallback to window.APP_SETTINGS on error
       const customHotkeys = window.APP_SETTINGS?.user?.customHotkeys || {};
-      const updatedHotkeys = updateHotkeysWithCustomSettings(typedDefaultHotkeys, customHotkeys);
+      const updatedHotkeys = updateHotkeysWithCustomSettings(getTranslatedHotkeys(), customHotkeys);
       setHotkeys(updatedHotkeys);
       // No settings available in fallback
       setHotkeySettings({});
@@ -170,7 +177,7 @@ export const useHotkeys = () => {
 
       try {
         // Use proper API endpoint name from the config
-        const response = await api.callApi("updateHotkeys" as any, {
+        const response = await (api as any).callApi("updateHotkeys", {
           body: requestBody,
         });
 
@@ -245,7 +252,7 @@ export const useHotkeys = () => {
               });
             }
             // Update local state to reflect the reset
-            setHotkeys([...typedDefaultHotkeys]);
+            setHotkeys([...getTranslatedHotkeys()]);
           } else {
             if (toast) {
               toast.show({

@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import clsx from "clsx";
-import { useTranslation } from "react-i18next";
 
-// UI components
+// UI Components
 import { Button, Tooltip } from "@humansignal/ui";
 import { Toggle as UiToggle } from "@humansignal/ui";
 import { KeyboardKey } from "./Key";
 import { IconClose } from "@humansignal/ui";
+import { translate, getCurrentLocale } from "./translate";
 
 // Type definitions
 interface Hotkey {
@@ -17,7 +17,7 @@ interface Hotkey {
   key: string;
   mac?: string;
   active: boolean;
-  subgroup?: string;
+  subgroup?: string; 
   description?: string;
 }
 
@@ -30,13 +30,6 @@ interface HotkeyItemProps {
   onToggle: (id: string) => void;
 }
 
-// Helper function to convert hotkey element to translation key
-const getHotkeyKey = (hotkey: Hotkey): string => {
-  // Convert element like "annotation:submit" to "submitAnnotation"
-  const element = hotkey.element.replace(/[:-]/g, '');
-  return element.charAt(0).toLowerCase() + element.slice(1);
-};
-
 /**
  * HotkeyItem component for displaying and editing keyboard shortcuts
  *
@@ -44,25 +37,6 @@ const getHotkeyKey = (hotkey: Hotkey): string => {
  * @returns {React.ReactElement} The HotkeyItem component
  */
 export const HotkeyItem = ({ hotkey, onEdit, isEditing, onSave, onCancel, onToggle }: HotkeyItemProps) => {
-  const { t, i18n } = useTranslation('translation');
-
-  // Helper function to get translation with fallback
-  const getTranslation = (key: string, options?: any): string => {
-    // Try direct translation
-    const result = String(t(key, options));
-    
-    // If translation failed (returns the key), use fallback
-    if (result === key && options?.defaultValue) {
-      return options.defaultValue;
-    }
-    
-    return result;
-  };
-
-  // Helper function to get hotkey translation key
-  const getHotkeyTranslationKey = (hotkey: Hotkey, type: 'label' | 'description'): string => {
-    return `hotkeys.${hotkey.element}.${type}`;
-  };
   const [editedKey, setEditedKey] = useState<string>(hotkey.key);
   const [keyRecordingMode, setKeyRecordingMode] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
@@ -158,7 +132,7 @@ export const HotkeyItem = ({ hotkey, onEdit, isEditing, onSave, onCancel, onTogg
   if (isEditing) {
     return (
       <div className="py-3 space-y-3 border-b border-border last:border-0">
-        <div className="font-medium">{hotkey.label}</div>
+        <div className="font-medium">{translate(hotkey.label, getCurrentLocale())}</div>
         <div className="flex gap-3">
           {/* Key recording input area */}
           <Button
@@ -171,21 +145,21 @@ export const HotkeyItem = ({ hotkey, onEdit, isEditing, onSave, onCancel, onTogg
             )}
             onClick={startRecordingKeys}
             onKeyDown={handleKeyPress}
-            aria-label={getTranslation('accountSettings.hotkeysManager.clickToSetShortcut')}
+            aria-label="Click to record keyboard shortcut"
           >
             {keyRecordingMode ? (
-              <span className="text-primary-content font-medium animate-pulse">{getTranslation('accountSettings.hotkeysManager.pressKeysNow')}</span>
+              <span className="text-primary-content font-medium animate-pulse">Press keys now...</span>
             ) : editedKey ? (
               <KeyboardKey>{editedKey}</KeyboardKey>
             ) : (
-              <span className="text-neutral-content-subtler">{getTranslation('accountSettings.hotkeysManager.clickToSetShortcut')}</span>
+              <span className="text-neutral-content-subtler">Click to set shortcut</span>
             )}
           </Button>
 
           {/* Action buttons */}
           <div className="flex flex-row gap-2">
             <Button variant="primary" onClick={handleSave} disabled={!editedKey || !!error}>
-              {getTranslation('accountSettings.hotkeysManager.apply')}
+              Apply
             </Button>
             <Button variant="neutral" icon={<IconClose />} onClick={handleCancel} />
           </div>
@@ -205,54 +179,18 @@ export const HotkeyItem = ({ hotkey, onEdit, isEditing, onSave, onCancel, onTogg
         <UiToggle
           checked={hotkey.active}
           onChange={handleToggle}
-          aria-label={`${hotkey.active ? getTranslation('accountSettings.hotkeysManager.disable') : getTranslation('accountSettings.hotkeysManager.enable')} ${hotkey.label}`}
+          aria-label={`${hotkey.active ? "Disable" : "Enable"} ${hotkey.label}`}
         />
       </div>
 
       {/* Label and description */}
       <div className="flex-1 mr-4">
-        <div className="font-medium">
-          {getTranslation(getHotkeyTranslationKey(hotkey, 'label')) !== getHotkeyTranslationKey(hotkey, 'label') 
-            ? getTranslation(getHotkeyTranslationKey(hotkey, 'label')) 
-            : (hotkey.label && !hotkey.label.includes('.label') ? hotkey.label : hotkey.element)}
-        </div>
-        <div className="text-sm text-neutral-content-subtler">
-          {(() => {
-            // Fix translation key handling for description
-            if (!hotkey.description) return undefined;
-            
-            // First try to get translation using the standard key format: hotkeys.element.description
-            const descriptionKey = getHotkeyTranslationKey(hotkey, 'description');
-            const standardTranslation = getTranslation(descriptionKey);
-            if (standardTranslation !== descriptionKey) {
-              return standardTranslation;
-            }
-            
-            // Try to get translation using the nested object format: hotkeys[element].description
-            const nestedKey = `hotkeys.${hotkey.element}.description`;
-            const nestedTranslation = getTranslation(nestedKey);
-            if (nestedTranslation !== nestedKey) {
-              return nestedTranslation;
-            }
-            
-            // If description is already a translation key, try to translate it directly
-            if (hotkey.description.startsWith('hotkeys.') && hotkey.description.includes('.description')) {
-              const directTranslation = getTranslation(hotkey.description);
-              return directTranslation !== hotkey.description ? directTranslation : undefined;
-            }
-            
-            // If it's not a translation key, use it directly
-            if (!hotkey.description.includes('.description')) {
-              return hotkey.description;
-            }
-            
-            return undefined;
-          })()}
-        </div>
+        <div className="font-medium">{translate(hotkey.label, getCurrentLocale())}</div>
+        <div className="text-sm text-neutral-content-subtler">{translate(hotkey.description || hotkey.label, getCurrentLocale())}</div>
       </div>
 
       {/* Current hotkey display (clickable to edit) */}
-      <Tooltip title={getTranslation('accountSettings.hotkeysManager.clickToEditHotkey')}>
+      <Tooltip title="Click to edit hotkey">
         <div
           className="flex items-center gap-2 cursor-pointer hover:opacity-80 hover:bg-primary-emphasis-subtle px-base py-base rounded-small"
           onClick={handleEdit}
