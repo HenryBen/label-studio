@@ -19,6 +19,7 @@ interface PaginationProps {
     next?: string;
   };
   disabled?: boolean;
+  perPageText?: string;
   onChange?: (pageNumber: number, maxPerPage?: number | string) => void;
 }
 
@@ -46,6 +47,7 @@ export const Pagination: FC<PaginationProps> = forwardRef<any, PaginationProps>(
       pageSizeSelectable = true,
       hotkey,
       disabled,
+      perPageText = "per page",
       onChange,
     },
     _ref,
@@ -60,10 +62,10 @@ export const Pagination: FC<PaginationProps> = forwardRef<any, PaginationProps>(
       return pageSizeOptions.map((obj: number, index: number) => {
         return {
           value: obj,
-          label: `${obj} per page`,
+          label: `${obj} ${perPageText}`,
         };
       });
-    }, [pageSizeOptions]);
+    }, [pageSizeOptions, perPageText]);
 
     return (
       <Block name="pagination" mod={{ size, outline, align, noPadding, disabled }}>
@@ -173,7 +175,7 @@ const NavigationButton: FC<NavigationButtonProps> = ({ mod, disabled, hotkey, on
   buttonMod.disabled = disabled === true;
 
   return (
-    <WithHotkey binging={hotkey as HotkeyList}>
+    <WithHotkey binging={hotkey as keyof typeof import("../../core/Hotkey").Hotkey.keymap}>
       <Elem name="btn" mod={buttonMod} onClick={actionHandler} />
     </WithHotkey>
   );

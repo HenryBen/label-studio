@@ -1,7 +1,7 @@
 import { IconExternal, IconFolderAdd, IconHumanSignal, IconUserAdd, IconFolderOpen } from "@humansignal/icons";
 import { Button, SimpleCard, Spinner, Typography } from "@humansignal/ui";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useState, createElement } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { HeidiTips } from "../../components/HeidiTips/HeidiTips";
@@ -178,7 +178,7 @@ export const HomePage: Page = () => {
           </SimpleCard>
           <div className="flex gap-2 items-center">
             <IconHumanSignal />
-            <span className="text-neutral-content-subtle">{t('homepage.version')}</span>
+            <span className="text-neutral-content-subtle">{t('homepage.versionInfo')}</span>
           </div>
         </section>
       </div>
@@ -206,26 +206,26 @@ function ProjectSimpleCard({
   const white = "#FFFFFF";
   const color = project.color && project.color !== white ? project.color : "#E1DED5";
 
-  return (
-    <Link
-      to={`/projects/${project.id}`}
-      className="block even:bg-neutral-surface rounded-sm overflow-hidden"
-      data-external
+  return createElement(
+    Link as any,
+    {
+      to: `/projects/${project.id}`,
+      className: "block even:bg-neutral-surface rounded-sm overflow-hidden",
+      "data-external": true,
+    },
+    <div
+      className="grid grid-cols-[minmax(0,1fr)_150px] p-2 py-3 items-center border-l-[3px]"
+      style={{ borderLeftColor: color }}
     >
-      <div
-        className="grid grid-cols-[minmax(0,1fr)_150px] p-2 py-3 items-center border-l-[3px]"
-        style={{ borderLeftColor: color }}
-      >
-        <div className="flex flex-col gap-1">
-          <span className="text-neutral-content">{project.title}</span>
-          <div className="text-neutral-content-subtler text-sm">
-            {finished} of {total} Tasks ({total > 0 ? Math.round((finished / total) * 100) : 0}%)
-          </div>
-        </div>
-        <div className="bg-neutral-surface rounded-full overflow-hidden w-full h-2 shadow-neutral-border-subtle shadow-border-1">
-          <div className="bg-positive-surface-hover h-full" style={{ maxWidth: `${progress}%` }} />
+      <div className="flex flex-col gap-1">
+        <span className="text-neutral-content">{project.title}</span>
+        <div className="text-neutral-content-subtler text-sm">
+          {finished} of {total} Tasks ({total > 0 ? Math.round((finished / total) * 100) : 0}%)
         </div>
       </div>
-    </Link>
+      <div className="bg-neutral-surface rounded-full overflow-hidden w-full h-2 shadow-neutral-border-subtle shadow-border-1">
+        <div className="bg-positive-surface-hover h-full" style={{ maxWidth: `${progress}%` }} />
+      </div>
+    </div>
   );
 }

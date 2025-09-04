@@ -139,6 +139,8 @@
     "pinMenu": "固定菜单",
     "unpinMenu": "取消固定菜单",
     "keyboardShortcuts": "键盘快捷键",
+    "viewAllKeyboardShortcuts": "查看所有可用的键盘快捷键。",
+    "customize": "自定义",
     "accountSettings": "账户与设置",
     "logOut": "退出登录",
     "newsletterNotification": "请在账户与设置页面查看新的通知设置",
@@ -320,9 +322,26 @@
     },
     "aria": {
       "cancelProjectCreation": "取消项目创建"
+    },
+    "configureData": "配置数据",
+    "recipes": {
+        "groups": {
+          "computerVision": "计算机视觉",
+          "nlp": "自然语言处理",
+          "audioSpeechProcessing": "音频/语音处理",
+          "conversationalAi": "对话式AI",
+          "rankingScoring": "排序与评分",
+          "structuredDataParsing": "结构化数据解析",
+          "timeSeriesAnalysis": "时间序列分析",
+          "videos": "视频",
+          "generativeAi": "生成式AI"
+      },
+      "customTemplate": "自定义模板",
+    "documentationText": "查看文档以",
+    "contributeTemplate": "贡献模板"
     }
-  },
-  "importData": {
+    },
+    "importData": {
     "title": "导入数据",
     "datasetUrl": "数据集URL",
     "addUrl": "添加URL",
@@ -372,7 +391,8 @@
     "filesUploaded_other": "已上传 {{count}} 个文件"
   },
   "languageSwitcher": {
-    "switchLanguage": "切换语言"
+    "switchLanguage": "切换语言",
+    "tooltip": "切换语言"
   },
   "themeToggle": {
     "auto": "自动",
@@ -653,6 +673,7 @@
     "emailNotifications": "邮件通知",
     "browserNotifications": "浏览器通知",
     "save": "保存",
+    "saveAriaLabel": "保存设置",
     "settingsSaved": "设置已保存",
     "color": "颜色",
     "learnMore": "了解更多",
@@ -685,7 +706,14 @@
       "description": "连接您的云存储或从计算机上传文件",
       "import": "导入",
       "seeDocsOnImporting": "查看数据导入文档",
-      "title": "导入数据以开始您的项目"
+      "title": "导入数据以开始您的项目",
+      "opensInNewTab": "在新标签页中打开",
+      "storageProviders": {
+        "amazonS3": "亚马逊 S3",
+        "googleCloudStorage": "谷歌云存储",
+        "azureBlobStorage": "Azure Blob 存储",
+        "redisStorage": "Redis 存储"
+      }
     }
   },
   "dataManager": {
@@ -720,9 +748,9 @@
       },
       "deleteAnnotations": {
         "allPlaceholder": "全部",
-        "annotatorLabel": "Annotator",
+        "annotatorLabel": "标注者",
         "text": "您即将删除选定的标注。此操作无法撤销。",
-        "title": "删除选定的标注？"
+        "title": "删除选中的标注？"
       },
       "deleteTasks": {
         "text": "您即将删除选定的任务。此操作无法撤销。",
@@ -759,7 +787,8 @@
       "escapeToClose": "按Escape键关闭",
       "scrollAndDrag": "滚动和拖拽以移动",
       "spaceToSelect": "按空格键选择/取消选择",
-      "useArrowKeys": "使用方向键导航"
+      "useArrowKeys": "使用方向键导航",
+      "taskLabel": "任务 {{id}}"
     },
     "mediaPlayer": {
       "unableToPlay": "无法播放"
@@ -805,6 +834,7 @@
       "export": "导出",
       "filters": "筛选器",
       "import": "导入",
+      "upgradeToImport": "您必须升级您的计划才能导入数据",
       "labelAllTasks": "标注所有任务",
       "labelTasks": "标注任务",
       "labelTasksAsDisplayed": "标注显示的任务",
@@ -1090,9 +1120,59 @@
       "errorMessage": "重置快捷键时出错：{{error}}"
     }
   },
-  "common": {
+  "editor": {
+    "annotations": {
+      "deleteTooltip": "删除选中的标注",
+      "deleteConfirm": "请确认您要删除此标注",
+      "title": "标注",
+      "createNew": "创建新标注",
+      "viewAll": "查看所有标注",
+      "toggleViewAll": "切换查看所有标注",
+      "noAnnotationsYet": "尚未提交任何标注",
+      "unsavedAnnotation": "未保存的标注",
+      "created": "创建于",
+      "started": "开始于",
+      "ago": "前",
+      "by": "由",
+      "skippedAnnotation": "跳过的标注",
+      "toggleVisibility": "切换当前标注的可见性",
+      "groundTruth": {
+        "setTitle": "将此结果设为基准真值",
+        "unsetTitle": "取消此结果的基准真值",
+        "setLabel": "设为基准真值",
+        "unsetLabel": "取消基准真值"
+      },
+      "draft": {
+        "label": "草稿",
+        "saved": "已保存",
+        "notSubmitted": "未提交的草稿",
+        "switchToSubmitted": "切换到已提交结果",
+        "switchToCurrent": "切换到当前草稿",
+        "switchToOriginal": "切换到原始结果",
+        "submitted": "已提交",
+        "original": "原始",
+        "toggleMode": "切换草稿模式"
+      }
+    },
+    "imageSettings": {
+      "strokeWidth": "区域边框宽度",
+      "zoom": "允许图像缩放 (ctrl+滚轮)",
+      "zoomControl": "显示放大缩小控件",
+      "rotateControl": "显示图像旋转控件",
+      "addFilterForLongListOfLabels": "为长标签列表添加过滤器",
+      "displayLabels": "显示标签："
+    }
+  },
+   "common": {
     "unknownError": "未知错误",
     "required": "必填",
-    "cancel": "取消"
+    "cancel": "取消",
+    "delete": "删除",
+    "ok": "确定",
+    "noResultsFound": "未找到结果。",
+    "search": "搜索",
+    "searchPlaceholder": "搜索...",
+    "searchEllipsis": "搜索...",
+    "enterprise": "企业版"
   }
 }

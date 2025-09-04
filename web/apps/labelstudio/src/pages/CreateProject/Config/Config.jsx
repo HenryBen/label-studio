@@ -320,11 +320,12 @@ const ConfigureColumn = ({ template, obj, columns }) => {
 };
 
 const ConfigureColumns = ({ columns, template }) => {
+  const { t } = useTranslation();
   if (!template.objects.length) return null;
 
   return (
     <div className={configClass.elem("object")}>
-      <h4>Configure data</h4>
+      <h4>{t("createProject.configureData")}</h4>
       {template.objects.length > 1 && columns?.length > 0 && columns.length < template.objects.length && (
         <p className={configClass.elem("object-error")}>This template requires more data then you have for now</p>
       )}

@@ -1,6 +1,9 @@
 import { useMemo, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 // @ts-ignore
 import { modal } from "apps/labelstudio/src/components/Modal/Modal";
+// @ts-ignore
+import { t } from "apps/labelstudio/src/utils/i18n";
 import clsx from "clsx";
 import { KeyboardKey } from "./Key";
 // @ts-ignore
@@ -59,6 +62,7 @@ const useCurrentHotkeys = (): Hotkey[] => {
  * Renders shortcuts organized by sections and subgroups
  */
 const HotkeyHelpModal = ({ sectionsToShow }: HotkeyHelpModalProps) => {
+  const { t } = useTranslation();
   const hotkeys = useCurrentHotkeys();
 
   /**
@@ -156,18 +160,18 @@ const HotkeyHelpModal = ({ sectionsToShow }: HotkeyHelpModalProps) => {
       <div className="max-w-3xl max-h-[90vh] h-full overflow-hidden w-full mx-4 flex flex-col">
         <div className="px-wide py-base border-b border-neutral-border">
           <div className="flex justify-between items-center">
-            <h2 className="text-lg font-semibold">Keyboard Shortcuts</h2>
+            <h2 className="text-lg font-semibold">{t('menubar.keyboardShortcuts')}</h2>
           </div>
           <p className="text-sm text-neutral-content-subtler mt-1">
-            View all available keyboard shortcuts.&nbsp;
-            <a
-              href="/user/account/hotkeys"
-              onClick={handleCustomizeClick}
-              className="text-primary-content hover:underline hover:text-primary-content-hover"
-            >
-              Customize
-            </a>
-          </p>
+              {t('menubar.viewAllKeyboardShortcuts')}&nbsp;
+              <a
+                href="/user/account/hotkeys"
+                onClick={handleCustomizeClick}
+                className="text-primary-content hover:underline hover:text-primary-content-hover"
+              >
+                {t('menubar.customize')}
+              </a>
+            </p>
         </div>
 
         <div className="px-wide py-wide overflow-y-auto scrollbar-thin scrollbar-thumb-neutral-border-bold scrollbar-track-transparent">
@@ -257,7 +261,7 @@ export const openHotkeyHelp = (sectionOrUrl?: string | string[]): ModalReturn =>
   const sectionsToShow = determineSectionsToShow(sectionOrUrl);
 
   const modalInstance = modal({
-    title: "Keyboard Shortcuts",
+    title: t("menubar.keyboardShortcuts"),
     body: () => <HotkeyHelpModal sectionsToShow={sectionsToShow} />,
     bare: true,
     allowClose: true,

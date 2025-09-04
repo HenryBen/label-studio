@@ -42,14 +42,30 @@ const DialogContent = ({ text, form, formRef, store, action }) => {
   const translateFieldLabels = (fields) => {
     if (!fields || !Array.isArray(fields)) return fields;
     
-    return fields.map(field => {
-      if (field.label === 'Choose predictions') {
-        return { ...field, label: t('dataManager.dialogs.createAnnotationsFromPredictions.choosePredictions') };
+    return fields.map(section => {
+      // Handle nested structure with columnCount and fields array
+      if (section.fields && Array.isArray(section.fields)) {
+        return {
+          ...section,
+          fields: section.fields.map(field => {
+            if (field.label === 'Choose predictions') {
+              return { ...field, label: t('dataManager.dialogs.createAnnotationsFromPredictions.choosePredictions') };
+            }
+            if (field.label === 'Annotator') {
+              return { ...field, label: t('dataManager.dialogs.deleteAnnotations.annotatorLabel'), placeholder: t('dataManager.dialogs.deleteAnnotations.allPlaceholder') };
+            }
+            return field;
+          })
+        };
       }
-      if (field.label === 'Annotator') {
-        return { ...field, label: t('dataManager.dialogs.deleteAnnotations.annotatorLabel'), placeholder: t('dataManager.dialogs.deleteAnnotations.allPlaceholder') };
+      // Handle flat structure (backward compatibility)
+      if (section.label === 'Choose predictions') {
+        return { ...section, label: t('dataManager.dialogs.createAnnotationsFromPredictions.choosePredictions') };
       }
-      return field;
+      if (section.label === 'Annotator') {
+        return { ...section, label: t('dataManager.dialogs.deleteAnnotations.annotatorLabel'), placeholder: t('dataManager.dialogs.deleteAnnotations.allPlaceholder') };
+      }
+      return section;
     });
   };
 
@@ -60,7 +76,7 @@ const DialogContent = ({ text, form, formRef, store, action }) => {
     if (action.id === 'retrieve_tasks_predictions') {
       return t('dataManager.dialogs.retrievePredictions.text');
     }
-    if (action.id === 'create_annotations_from_predictions') {
+    if (action.id === 'predictions_to_annotations') {
       return t('dataManager.dialogs.createAnnotationsFromPredictions.text');
     }
     if (action.id === 'remove_duplicates') {
@@ -208,7 +224,7 @@ const invokeAction = (action, destructive, store, formRef, t) => {
     if (action.id === 'retrieve_tasks_predictions') {
       dialogTitle = t('dataManager.dialogs.retrievePredictions.title');
     }
-    if (action.id === 'create_annotations_from_predictions') {
+    if (action.id === 'predictions_to_annotations') {
       dialogTitle = t('dataManager.dialogs.createAnnotationsFromPredictions.title');
     }
     if (action.id === 'remove_duplicates') {

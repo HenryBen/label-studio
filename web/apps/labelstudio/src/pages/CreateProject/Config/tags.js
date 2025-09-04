@@ -1,25 +1,27 @@
+import { t } from '../../../../../../libs/editor/src/utils/i18n.js';
+
 const OBJECTS = {
   Image: {
     type: "Image",
     settings: {
       strokeWidth: {
-        title: "Width of region borders",
+        title: t("editor.imageSettings.strokeWidth"),
         type: Number,
         param: ($obj, value) => $obj.$controls.forEach(($control) => $control.setAttribute("strokeWidth", value)),
         value: ($obj) => $obj.$controls[0]?.getAttribute("strokeWidth") ?? 1,
       },
       zoom: {
-        title: "Allow image zoom (ctrl+wheel)",
+        title: t("editor.imageSettings.zoom"),
         type: Boolean,
         param: "zoom",
       },
       zoomControl: {
-        title: "Show controls to zoom in and out",
+        title: t("editor.imageSettings.zoomControl"),
         type: Boolean,
         param: "zoomControl",
       },
       rotateControl: {
-        title: "Show controls to rotate image",
+        title: t("editor.imageSettings.rotateControl"),
         type: Boolean,
         param: "rotateControl",
       },
@@ -68,7 +70,7 @@ const Labels = {
   type: "Labels",
   settings: {
     placeLabelsLeft: {
-      title: "Display labels:",
+      title: t("editor.imageSettings.displayLabels"),
       type: ["bottom", "left", "right", "top"],
       control: true,
       when: ($tag) => $tag.$object.tagName !== "Video",
@@ -114,7 +116,7 @@ const Labels = {
       },
     },
     filter: {
-      title: "Add filter for long list of labels",
+      title: t("editor.imageSettings.addFilterForLongListOfLabels"),
       type: Boolean,
       control: true,
       param: ($obj, value) => {

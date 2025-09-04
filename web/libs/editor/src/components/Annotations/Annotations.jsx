@@ -1,8 +1,8 @@
-import { Component } from "react";
 import { Badge, Card, List, Popconfirm } from "antd";
 import { Button } from "@humansignal/ui";
 import { Tooltip } from "@humansignal/ui";
 import { observer } from "mobx-react";
+import { useTranslation } from "react-i18next";
 import {
   DeleteOutlined,
   EyeInvisibleOutlined,
@@ -21,47 +21,71 @@ import styles from "./Annotations.module.scss";
 /** @deprecated this file is not used; DraftPanel is moved to separate component */
 
 export const DraftPanel = observer(({ item }) => {
+  const { t } = useTranslation();
   if (!item.draftSaved && !item.versions.draft) return null;
-  const saved = item.draft && item.draftSaved ? ` saved ${Utils.UDate.prettyDate(item.draftSaved)}` : "";
+  const saved = item.draft && item.draftSaved ? ` ${t('editor.annotations.draft.saved')} ${Utils.UDate.prettyDate(item.draftSaved)}` : "";
 
   if (!item.selected) {
     if (!item.draft) return null;
-    return <div>draft{saved}</div>;
+    return <div>{t('editor.annotations.draft.label')}{saved}</div>;
   }
   if (!item.versions.result || !item.versions.result.length) {
-    return <div>{saved ? `draft${saved}` : "not submitted draft"}</div>;
+    return <div>{saved ? `${t('editor.annotations.draft.label')}${saved}` : t('editor.annotations.draft.notSubmitted')}</div>;
   }
   return (
     <div>
       <Button
         look="string"
         onClick={item.toggleDraft}
-        tooltip={item.draftSelected ? "switch to submitted result" : "switch to current draft"}
+        tooltip={item.draftSelected ? t('editor.annotations.draft.switchToSubmitted') : t('editor.annotations.draft.switchToCurrent')}
       >
-        {item.draftSelected ? "draft" : "submitted"}
+        {item.draftSelected ? t('editor.annotations.draft.label') : t('editor.annotations.draft.submitted')}
       </Button>
       {saved}
     </div>
   );
 });
 
+const DeleteAnnotationButton = observer(({ onConfirm }) => {
+  const { t } = useTranslation();
+
+  return (
+    <Tooltip placement="topLeft" title={t('editor.annotations.deleteTooltip', 'Delete selected annotation')}>
+      <Popconfirm
+        placement="bottomLeft"
+        title={t('editor.annotations.deleteConfirm', 'Please confirm you want to delete this annotation')}
+        onConfirm={onConfirm}
+        okText={t('common.delete', 'Delete')}
+        okType="danger"
+        cancelText={t('common.cancel', 'Cancel')}
+      >
+        <Button size="small" look="string" variant="negative" aria-label={t('editor.annotations.deleteTooltip', 'Delete selected annotation')}>
+          <DeleteOutlined />
+        </Button>
+      </Popconfirm>
+    </Tooltip>
+  );
+});
+
 const Annotation = observer(({ item, store }) => {
+  const { t } = useTranslation();
+  
   const removeHoney = () => (
     <Button
       size="small"
-      tooltip="Unset this result as a ground truth"
+      tooltip={t('editor.annotations.groundTruth.unsetTitle')}
       onClick={(ev) => {
         ev.preventDefault();
         item.setGroundTruth(false);
       }}
-      aria-label="Unset ground truth"
+      aria-label={t('editor.annotations.groundTruth.unsetLabel')}
     >
       <StarOutlined />
     </Button>
   );
 
   const setHoney = () => {
-    const title = item.ground_truth ? "Unset this result as a ground truth" : "Set this result as a ground truth";
+    const title = item.ground_truth ? t('editor.annotations.groundTruth.unsetTitle') : t('editor.annotations.groundTruth.setTitle');
 
     return (
       <Button
@@ -72,7 +96,7 @@ const Annotation = observer(({ item, store }) => {
           ev.preventDefault();
           item.setGroundTruth(!item.ground_truth);
         }}
-        aria-label={item.ground_truth ? "Unset ground truth" : "Set ground truth"}
+        aria-label={item.ground_truth ? t('editor.annotations.groundTruth.unsetLabel') : t('editor.annotations.groundTruth.setLabel')}
       >
         {item.ground_truth ? <StarFilled /> : <StarOutlined />}
       </Button>
@@ -114,7 +138,7 @@ const Annotation = observer(({ item, store }) => {
    * Title of card
    */
   if (item.userGenerate && !item.sentUserGenerate) {
-    annotationID = <span className={styles.title}>Unsaved Annotation</span>;
+    annotationID = <span className={styles.title}>{t('editor.annotations.unsavedAnnotation')}</span>;
   } else {
     if (item.pk) {
       annotationID = <span className={styles.title}>ID {item.pk}</span>;
@@ -149,20 +173,7 @@ const Annotation = observer(({ item, store }) => {
         {store.hasInterface("ground-truth") && (item.ground_truth ? removeHoney() : setHoney())}
         &nbsp;
         {store.hasInterface("annotations:delete") && (
-          <Tooltip placement="topLeft" title="Delete selected annotation">
-            <Popconfirm
-              placement="bottomLeft"
-              title={"Please confirm you want to delete this annotation"}
-              onConfirm={confirm}
-              okText="Delete"
-              okType="danger"
-              cancelText="Cancel"
-            >
-              <Button size="small" look="string" variant="negative" aria-label="Delete selected annotation">
-                <DeleteOutlined />
-              </Button>
-            </Popconfirm>
-          </Tooltip>
+          <DeleteAnnotationButton onConfirm={confirm} />
         )}
       </div>
     );
@@ -184,14 +195,14 @@ const Annotation = observer(({ item, store }) => {
             {badge}
             {annotationID}
           </div>
-          {item.pk ? "Created" : "Started"}
-          <i>{item.createdAgo ? ` ${item.createdAgo} ago` : ` ${Utils.UDate.prettyDate(item.createdDate)}`}</i>
-          {item.createdBy && item.pk ? ` by ${item.createdBy}` : null}
+          {item.pk ? t('editor.annotations.created') : t('editor.annotations.started')}
+          <i>{item.createdAgo ? ` ${item.createdAgo} ${t('editor.annotations.ago')}` : ` ${Utils.UDate.prettyDate(item.createdDate)}`}</i>
+          {item.createdBy && item.pk ? ` ${t('editor.annotations.by')} ${item.createdBy}` : null}
           <DraftPanel item={item} />
         </div>
         {/* platform uses was_cancelled so check both */}
         {store.hasInterface("skip") && (item.skipped || item.was_cancelled) && (
-          <Tooltip alignment="top-left" title="Skipped annotation">
+          <Tooltip alignment="top-left" title={t('editor.annotations.skippedAnnotation')}>
             <StopOutlined className={styles.skipped} />
           </Tooltip>
         )}
@@ -200,7 +211,7 @@ const Annotation = observer(({ item, store }) => {
             size="small"
             look="outlined"
             onClick={toggleVisibility}
-            aria-label="Toggle visibility of current annotation"
+            aria-label={t('editor.annotations.toggleVisibility')}
           >
             {item.hidden ? <EyeInvisibleOutlined /> : <EyeOutlined />}
           </Button>
@@ -211,57 +222,55 @@ const Annotation = observer(({ item, store }) => {
   );
 });
 
-class Annotations extends Component {
-  render() {
-    const { store } = this.props;
+const Annotations = observer(({ store }) => {
+  const { t } = useTranslation();
 
-    const title = (
-      <div className={`${styles.title} ${styles.titlespace}`}>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <h3>Annotations</h3>
-        </div>
+  const title = (
+    <div className={`${styles.title} ${styles.titlespace}`}>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <h3>{t('editor.annotations.title')}</h3>
+      </div>
 
-        <div style={{ marginRight: "1px" }}>
-          {store.hasInterface("annotations:add-new") && (
-            <Button
-              size="small"
-              tooltip="Create new annotation"
-              onClick={(ev) => {
-                ev.preventDefault();
-                const c = store.annotationStore.createAnnotation();
-
-                store.annotationStore.selectAnnotation(c.id);
-              }}
-              aria-label="Create new annotation"
-            >
-              <PlusOutlined />
-            </Button>
-          )}
-          &nbsp;
+      <div style={{ marginRight: "1px" }}>
+        {store.hasInterface("annotations:add-new") && (
           <Button
             size="small"
-            tooltip="View all annotations"
-            look={store.annotationStore.viewingAll ? "filled" : "outlined"}
+            tooltip={t('editor.annotations.createNew')}
             onClick={(ev) => {
               ev.preventDefault();
-              store.annotationStore.toggleViewingAllAnnotations();
+              const c = store.annotationStore.createAnnotation();
+
+              store.annotationStore.selectAnnotation(c.id);
             }}
-            aria-label="Toggle view of all annotations"
+            aria-label={t('editor.annotations.createNew')}
           >
-            <WindowsOutlined />
+            <PlusOutlined />
           </Button>
-        </div>
+        )}
+        &nbsp;
+        <Button
+          size="small"
+          tooltip={t('editor.annotations.viewAll')}
+          look={store.annotationStore.viewingAll ? "filled" : "outlined"}
+          onClick={(ev) => {
+            ev.preventDefault();
+            store.annotationStore.toggleViewingAllAnnotations();
+          }}
+          aria-label={t('editor.annotations.toggleViewAll')}
+        >
+          <WindowsOutlined />
+        </Button>
       </div>
-    );
+    </div>
+  );
 
-    const content = store.annotationStore.annotations.map((c) => <Annotation key={c.id} item={c} store={store} />);
+  const content = store.annotationStore.annotations.map((c) => <Annotation key={c.id} item={c} store={store} />);
 
-    return (
-      <Card title={title} size="small" bodyStyle={{ padding: "0", paddingTop: "1px" }}>
-        <List>{store.annotationStore.annotations ? content : <p>No annotations submitted yet</p>}</List>
-      </Card>
-    );
-  }
-}
+  return (
+    <Card title={title} size="small" bodyStyle={{ padding: "0", paddingTop: "1px" }}>
+      <List>{store.annotationStore.annotations ? content : <p>{t('editor.annotations.noAnnotationsYet')}</p>}</List>
+    </Card>
+  );
+});
 
-export default observer(Annotations);
+export default Annotations;

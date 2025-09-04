@@ -139,6 +139,8 @@
     "pinMenu": "Pin menu",
     "unpinMenu": "Unpin menu",
     "keyboardShortcuts": "Keyboard Shortcuts",
+    "viewAllKeyboardShortcuts": "View all available keyboard shortcuts.",
+    "customize": "Customize",
     "accountSettings": "Account & Settings",
     "logOut": "Log Out",
     "newsletterNotification": "Please check new notification settings in the Account & Settings page",
@@ -218,6 +220,7 @@
     "hotkeysManager": {
       "import": "Import",
       "export": "Export",
+      "upgradeToImport": "You must upgrade your plan to import data",
       "resetToDefaults": "Reset to Defaults",
       "save": "Save",
       "cancel": "Cancel",
@@ -320,9 +323,26 @@
     },
     "aria": {
       "cancelProjectCreation": "Cancel project creation"
+    },
+    "configureData": "Configure data",
+    "recipes": {
+        "groups": {
+           "computerVision": "Computer Vision",
+           "nlp": "NLP",
+           "audioSpeechProcessing": "Audio/Speech Processing",
+           "conversationalAi": "Conversational AI",
+           "rankingScoring": "Ranking & Scoring",
+           "structuredDataParsing": "Structured Data Parsing",
+           "timeSeriesAnalysis": "Time Series Analysis",
+           "videos": "Videos",
+           "generativeAi": "Generative AI"
+      },
+      "customTemplate": "Custom template",
+    "documentationText": "See the documentation to",
+    "contributeTemplate": "contribute a template"
     }
-  },
-  "importData": {
+    },
+    "importData": {
     "title": "Import Data",
     "datasetUrl": "Dataset URL",
     "addUrl": "Add URL",
@@ -372,7 +392,8 @@
     "filesUploaded_other": "{{count}} files uploaded"
   },
   "languageSwitcher": {
-    "switchLanguage": "Switch Language"
+    "switchLanguage": "Switch Language",
+    "tooltip": "Switch Language"
   },
   "themeToggle": {
     "auto": "Auto",
@@ -601,6 +622,7 @@
     "uncertaintyDescription": "Tasks are chosen according to model uncertainty score (active learning mode). Learn more",
     "saved": "Saved!",
     "save": "Save",
+    "saveAriaLabel": "Save settings",
     "browserNotifications": "Browser Notifications",
     "emailNotifications": "Email Notifications",
     "language": "Language",
@@ -614,7 +636,14 @@
       "description": "Connect your cloud storage or upload files from your computer",
       "connectCloudStorage": "Connect Cloud Storage",
       "import": "Import",
-      "seeDocsOnImporting": "See docs on importing data"
+      "seeDocsOnImporting": "See docs on importing data",
+      "opensInNewTab": "Opens in new tab",
+      "storageProviders": {
+        "amazonS3": "Amazon S3",
+        "googleCloudStorage": "Google Cloud Storage",
+        "azureBlobStorage": "Azure Blob Storage",
+        "redisStorage": "Redis Storage"
+      }
     },
     "description": "Import your data for labeling",
     "dragDrop": "Drag and drop files here",
@@ -737,7 +766,8 @@
       "useArrowKeys": "Use arrow keys to navigate",
       "escapeToClose": "Press Escape to close",
       "spaceToSelect": "Press Space to select/unselect",
-      "scrollAndDrag": "Scroll and drag to move around"
+      "scrollAndDrag": "Scroll and drag to move around",
+      "taskLabel": "Task {{id}}"
     },
     "table": {
       "failedToSyncData": "Failed to sync data",
@@ -1090,9 +1120,59 @@
       "errorMessage": "Error resetting hotkeys: {{error}}"
     }
   },
-  "common": {
+  "editor": {
+    "annotations": {
+      "deleteTooltip": "Delete selected annotation",
+      "deleteConfirm": "Please confirm you want to delete this annotation",
+      "title": "Annotations",
+      "createNew": "Create new annotation",
+      "viewAll": "View all annotations",
+      "toggleViewAll": "Toggle view of all annotations",
+      "noAnnotationsYet": "No annotations submitted yet",
+      "unsavedAnnotation": "Unsaved Annotation",
+      "created": "Created",
+      "started": "Started",
+      "ago": "ago",
+      "by": "by",
+      "skippedAnnotation": "Skipped annotation",
+      "toggleVisibility": "Toggle visibility of current annotation",
+      "groundTruth": {
+        "setTitle": "Set this result as a ground truth",
+        "unsetTitle": "Unset this result as a ground truth",
+        "setLabel": "Set ground truth",
+        "unsetLabel": "Unset ground truth"
+      },
+      "draft": {
+        "label": "draft",
+        "saved": "saved",
+        "notSubmitted": "not submitted draft",
+        "switchToSubmitted": "switch to submitted result",
+        "switchToCurrent": "switch to current draft",
+        "switchToOriginal": "switch to original result",
+        "submitted": "submitted",
+        "original": "original",
+        "toggleMode": "Toggle draft mode"
+      }
+    },
+    "imageSettings": {
+      "strokeWidth": "Width of region borders",
+      "zoom": "Allow image zoom (ctrl+wheel)",
+      "zoomControl": "Show controls to zoom in and out",
+      "rotateControl": "Show controls to rotate image",
+      "addFilterForLongListOfLabels": "Add filter for long list of labels",
+      "displayLabels": "Display labels:"
+    }
+  },
+   "common": {
     "unknownError": "Unknown error",
     "required": "Required",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "ok": "OK",
+    "noResultsFound": "No results found.",
+    "search": "Search",
+    "searchPlaceholder": "Search...",
+    "searchEllipsis": "Search...",
+    "enterprise": "Enterprise"
   }
 }

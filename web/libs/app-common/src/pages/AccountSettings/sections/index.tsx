@@ -29,7 +29,7 @@ export const accountSettingsSections = (settings: AuthTokenSettings, t?: TFuncti
       title: (
         <div className="flex items-center gap-tight">
           <span>{t ? t('accountSettings.hotkeysTitle') : "Hotkeys"}</span>
-          <Badge variant="beta">Beta</Badge>
+          <Badge variant="beta" title={t ? t('themeToggle.beta') : "Beta"}>{t ? t('themeToggle.beta') : "Beta"}</Badge>
         </div>
       ),
       id: "hotkeys",

@@ -1,0 +1,1199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: webhooks/models.py:116 webhooks/models.py:125 webhooks/models.py:134
+#: webhooks/models.py:143 webhooks/models.py:152 webhooks/models.py:161
+#: webhooks/models.py:177 webhooks/models.py:193 webhooks/models.py:209
+#: webhooks/models.py:218 webhooks/models.py:227 webhooks/models.py:243
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-04 08:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: data_export/models.py:31 data_export/models.py:189 projects/models.py:1528
+#: projects/models.py:1561
+msgid "Created"
+msgstr ""
+
+#: data_export/models.py:32 data_export/models.py:190
+#: io_storages/base_models.py:54 projects/models.py:1529
+#: projects/models.py:1562
+msgid "In progress"
+msgstr ""
+
+#: data_export/models.py:33 data_export/models.py:191
+#: io_storages/base_models.py:55 projects/models.py:1530
+#: projects/models.py:1563
+msgid "Failed"
+msgstr ""
+
+#: data_export/models.py:34 data_export/models.py:192
+#: io_storages/base_models.py:56 projects/models.py:1531
+#: projects/models.py:1564 users/product_tours/models.py:10
+msgid "Completed"
+msgstr ""
+
+#: data_export/models.py:37 io_storages/base_models.py:298 ml/models.py:62
+#: ml_models/models.py:32 ml_models/models.py:64 projects/models.py:130
+#: projects/models.py:1231
+msgid "title"
+msgstr ""
+
+#: data_export/models.py:43 data_export/models.py:224
+#: io_storages/base_models.py:300 io_storages/base_models.py:879
+#: io_storages/base_models.py:907 jwt_auth/models.py:35 ml/models.py:123
+#: ml/models.py:440 ml/models.py:454 ml_model_providers/models.py:78
+#: ml_models/models.py:40 ml_models/models.py:110 ml_models/models.py:179
+#: organizations/models.py:28 organizations/models.py:96 projects/models.py:252
+#: projects/models.py:1235 projects/models.py:1250 projects/models.py:1279
+#: projects/models.py:1286 projects/models.py:1541 session_policy/models.py:29
+#: tasks/models.py:82 tasks/models.py:632 tasks/models.py:814
+#: tasks/models.py:861 tasks/models.py:930 tasks/models.py:1115
+#: webhooks/models.py:65
+msgid "created at"
+msgstr ""
+
+#: data_export/models.py:52
+msgid "md5 of file"
+msgstr ""
+
+#: data_export/models.py:57 data_export/models.py:236 projects/models.py:1543
+msgid "finished at"
+msgstr ""
+
+#: data_export/models.py:64
+msgid "Export status"
+msgstr ""
+
+#: data_export/models.py:70
+msgid "Exporting meta data"
+msgstr ""
+
+#: data_export/models.py:83 data_export/models.py:246 projects/models.py:207
+msgid "created by"
+msgstr ""
+
+#: data_export/models.py:230 io_storages/base_models.py:908
+#: jwt_auth/models.py:36 ml/models.py:124 ml/models.py:441 ml/models.py:455
+#: ml_model_providers/models.py:80 ml_models/models.py:42
+#: ml_models/models.py:112 organizations/models.py:29
+#: organizations/models.py:97 projects/models.py:253 projects/models.py:1236
+#: projects/models.py:1251 projects/models.py:1280 projects/models.py:1542
+#: session_policy/models.py:30 tasks/models.py:83 tasks/models.py:633
+#: tasks/models.py:862 tasks/models.py:931 webhooks/models.py:66
+msgid "updated at"
+msgstr ""
+
+#: data_manager/actions/basic.py:30
+#, python-format
+msgid "Retrieved %(count)s predictions"
+msgstr ""
+
+#: data_manager/actions/basic.py:72
+#, python-format
+msgid "Deleted %(count)s tasks"
+msgstr ""
+
+#: data_manager/actions/basic.py:117
+#, python-format
+msgid "Deleted %(count)s annotations"
+msgstr ""
+
+#: data_manager/actions/basic.py:131
+msgid "Annotator"
+msgstr ""
+
+#: data_manager/actions/basic.py:136 ml_models/models.py:131
+msgid "All"
+msgstr ""
+
+#: data_manager/actions/basic.py:156
+#, python-format
+msgid "Deleted %(count)s predictions"
+msgstr ""
+
+#: data_manager/actions/basic.py:171 data_manager/actions/basic.py:174
+msgid "Retrieve Predictions"
+msgstr ""
+
+#: data_manager/actions/basic.py:175
+msgid "Send the selected tasks to all ML backends connected to the project."
+msgstr ""
+
+#: data_manager/actions/basic.py:176
+msgid "This operation might be abruptly interrupted due to a timeout."
+msgstr ""
+
+#: data_manager/actions/basic.py:177
+msgid ""
+"The recommended way to get predictions is to update tasks using the Label "
+"Studio API."
+msgstr ""
+
+#: data_manager/actions/basic.py:178 data_manager/actions/basic.py:201
+msgid "Please confirm your action."
+msgstr ""
+
+#: data_manager/actions/basic.py:185
+msgid "Delete Tasks"
+msgstr ""
+
+#: data_manager/actions/basic.py:189
+msgid "You are going to delete the selected tasks. Please confirm your action."
+msgstr ""
+
+#: data_manager/actions/basic.py:196
+msgid "Delete Annotations"
+msgstr ""
+
+#: data_manager/actions/basic.py:199
+msgid "You are going to delete annotations from the selected tasks."
+msgstr ""
+
+#: data_manager/actions/basic.py:200
+msgid "You can select specific annotators to delete annotations for."
+msgstr ""
+
+#: data_manager/actions/basic.py:209
+msgid "Delete Predictions"
+msgstr ""
+
+#: data_manager/actions/basic.py:212
+msgid ""
+"You are going to delete all predictions from the selected tasks. Please "
+"confirm your action."
+msgstr ""
+
+#: data_manager/actions/predictions_to_annotations.py:93
+msgid "Choose predictions"
+msgstr ""
+
+#: data_manager/actions/predictions_to_annotations.py:106
+#: data_manager/actions/predictions_to_annotations.py:109
+msgid "Create Annotations From Predictions"
+msgstr ""
+
+#: data_manager/actions/predictions_to_annotations.py:110
+msgid ""
+"Create annotations from predictions using selected predictions set for each "
+"selected task. Your account will be assigned as an owner to those "
+"annotations."
+msgstr ""
+
+#: data_manager/api.py:459 data_manager/functions.py:116
+msgid "Last annotation date"
+msgstr ""
+
+#: data_manager/models.py:10
+msgid "data"
+msgstr ""
+
+#: data_manager/models.py:11
+msgid "ordering"
+msgstr ""
+
+#: data_manager/models.py:13
+msgid "order"
+msgstr ""
+
+#: data_manager/models.py:18
+msgid "selected items"
+msgstr ""
+
+#: data_manager/models.py:76
+msgid "conjunction"
+msgstr ""
+
+#: data_manager/models.py:95
+msgid "index"
+msgstr ""
+
+#: data_manager/models.py:101
+msgid "column"
+msgstr ""
+
+#: data_manager/models.py:102
+msgid "type"
+msgstr ""
+
+#: data_manager/models.py:103
+msgid "operator"
+msgstr ""
+
+#: data_manager/models.py:104
+msgid "value"
+msgstr ""
+
+#: io_storages/azure_blob/models.py:43
+msgid "container"
+msgstr ""
+
+#: io_storages/azure_blob/models.py:44 io_storages/gcs/models.py:39
+#: io_storages/s3/models.py:44
+msgid "prefix"
+msgstr ""
+
+#: io_storages/azure_blob/models.py:46 io_storages/gcs/models.py:41
+#: io_storages/localfiles/models.py:34 io_storages/s3/models.py:46
+msgid "regex_filter"
+msgstr ""
+
+#: io_storages/azure_blob/models.py:49 io_storages/gcs/models.py:47
+#: io_storages/localfiles/models.py:40 io_storages/redis/models.py:37
+#: io_storages/s3/models.py:52
+msgid "use_blob_urls"
+msgstr ""
+
+#: io_storages/azure_blob/models.py:51
+msgid "account_name"
+msgstr ""
+
+#: io_storages/azure_blob/models.py:52
+msgid "account_key"
+msgstr ""
+
+#: io_storages/azure_blob/models.py:196 io_storages/gcs/models.py:174
+#: io_storages/s3/models.py:184
+msgid "presign"
+msgstr ""
+
+#: io_storages/azure_blob/models.py:198 io_storages/gcs/models.py:176
+#: io_storages/s3/models.py:186
+msgid "presign_ttl"
+msgstr ""
+
+#: io_storages/base_models.py:52
+msgid "Initialized"
+msgstr ""
+
+#: io_storages/base_models.py:53
+msgid "Queued"
+msgstr ""
+
+#: io_storages/base_models.py:57
+msgid "Completed with errors"
+msgstr ""
+
+#: io_storages/base_models.py:62
+msgid "last sync"
+msgstr ""
+
+#: io_storages/base_models.py:64
+msgid "last sync count"
+msgstr ""
+
+#: io_storages/base_models.py:67
+msgid "last_sync_job"
+msgstr ""
+
+#: io_storages/base_models.py:299 ml/models.py:92 ml_models/models.py:34
+#: projects/models.py:142 projects/models.py:1232
+msgid "description"
+msgstr ""
+
+#: io_storages/base_models.py:302
+msgid "synchronizable"
+msgstr ""
+
+#: io_storages/base_models.py:762
+msgid "can_delete_objects"
+msgstr ""
+
+#: io_storages/base_models.py:872
+msgid "key"
+msgstr ""
+
+#: io_storages/base_models.py:876 io_storages/base_models.py:905
+msgid "object exists"
+msgstr ""
+
+#: io_storages/gcs/models.py:38 io_storages/s3/models.py:43
+msgid "bucket"
+msgstr ""
+
+#: io_storages/gcs/models.py:52
+msgid "google_application_credentials"
+msgstr ""
+
+#: io_storages/gcs/models.py:57
+msgid "Google Project ID"
+msgstr ""
+
+#: io_storages/localfiles/models.py:32 io_storages/redis/models.py:26
+msgid "path"
+msgstr ""
+
+#: io_storages/redis/models.py:27
+msgid "host"
+msgstr ""
+
+#: io_storages/redis/models.py:28 io_storages/redis/models.py:31
+msgid "port"
+msgstr ""
+
+#: io_storages/redis/models.py:29
+msgid "password"
+msgstr ""
+
+#: io_storages/redis/models.py:82 io_storages/redis/models.py:130
+msgid "db"
+msgstr ""
+
+#: io_storages/s3/models.py:56
+msgid "aws_access_key_id"
+msgstr ""
+
+#: io_storages/s3/models.py:58
+msgid "aws_secret_access_key"
+msgstr ""
+
+#: io_storages/s3/models.py:63
+msgid "aws_session_token"
+msgstr ""
+
+#: io_storages/s3/models.py:65
+msgid "aws_sse_kms_key_id"
+msgstr ""
+
+#: io_storages/s3/models.py:67
+msgid "region_name"
+msgstr ""
+
+#: io_storages/s3/models.py:68
+msgid "s3_endpoint"
+msgstr ""
+
+#: io_storages/s3/models.py:189
+msgid "recursive scan"
+msgstr ""
+
+#: io_storages/s3/models.py:191
+msgid "Perform recursive scan over the bucket content"
+msgstr ""
+
+#: jwt_auth/models.py:20
+msgid "JWT API tokens enabled"
+msgstr ""
+
+#: jwt_auth/models.py:25
+msgid "JWT API token time to live (days)"
+msgstr ""
+
+#: jwt_auth/models.py:30
+msgid "legacy API tokens enabled"
+msgstr ""
+
+#: labels_manager/models.py:7
+msgid "Created at"
+msgstr ""
+
+#: labels_manager/models.py:8
+msgid "Updated at"
+msgstr ""
+
+#: labels_manager/models.py:13
+msgid "Title"
+msgstr ""
+
+#: labels_manager/models.py:14
+msgid "Description"
+msgstr ""
+
+#: labels_manager/models.py:36
+msgid "Tag name"
+msgstr ""
+
+#: ml/models.py:26
+msgid "Connected"
+msgstr ""
+
+#: ml/models.py:27
+msgid "Disconnected"
+msgstr ""
+
+#: ml/models.py:28
+msgid "Error"
+msgstr ""
+
+#: ml/models.py:29
+msgid "Training"
+msgstr ""
+
+#: ml/models.py:30
+msgid "Predicting"
+msgstr ""
+
+#: ml/models.py:34
+msgid "None"
+msgstr ""
+
+#: ml/models.py:35
+msgid "Basic Auth"
+msgstr ""
+
+#: ml/models.py:47
+msgid "is_interactive"
+msgstr ""
+
+#: ml/models.py:52
+msgid "url"
+msgstr ""
+
+#: ml/models.py:56
+msgid "error_message"
+msgstr ""
+
+#: ml/models.py:76
+msgid "basic auth user"
+msgstr ""
+
+#: ml/models.py:84
+msgid "basic auth password"
+msgstr ""
+
+#: ml/models.py:100
+msgid "extra params"
+msgstr ""
+
+#: ml/models.py:106 ml/models.py:434 ml/models.py:449 projects/models.py:241
+#: tasks/models.py:893 tasks/models.py:1098
+msgid "model version"
+msgstr ""
+
+#: ml/models.py:113
+msgid "timeout"
+msgstr ""
+
+#: ml/models.py:126
+msgid "auto_update"
+msgstr ""
+
+#: ml/models.py:437
+msgid "batch size"
+msgstr ""
+
+#: ml_model_providers/models.py:15
+msgid "OpenAI"
+msgstr ""
+
+#: ml_model_providers/models.py:16
+msgid "AzureOpenAI"
+msgstr ""
+
+#: ml_model_providers/models.py:17
+msgid "AzureAIFoundry"
+msgstr ""
+
+#: ml_model_providers/models.py:18
+msgid "VertexAI"
+msgstr ""
+
+#: ml_model_providers/models.py:19
+msgid "Gemini"
+msgstr ""
+
+#: ml_model_providers/models.py:20
+msgid "Anthropic"
+msgstr ""
+
+#: ml_model_providers/models.py:21
+msgid "Custom"
+msgstr ""
+
+#: ml_model_providers/models.py:25
+msgid "Organization"
+msgstr ""
+
+#: ml_model_providers/models.py:26
+msgid "User"
+msgstr ""
+
+#: ml_model_providers/models.py:27
+msgid "Model"
+msgstr ""
+
+#: ml_model_providers/models.py:34
+msgid "api_key"
+msgstr ""
+
+#: ml_model_providers/models.py:36
+msgid "auth_token"
+msgstr ""
+
+#: ml_model_providers/models.py:43
+msgid "google application credentials"
+msgstr ""
+
+#: ml_model_providers/models.py:50
+msgid "google project id"
+msgstr ""
+
+#: ml_model_providers/models.py:54
+msgid "google location"
+msgstr ""
+
+#: ml_model_providers/models.py:83
+msgid "is_internal"
+msgstr ""
+
+#: ml_model_providers/models.py:91
+msgid "budget_limit"
+msgstr ""
+
+#: ml_model_providers/models.py:99
+msgid "budget_last_reset_date"
+msgstr ""
+
+#: ml_model_providers/models.py:107
+msgid "budget_reset_period"
+msgstr ""
+
+#: ml_model_providers/models.py:120
+msgid "budget_total_spent"
+msgstr ""
+
+#: ml_model_providers/models.py:128
+msgid "budget_alert_threshold"
+msgstr ""
+
+#: ml_models/models.py:18
+msgid "TextClassification"
+msgstr ""
+
+#: ml_models/models.py:19
+msgid "NamedEntityRecognition"
+msgstr ""
+
+#: ml_models/models.py:68
+msgid "prompt"
+msgstr ""
+
+#: ml_models/models.py:132
+msgid "HasGT"
+msgstr ""
+
+#: ml_models/models.py:133
+msgid "Sample"
+msgstr ""
+
+#: ml_models/models.py:136
+msgid "Input"
+msgstr ""
+
+#: ml_models/models.py:137
+msgid "Output"
+msgstr ""
+
+#: ml_models/models.py:140
+msgid "Pending"
+msgstr ""
+
+#: ml_models/models.py:141
+msgid "InProgress"
+msgstr ""
+
+#: ml_models/models.py:173
+msgid "total predictions"
+msgstr ""
+
+#: ml_models/models.py:175
+msgid "total correct predictions"
+msgstr ""
+
+#: ml_models/models.py:177
+msgid "total tasks"
+msgstr ""
+
+#: ml_models/models.py:181
+msgid "triggered at"
+msgstr ""
+
+#: ml_models/models.py:183
+msgid "predictions updated at"
+msgstr ""
+
+#: ml_models/models.py:185
+msgid "completed at"
+msgstr ""
+
+#: organizations/models.py:32
+msgid "deleted at"
+msgstr ""
+
+#: organizations/models.py:82
+msgid "organization title"
+msgstr ""
+
+#: organizations/models.py:84 projects/models.py:196
+msgid "token"
+msgstr ""
+
+#: organizations/models.py:93
+msgid "created_by"
+msgstr ""
+
+#: organizations/models.py:99
+msgid "contact info"
+msgstr ""
+
+#: projects/models.py:149
+msgid "label config"
+msgstr ""
+
+#: projects/models.py:156
+msgid "parsed label config"
+msgstr ""
+
+#: projects/models.py:164
+msgid "expert instruction"
+msgstr ""
+
+#: projects/models.py:167
+msgid "show instruction"
+msgstr ""
+
+#: projects/models.py:171
+msgid "show skip button"
+msgstr ""
+
+#: projects/models.py:176
+msgid "enable empty annotation"
+msgstr ""
+
+#: projects/models.py:180
+msgid "reveal_preannotations_interactively"
+msgstr ""
+
+#: projects/models.py:183
+msgid "show annotation history"
+msgstr ""
+
+#: projects/models.py:186
+msgid "show predictions to annotator"
+msgstr ""
+
+#: projects/models.py:192
+msgid "evaluate predictions automatically"
+msgstr ""
+
+#: projects/models.py:198 tasks/models.py:649
+msgid "result count"
+msgstr ""
+
+#: projects/models.py:200
+msgid "color"
+msgstr ""
+
+#: projects/models.py:210
+msgid "maximum annotation number"
+msgstr ""
+
+#: projects/models.py:217
+msgid "min_annotations_to_start_training"
+msgstr ""
+
+#: projects/models.py:223
+msgid "control weights"
+msgstr ""
+
+#: projects/models.py:244
+msgid "data_types"
+msgstr ""
+
+#: projects/models.py:247
+msgid "is draft"
+msgstr ""
+
+#: projects/models.py:250
+msgid "published"
+msgstr ""
+
+#: projects/models.py:269
+msgid "show ground truth first"
+msgstr ""
+
+#: projects/models.py:270
+msgid "show overlap first"
+msgstr ""
+
+#: projects/models.py:271
+msgid "overlap_cohort_percentage"
+msgstr ""
+
+#: projects/models.py:274
+msgid "task_data_login"
+msgstr ""
+
+#: projects/models.py:277
+msgid "task_data_password"
+msgstr ""
+
+#: projects/models.py:280
+msgid "pinned at"
+msgstr ""
+
+#: projects/models.py:283
+msgid "custom_task_lock_ttl"
+msgstr ""
+
+#: projects/models.py:1188
+#, python-format
+msgid "Business number %d"
+msgstr ""
+
+#: projects/models.py:1290
+msgid "all data columns"
+msgstr ""
+
+#: projects/models.py:1294
+msgid "common data columns"
+msgstr ""
+
+#: projects/models.py:1298
+msgid "created annotations"
+msgstr ""
+
+#: projects/models.py:1304
+msgid "created labels"
+msgstr ""
+
+#: projects/models.py:1306
+msgid "created labels in drafts"
+msgstr ""
+
+#: session_policy/models.py:16
+msgid "Max session age (minutes)"
+msgstr ""
+
+#: session_policy/models.py:23
+msgid "Max time (minutes) between activity"
+msgstr ""
+
+#: tasks/choices.py:6
+msgid "Created from prediction"
+msgstr ""
+
+#: tasks/choices.py:7
+msgid "Created from another annotation"
+msgstr ""
+
+#: tasks/choices.py:8
+msgid "Imported"
+msgstr ""
+
+#: tasks/choices.py:9
+msgid "Submitted"
+msgstr ""
+
+#: tasks/choices.py:10
+msgid "Updated"
+msgstr ""
+
+#: tasks/choices.py:11 users/product_tours/models.py:11
+msgid "Skipped"
+msgstr ""
+
+#: tasks/choices.py:12
+msgid "Accepted"
+msgstr ""
+
+#: tasks/choices.py:13
+msgid "Rejected"
+msgstr ""
+
+#: tasks/choices.py:14
+msgid "Fixed and accepted"
+msgstr ""
+
+#: tasks/choices.py:15
+msgid "Deleted review"
+msgstr ""
+
+#: tasks/models.py:89 tasks/models.py:623
+msgid "updated by"
+msgstr ""
+
+#: tasks/models.py:93
+msgid "is_labeled"
+msgstr ""
+
+#: tasks/models.py:99
+msgid "overlap"
+msgstr ""
+
+#: tasks/models.py:113
+msgid "inner id"
+msgstr ""
+
+#: tasks/models.py:120
+msgid "total_annotations"
+msgstr ""
+
+#: tasks/models.py:126
+msgid "cancelled_annotations"
+msgstr ""
+
+#: tasks/models.py:132
+msgid "total_predictions"
+msgstr ""
+
+#: tasks/models.py:139
+msgid "comment count"
+msgstr ""
+
+#: tasks/models.py:145
+msgid "unresolved comment count"
+msgstr ""
+
+#: tasks/models.py:158
+msgid "last comment updated at"
+msgstr ""
+
+#: tasks/models.py:626
+msgid "was cancelled"
+msgstr ""
+
+#: tasks/models.py:628
+msgid "ground_truth"
+msgstr ""
+
+#: tasks/models.py:635
+msgid "draft created at"
+msgstr ""
+
+#: tasks/models.py:638 tasks/models.py:820
+msgid "lead time"
+msgstr ""
+
+#: tasks/models.py:644
+msgid "prediction"
+msgstr ""
+
+#: tasks/models.py:674
+msgid "last action"
+msgstr ""
+
+#: tasks/models.py:684
+msgid "last created by"
+msgstr ""
+
+#: tasks/models.py:690
+msgid "bulk created"
+msgstr ""
+
+#: tasks/models.py:806
+msgid "expire_at"
+msgstr ""
+
+#: tasks/models.py:818
+msgid "result"
+msgstr ""
+
+#: tasks/models.py:848
+msgid "was postponed"
+msgstr ""
+
+#: tasks/models.py:891
+msgid "score"
+msgstr ""
+
+#: tasks/models.py:915
+msgid "cluster"
+msgstr ""
+
+#: tasks/models.py:926
+msgid "mislabeling"
+msgstr ""
+
+#: tasks/models.py:1077
+msgid "message"
+msgstr ""
+
+#: tasks/models.py:1084
+msgid "error_type"
+msgstr ""
+
+#: tasks/models.py:1125
+msgid "Reference to the associated prediction"
+msgstr ""
+
+#: tasks/models.py:1133
+msgid "Reference to the associated failed prediction"
+msgstr ""
+
+#: tasks/models.py:1136
+msgid "inference time"
+msgstr ""
+
+#: tasks/models.py:1136
+msgid "Time taken for inference in seconds"
+msgstr ""
+
+#: tasks/models.py:1139
+msgid "prompt tokens count"
+msgstr ""
+
+#: tasks/models.py:1139
+msgid "Number of tokens in the prompt"
+msgstr ""
+
+#: tasks/models.py:1142
+msgid "completion tokens count"
+msgstr ""
+
+#: tasks/models.py:1142
+msgid "Number of tokens in the completion"
+msgstr ""
+
+#: tasks/models.py:1145
+msgid "total tokens count"
+msgstr ""
+
+#: tasks/models.py:1145
+msgid "Total number of tokens"
+msgstr ""
+
+#: tasks/models.py:1147
+msgid "prompt cost"
+msgstr ""
+
+#: tasks/models.py:1147
+msgid "Cost of the prompt"
+msgstr ""
+
+#: tasks/models.py:1149
+msgid "completion cost"
+msgstr ""
+
+#: tasks/models.py:1149
+msgid "Cost of the completion"
+msgstr ""
+
+#: tasks/models.py:1151
+msgid "total cost"
+msgstr ""
+
+#: tasks/models.py:1151
+msgid "Total cost"
+msgstr ""
+
+#: tasks/models.py:1152
+msgid "extra"
+msgstr ""
+
+#: tasks/models.py:1152
+msgid "Additional metadata in JSON format"
+msgstr ""
+
+#: tasks/models.py:1200
+msgid "Prediction Meta"
+msgstr ""
+
+#: tasks/models.py:1201
+msgid "Prediction Metas"
+msgstr ""
+
+#: templates/standard_form.html:11
+msgid "Create"
+msgstr ""
+
+#: users/models.py:28
+msgid "year"
+msgstr ""
+
+#: users/models.py:67
+msgid "last activity"
+msgstr ""
+
+#: users/models.py:116
+msgid "username"
+msgstr ""
+
+#: users/models.py:117
+msgid "email address"
+msgstr ""
+
+#: users/models.py:119
+msgid "first name"
+msgstr ""
+
+#: users/models.py:120
+msgid "last name"
+msgstr ""
+
+#: users/models.py:121
+msgid "phone"
+msgstr ""
+
+#: users/models.py:124
+msgid "custom hotkeys"
+msgstr ""
+
+#: users/models.py:128
+msgid "Custom keyboard shortcuts configuration for the user interface"
+msgstr ""
+
+#: users/models.py:132
+msgid "staff status"
+msgstr ""
+
+#: users/models.py:132
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: users/models.py:136
+msgid "active"
+msgstr ""
+
+#: users/models.py:138
+msgid ""
+"Designates whether to treat this user as active. Unselect this instead of "
+"deleting accounts."
+msgstr ""
+
+#: users/models.py:141
+msgid "date joined"
+msgstr ""
+
+#: users/models.py:143
+msgid "last annotation activity"
+msgstr ""
+
+#: users/models.py:150
+msgid "allow newsletters"
+msgstr ""
+
+#: users/models.py:150
+msgid "Allow sending newsletters to user"
+msgstr ""
+
+#: users/models.py:161
+msgid "user"
+msgstr ""
+
+#: users/models.py:162
+msgid "users"
+msgstr ""
+
+#: users/product_tours/models.py:9
+msgid "Ready"
+msgstr ""
+
+#: users/product_tours/models.py:34
+msgid "Name"
+msgstr ""
+
+#: users/product_tours/models.py:38
+msgid "State"
+msgstr ""
+
+#: users/product_tours/models.py:46
+msgid "Interaction Data"
+msgstr ""
+
+#: users/validators.py:14 users/validators.py:20
+#, python-format
+msgid ""
+"Please enter a password %(min_length)d–%(max_length)d characters in length."
+msgstr ""
+
+#: users/validators.py:26
+#, python-format
+msgid ""
+"Your password must be between %(min_length)d and %(max_length)d characters."
+msgstr ""
+
+#: webhooks/models.py:38
+msgid "URL of webhook"
+msgstr ""
+
+#: webhooks/models.py:41
+msgid "does webhook send the payload"
+msgstr ""
+
+#: webhooks/models.py:47
+msgid "Use webhook for all actions"
+msgstr ""
+
+#: webhooks/models.py:53
+msgid "request extra headers of webhook"
+msgstr ""
+
+#: webhooks/models.py:60
+msgid "is webhook active"
+msgstr ""
+
+#: webhooks/models.py:65
+msgid "Creation time"
+msgstr ""
+
+#: webhooks/models.py:66
+msgid "Last update time"
+msgstr ""
+
+#: webhooks/models.py:115
+msgid "Project created"
+msgstr ""
+
+#: webhooks/models.py:124
+msgid "Project updated"
+msgstr ""
+
+#: webhooks/models.py:133
+msgid "Project deleted"
+msgstr ""
+
+#: webhooks/models.py:142
+msgid "Task created"
+msgstr ""
+
+#: webhooks/models.py:151
+msgid "Task deleted"
+msgstr ""
+
+#: webhooks/models.py:160
+msgid "Annotation created"
+msgstr ""
+
+#: webhooks/models.py:176
+msgid "Annotations created"
+msgstr ""
+
+#: webhooks/models.py:192
+msgid "Annotation updated"
+msgstr ""
+
+#: webhooks/models.py:208
+msgid "Annotation deleted"
+msgstr ""
+
+#: webhooks/models.py:217
+msgid "Label link created"
+msgstr ""
+
+#: webhooks/models.py:226
+msgid "Label link updated"
+msgstr ""
+
+#: webhooks/models.py:242
+msgid "Label link deleted"
+msgstr ""
+
+#: webhooks/models.py:255
+msgid "action of webhook"
+msgstr ""
+
+#: webhooks/models.py:259
+msgid "Action value"
+msgstr ""

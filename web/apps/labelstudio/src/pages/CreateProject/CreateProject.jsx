@@ -62,7 +62,7 @@ const ProjectName = ({ name, setName, onSaveName, onSubmit, error, description, 
         <div className="w-full flex flex-col gap-2">
           <label>
             {t('createProject.workspace')}
-            <EnterpriseBadge className="ml-2" />
+            <EnterpriseBadge className="ml-2" text={t('common.enterprise')} />
           </label>
           <Select placeholder={t('createProject.workspaceSelectPlaceholder')} disabled options={[]} triggerClassName="!flex-1" />
           <Typography size="small" className="mt-tight mb-wider">

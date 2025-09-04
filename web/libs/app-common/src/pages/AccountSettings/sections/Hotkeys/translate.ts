@@ -355,28 +355,49 @@ export const getCurrentLocale = (): string => {
   // First try to get from react-i18next if available
   if (typeof window !== 'undefined' && window.i18n?.language) {
     const i18nLang = window.i18n.language;
-    if (i18nLang === 'zh') {
+    if (i18nLang === 'zh' || i18nLang === 'zh-hans') {
       return 'zh-hans';
     }
     return i18nLang;
   }
   
+  // Try to get from localStorage i18nextLng (react-i18next default key)
+  if (typeof window !== 'undefined') {
+    const i18nextLng = localStorage.getItem('i18nextLng');
+    if (i18nextLng) {
+      if (i18nextLng === 'zh' || i18nextLng === 'zh-hans') {
+        return 'zh-hans';
+      }
+      return i18nextLng;
+    }
+  }
+  
   // Try to get locale from Django settings first (more reliable on page refresh)
   if (typeof window !== 'undefined' && window.APP_SETTINGS?.user?.locale) {
-    return window.APP_SETTINGS.user.locale;
+    const locale = window.APP_SETTINGS.user.locale;
+    if (locale === 'zh' || locale === 'zh-hans') {
+      return 'zh-hans';
+    }
+    return locale;
   }
   
   // Try to get from localStorage (persisted across page refreshes)
   if (typeof window !== 'undefined') {
     const storedLang = localStorage.getItem('language') || localStorage.getItem('locale');
     if (storedLang) {
-      return storedLang === 'zh' ? 'zh-hans' : storedLang;
+      if (storedLang === 'zh' || storedLang === 'zh-hans') {
+        return 'zh-hans';
+      }
+      return storedLang;
     }
   }
   
   // Use stored current language (may be reset on page refresh)
   if (currentLanguage && currentLanguage !== 'en') {
-    return currentLanguage === 'zh' ? 'zh-hans' : currentLanguage;
+    if (currentLanguage === 'zh' || currentLanguage === 'zh-hans') {
+      return 'zh-hans';
+    }
+    return currentLanguage;
   }
   
   // Fallback to browser language
@@ -406,7 +427,27 @@ export const setCurrentLanguage = (language: string): void => {
 if (typeof window !== 'undefined') {
   window.addEventListener('languageChanged', (event: Event) => {
     const customEvent = event as CustomEvent<string>;
-    setCurrentLanguage(customEvent.detail);
+    const newLanguage = customEvent.detail;
+    if (newLanguage) {
+      currentLanguage = newLanguage;
+      // Force re-render of any components using these translations
+      window.dispatchEvent(new CustomEvent('hotkeysLanguageChanged', { detail: newLanguage }));
+    }
+  });
+  
+  // Also listen for i18next language changes
+  window.addEventListener('i18nextLanguageChanged', (event: any) => {
+    const newLanguage = event.detail?.language || 'en';
+    currentLanguage = newLanguage;
+    window.dispatchEvent(new CustomEvent('hotkeysLanguageChanged', { detail: newLanguage }));
+  });
+  
+  // Listen for storage changes (when language is changed in another tab)
+  window.addEventListener('storage', (event) => {
+    if (event.key === 'i18nextLng' && event.newValue) {
+      currentLanguage = event.newValue;
+      window.dispatchEvent(new CustomEvent('hotkeysLanguageChanged', { detail: event.newValue }));
+    }
   });
 }
 
@@ -421,10 +462,24 @@ export const translate = (key: string, locale?: string): string => {
     return key;
   }
   
+  // Normalize locale - handle both 'zh' and 'zh-hans'
+  let normalizedLocale = currentLocale;
+  if (currentLocale === 'zh') {
+    normalizedLocale = 'zh-hans';
+  }
+  
   // Try to get translation for current locale
-  const translation = translations[currentLocale]?.[key];
+  const translation = translations[normalizedLocale]?.[key];
   if (translation) {
     return translation;
+  }
+  
+  // If current locale is Chinese but not found, try 'zh-hans' explicitly
+  if (currentLocale.startsWith('zh') && normalizedLocale !== 'zh-hans') {
+    const zhTranslation = translations['zh-hans']?.[key];
+    if (zhTranslation) {
+      return zhTranslation;
+    }
   }
   
   // Fallback to English

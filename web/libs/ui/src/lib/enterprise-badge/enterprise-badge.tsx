@@ -7,14 +7,15 @@ import styles from "./enterprise-badge.module.scss";
 export interface EnterpriseBadgeProps {
   className?: string;
   filled?: boolean;
+  text?: string;
 }
 
-export const EnterpriseBadge: FC<EnterpriseBadgeProps> = ({ className, filled }) => {
+export const EnterpriseBadge: FC<EnterpriseBadgeProps> = ({ className, filled, text = "Enterprise" }) => {
   return (
     <div className={clsx(styles.badge, { [styles.filled]: filled }, className)}>
       <div className={clsx(styles.label)}>
         <IconSpark className={clsx(styles.icon)} />
-        Enterprise
+        {text}
       </div>
     </div>
   );

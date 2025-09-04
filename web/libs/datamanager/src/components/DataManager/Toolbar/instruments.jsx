@@ -53,7 +53,7 @@ const ImportButtonWithChecks = ({ size }) => {
   // Disabled buttons ignore hover, so we use wrapper to properly handle a tooltip
   return (
     <Tooltip
-      title="You must upgrade your plan to import data"
+      title={t('dataManager.toolbar.upgradeToImport', 'You must upgrade your plan to import data')}
       style={{
         maxWidth: 200,
         textAlign: "center",

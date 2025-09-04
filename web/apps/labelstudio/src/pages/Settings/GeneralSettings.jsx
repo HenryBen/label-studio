@@ -39,7 +39,7 @@ export const GeneralSettings = () => {
                 <Block name="workspace-placeholder">
                   <Elem name="badge-wrapper">
                     <Elem name="title">{t('generalSettings.workspace')}</Elem>
-                    <EnterpriseBadge className="ml-2" />
+                    <EnterpriseBadge className="ml-2" text={t('common.enterprise')} />
                   </Elem>
                   <Select placeholder={t('generalSettings.selectOption')} disabled options={[]} />
                   <Typography size="small" className="my-tight">
@@ -84,7 +84,7 @@ export const GeneralSettings = () => {
                     value=""
                     label={
                       <>
-                        {t('generalSettings.uncertaintySampling')} <EnterpriseBadge className="ml-2" />
+                        {t('generalSettings.uncertaintySampling')} <EnterpriseBadge className="ml-2" text={t('common.enterprise')} />
                       </>
                     }
                     disabled

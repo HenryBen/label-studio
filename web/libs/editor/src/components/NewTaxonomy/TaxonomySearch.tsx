@@ -7,6 +7,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { useTranslation } from "react-i18next";
 
 import "./TaxonomySearch.scss";
 import { Block } from "../../utils/bem";
@@ -24,6 +25,7 @@ export type TaxonomySearchRef = {
 };
 
 const TaxonomySearch = React.forwardRef<TaxonomySearchRef, TaxonomySearchProps>(({ treeData, onChange }, ref) => {
+  const { t } = useTranslation();
   useImperativeHandle(ref, (): TaxonomySearchRef => {
     return {
       resetValue() {
@@ -128,7 +130,7 @@ const TaxonomySearch = React.forwardRef<TaxonomySearchRef, TaxonomySearchProps>(
         // to prevent selected items from being deleted
         if (e.key === "Backspace" || e.key === "Delete") e.stopPropagation();
       }}
-      placeholder={"Search"}
+      placeholder={t("common.search")}
       data-testid={"taxonomy-search"}
       name={"taxonomy-search-input"}
     />

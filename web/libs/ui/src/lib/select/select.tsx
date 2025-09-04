@@ -1,4 +1,5 @@
 import React, { type ForwardedRef, forwardRef, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   Command,
@@ -91,6 +92,7 @@ export const Select = forwardRef(
     }: SelectProps<T, A>,
     _ref: ForwardedRef<HTMLSelectElement>,
   ) => {
+    const { t } = useTranslation();
     const ref = _ref ?? useRef<HTMLSelectElement>();
     const triggerRef = useRef<HTMLDivElement>();
     const [query, setQuery] = useState<string>("");
@@ -355,7 +357,7 @@ export const Select = forwardRef(
             <Command shouldFilter={false}>
               {searchable && (
                 <CommandInput
-                  placeholder={searchPlaceholder ?? "Search"}
+                  placeholder={searchPlaceholder ?? t("common.search")}
                   onChangeCapture={onSearchInputHandler}
                   data-testid="select-search-field"
                   autoFocus
@@ -367,7 +369,7 @@ export const Select = forwardRef(
                   searchable ? "shadow-inner shadow-neutral-surface-inset border-t border-neutral-border shadow-" : ""
                 }
               >
-                <CommandEmpty>{searchable ? "No results found." : ""}</CommandEmpty>
+                <CommandEmpty>{searchable ? t("common.noResultsFound") : ""}</CommandEmpty>
                 <CommandGroup>
                   {props.header ? props.header : null}
                   {isVirtualList ? (

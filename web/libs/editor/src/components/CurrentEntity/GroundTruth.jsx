@@ -1,6 +1,7 @@
 import { observer } from "mobx-react";
 import { IconStar, IconStarOutline } from "@humansignal/icons";
 import { Button, Tooltip } from "@humansignal/ui";
+import { useTranslation } from "react-i18next";
 import { BemWithSpecifiContext } from "../../utils/bem";
 import { FF_DEV_3873, isFF } from "../../utils/feature-flags";
 import "./GroundTruth.scss";
@@ -8,7 +9,8 @@ import "./GroundTruth.scss";
 const { Block, Elem } = BemWithSpecifiContext();
 
 export const GroundTruth = observer(({ entity, disabled = false, size = "md" }) => {
-  const title = entity.ground_truth ? "Unset this result as a ground truth" : "Set this result as a ground truth";
+  const { t } = useTranslation();
+  const title = entity.ground_truth ? t('editor.annotations.groundTruth.unsetTitle') : t('editor.annotations.groundTruth.setTitle');
 
   return (
     !entity.skipped &&

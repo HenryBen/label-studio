@@ -41,11 +41,11 @@ export const LanguageSwitcher = () => {
       >
         <Button
           className="language-switcher__button"
-          variant="ghost"
-          look="alt"
+          variant="neutral"
+          look="outlined"
           size="small"
           tooltip={t('languageSwitcher.tooltip', 'Switch Language')}
-          icon={<IconGlobe className="language-switcher__icon" />}
+          leading={<IconGlobe className="language-switcher__icon" />}
           data-testid="language-switcher"
         >
           <span className="language-switcher__text">{currentLanguage.name}</span>

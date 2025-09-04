@@ -26,7 +26,23 @@ import { useHotkeys } from "../hooks/useHotkeys";
 
 export const HotkeysHeaderButtons = () => {
   const [importDialogOpen, setImportDialogOpen] = useState<boolean>(false);
+  const [, forceUpdate] = useState({});
   const { handleResetToDefaults, handleExportHotkeys, handleImportHotkeys } = useHotkeys();
+
+  // Listen for language changes to force re-render
+  useEffect(() => {
+    const handleLanguageChange = () => {
+      forceUpdate({});
+    };
+
+    window.addEventListener('hotkeysLanguageChanged', handleLanguageChange);
+    window.addEventListener('languageChanged', handleLanguageChange);
+
+    return () => {
+      window.removeEventListener('hotkeysLanguageChanged', handleLanguageChange);
+      window.removeEventListener('languageChanged', handleLanguageChange);
+    };
+  }, []);
 
   return (
     <>

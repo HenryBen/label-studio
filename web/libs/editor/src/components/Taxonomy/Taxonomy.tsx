@@ -1,5 +1,6 @@
 import React, { type FormEvent, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { Dropdown, Menu } from "antd";
+import { useTranslation } from "react-i18next";
 
 import { IconChevron } from "@humansignal/icons";
 import { Button, Tooltip } from "@humansignal/ui";
@@ -361,6 +362,7 @@ const filterTreeByPredicate = (flatten: TaxonomyItem[], predicate: (item: Taxono
 };
 
 const TaxonomyDropdown = ({ show, flatten, items, dropdownRef, isEditable }: TaxonomyDropdownProps) => {
+  const { t } = useTranslation();
   const inputRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useState("");
   const predicate = (item: TaxonomyItem) => item.label.toLocaleLowerCase().includes(search);
@@ -413,7 +415,7 @@ const TaxonomyDropdown = ({ show, flatten, items, dropdownRef, isEditable }: Tax
         autoComplete="off"
         className={styles.taxonomy__search}
         name="taxonomy__search"
-        placeholder="Search..."
+        placeholder={t("common.searchEllipsis")}
         onInput={onInput}
         ref={inputRef}
       />

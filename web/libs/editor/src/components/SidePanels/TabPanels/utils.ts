@@ -144,31 +144,31 @@ export const createPanelViews = (t?: (key: string) => string) => {
   return [
     {
       name: "regions",
-      title: translate('sidePanels.regions'),
+      title: translate('labelingConfig.sidePanels.regions'),
       component: panelComponents.regions as FC<PanelProps>,
       active: true,
     },
     {
       name: "history",
-      title: translate('sidePanels.history'),
+      title: translate('labelingConfig.sidePanels.history'),
       component: panelComponents.history as FC<PanelProps>,
       active: false,
     },
     {
       name: "relations",
-      title: translate('sidePanels.relations'),
+      title: translate('labelingConfig.sidePanels.relations'),
       component: panelComponents.relations as FC<PanelProps>,
       active: false,
     },
     {
       name: "info",
-      title: translate('sidePanels.info'),
+      title: translate('labelingConfig.sidePanels.info'),
       component: panelComponents.info as FC<PanelProps>,
       active: true,
     },
     {
       name: "comments",
-      title: translate('sidePanels.comments'),
+      title: translate('labelingConfig.sidePanels.comments'),
       component: panelComponents.comments as FC<PanelProps>,
       active: false,
     },
