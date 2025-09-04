@@ -171,6 +171,7 @@
     "chinese": "Chinese"
   },
   "accountSettings": {
+    "myAccount": "My Account",
     "personalInfo": "Personal Info",
     "hotkeysTitle": "Hotkeys",
     "emailPreferences": "Email Preferences",
@@ -1063,6 +1064,30 @@
     "dm:toggle-bulk-sidebar-minimization": {
       "label": "Toggle Bulk Sidebar",
       "description": "Minimize or expand bulk actions sidebar"
+    },
+    "import": {
+      "title": "Import Hotkeys",
+      "description": "Paste your exported hotkeys JSON below. This will replace your current hotkeys. Make sure the JSON contains an array of hotkey objects with the required fields.",
+      "jsonLabel": "Hotkeys JSON",
+      "placeholder": "[{\"id\": 1, \"section\": \"annotation-actions\", \"element\": \"button\", \"label\": \"Save\", \"key\": \"Ctrl+S\"}]",
+      "errorTitle": "Import Error",
+      "importButton": "Import Hotkeys",
+      "errors": {
+        "emptyData": "Please enter JSON data to import",
+        "invalidFormat": "Invalid format: expected an array of hotkeys or an object with a hotkeys property",
+        "noHotkeys": "No hotkeys found in the imported data",
+        "invalidHotkeyObject": "Invalid hotkey object",
+        "missingFields": "Missing required fields: {{fields}}",
+        "hotkeyAtIndex": "Hotkey at index {{index}}: {{message}}"
+      }
+    },
+    "reset": {
+      "title": "Reset Hotkeys to Defaults?",
+      "description": "Are you sure you want to reset all hotkeys and settings to their default values? This action cannot be undone.",
+      "confirmButton": "Reset to Defaults",
+      "successMessage": "All hotkeys and settings have been reset to defaults and saved",
+      "failureMessage": "Failed to save reset hotkeys: {{error}}",
+      "errorMessage": "Error resetting hotkeys: {{error}}"
     }
   },
   "common": {

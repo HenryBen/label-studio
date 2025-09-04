@@ -171,6 +171,7 @@
     "chinese": "中文"
   },
   "accountSettings": {
+    "myAccount": "我的账户",
     "personalInfo": "个人信息",
     "hotkeysTitle": "快捷键",
     "emailPreferences": "邮件偏好",
@@ -1063,6 +1064,30 @@
     "dm:toggle-bulk-sidebar-minimization": {
       "label": "切换批量侧边栏",
       "description": "最小化或展开批量操作侧边栏"
+    },
+    "import": {
+      "title": "导入快捷键",
+      "description": "在下方粘贴您导出的快捷键 JSON。这将替换您当前的快捷键。请确保 JSON 包含具有必需字段的快捷键对象数组。",
+      "jsonLabel": "快捷键 JSON",
+      "placeholder": "[{\"id\": 1, \"section\": \"annotation-actions\", \"element\": \"button\", \"label\": \"Save\", \"key\": \"Ctrl+S\"}]",
+      "errorTitle": "导入错误",
+      "importButton": "导入快捷键",
+      "errors": {
+        "emptyData": "请输入要导入的 JSON 数据",
+        "invalidFormat": "格式无效：期望快捷键数组或包含快捷键属性的对象",
+        "noHotkeys": "导入数据中未找到快捷键",
+        "invalidHotkeyObject": "无效的快捷键对象",
+        "missingFields": "缺少必需字段：{{fields}}",
+        "hotkeyAtIndex": "索引 {{index}} 处的快捷键：{{message}}"
+      }
+    },
+    "reset": {
+      "title": "重置快捷键为默认值？",
+      "description": "您确定要将所有快捷键和设置重置为默认值吗？此操作无法撤销。",
+      "confirmButton": "重置为默认值",
+      "successMessage": "所有快捷键和设置已重置为默认值并保存",
+      "failureMessage": "保存重置快捷键失败：{{error}}",
+      "errorMessage": "重置快捷键时出错：{{error}}"
     }
   },
   "common": {

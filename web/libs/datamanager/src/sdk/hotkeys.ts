@@ -57,12 +57,5 @@ export const useShortcut = (
   const translationKey = `hotkeys.${actionName}.label`;
   const translatedLabel = t(translationKey, { defaultValue: action.label });
   const title = translatedLabel + (options.showShortcut ? `: [ ${readableShortcut(shortcut)} ]` : "");
-  console.log('---22222222222----', {
-    actionName,
-    translationKey,
-    translatedLabel,
-    defaultValue: action.label,
-    title
-  });
   return title;
 };

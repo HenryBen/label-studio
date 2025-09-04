@@ -3,6 +3,7 @@ import { ToastType, useToast } from "@humansignal/ui";
 import { confirm } from "apps/labelstudio/src/components/Modal/Modal";
 import { useAPI } from "apps/labelstudio/src/providers/ApiProvider";
 import { useCallback, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   type ApiResponse,
   type ExportData,
@@ -24,6 +25,7 @@ declare global {
 }
 
 export const useHotkeys = () => {
+  const { t } = useTranslation();
   const toast = useToast();
   const [hotkeys, setHotkeys] = useState<Hotkey[]>([]);
   const [hotkeySettings, setHotkeySettings] = useState<HotkeySettings>({});
@@ -232,9 +234,9 @@ export const useHotkeys = () => {
   // Handle resetting all hotkeys to defaults
   const handleResetToDefaults = useCallback(() => {
     confirm({
-      title: "Reset Hotkeys to Defaults?",
-      body: "Are you sure you want to reset all hotkeys and settings to their default values? This action cannot be undone.",
-      okText: "Reset to Defaults",
+      title: t("hotkeys.reset.title"),
+      body: t("hotkeys.reset.description"),
+      okText: t("hotkeys.reset.confirmButton"),
       buttonLook: "negative",
       style: { width: 500 },
       onOk: async () => {
@@ -247,7 +249,7 @@ export const useHotkeys = () => {
           if (result.ok) {
             if (toast) {
               toast.show({
-                message: "All hotkeys and settings have been reset to defaults and saved",
+                message: t("hotkeys.reset.successMessage"),
                 type: ToastType.info,
               });
             }
@@ -256,16 +258,16 @@ export const useHotkeys = () => {
           } else {
             if (toast) {
               toast.show({
-                message: `Failed to save reset hotkeys: ${result.error || "Unknown error"}`,
+                message: t("hotkeys.reset.failureMessage", { error: result.error || t("common.unknownError") }),
                 type: ToastType.error,
               });
             }
           }
         } catch (error: unknown) {
           if (toast) {
-            const errorMessage = error instanceof Error ? error.message : "Unknown error";
+            const errorMessage = error instanceof Error ? error.message : t("common.unknownError");
             toast.show({
-              message: `Error resetting hotkeys: ${errorMessage}`,
+              message: t("hotkeys.reset.errorMessage", { error: errorMessage }),
               type: ToastType.error,
             });
           }
@@ -274,7 +276,7 @@ export const useHotkeys = () => {
         }
       },
     });
-  }, [saveHotkeysToAPI, toast]);
+  }, [saveHotkeysToAPI, toast, t]);
 
   // Handle exporting hotkeys
   const handleExportHotkeys = useCallback(() => {

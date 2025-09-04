@@ -114,12 +114,14 @@ const AccountSettingsPage = () => {
   );
 };
 
-AccountSettingsPage.title = () => "My Account";
+AccountSettingsPage.title = ({ t }: { t?: any }) => {
+  return t ? t('accountSettings.myAccount') : "My Account";
+};
 AccountSettingsPage.path = "/user/account";
 AccountSettingsPage.exact = false;
 AccountSettingsPage.routes = () => [
   {
-    title: () => "My Account",
+    title: ({ t }: { t?: any }) => t ? t('accountSettings.myAccount') : "My Account",
     path: "/account",
     // @ts-ignore
     component: () => <Redirect to={AccountSettingsPage.path} />,
