@@ -1197,3 +1197,140 @@ msgstr ""
 #: webhooks/models.py:259
 msgid "Action value"
 msgstr ""
+
+# Data Manager Columns
+#: data_manager/functions.py
+msgid "ID"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Task ID"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Inner ID"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Internal task ID starting from 1 for the current project"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Annotations"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Total annotations per task"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Cancelled"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Total cancelled (skipped) annotations"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Predictions"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Total predictions per task"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Annotated by"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "All users who completed the task"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Annotation results"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Annotation results stacked over all annotations"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Annotation IDs"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Annotation IDs stacked over all annotations"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Prediction score"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Average prediction score over all task predictions"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Prediction model versions"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Model versions aggregated over all predictions"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Prediction results"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Prediction results stacked over all predictions"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Upload filename"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Filename of uploaded file"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Storage filename"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Filename from import storage"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Task creation time"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Task update time"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Updated by"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "User who did the last task update"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Lead Time"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Average lead time over all annotations (seconds)"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "Drafts"
+msgstr ""
+
+#: data_manager/functions.py
+msgid "True if at least one draft exists for the task"
+msgstr ""

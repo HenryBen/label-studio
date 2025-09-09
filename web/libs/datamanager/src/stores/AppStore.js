@@ -161,11 +161,30 @@ export const AppStore = types
     afterCreate() {
       networkActivity?.destroy();
       networkActivity = new ActivityObserver();
+      
+      // Listen for language changes and refresh columns
+      if (typeof window !== 'undefined') {
+        const handleLanguageChange = () => {
+          // Refresh columns when language changes
+          self.refreshColumns();
+        };
+        
+        window.addEventListener('languageChanged', handleLanguageChange);
+        
+        // Store the handler for cleanup
+        self._languageChangeHandler = handleLanguageChange;
+      }
     },
 
     beforeDestroy() {
       clearTimeout(self._poll);
       window.removeEventListener("popstate", self.handlePopState);
+      
+      // Clean up language change listener
+      if (typeof window !== 'undefined' && self._languageChangeHandler) {
+        window.removeEventListener('languageChanged', self._languageChangeHandler);
+      }
+      
       networkActivity.destroy();
     },
 
@@ -567,6 +586,32 @@ export const AppStore = types
       });
 
       self.users.push(...list);
+    }),
+
+    refreshColumns: flow(function* () {
+      // Get current language from localStorage or default to 'en'
+      let currentLanguage = 'en';
+      try {
+        const stored = localStorage.getItem('i18nextLng');
+        if (stored && (stored === 'en' || stored === 'zh')) {
+          currentLanguage = stored;
+        }
+      } catch (e) {
+        // Fallback to 'en' if localStorage is not available
+      }
+
+      const response = yield self.apiCall("columns", { language: currentLanguage });
+      
+      if (response && !response.error) {
+        const columns = response.columns ?? (Array.isArray(response) ? response : []);
+        
+        // Update the columns in viewsStore
+        self.viewsStore.columnsRaw = columns;
+        self.viewsStore.fetchColumns();
+        
+        // Recreate data stores with new columns
+        self.createDataStores();
+      }
     }),
 
     fetchData: flow(function* ({ isLabelStream } = {}) {

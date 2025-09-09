@@ -22,6 +22,7 @@ from django.conf import settings
 from django.db.models import Sum
 from django.db.models.functions import Coalesce
 from django.utils.decorators import method_decorator
+from django.utils.translation import gettext_lazy as _
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import OpenApiExample, OpenApiParameter, OpenApiResponse, extend_schema
@@ -431,6 +432,13 @@ class TaskListAPI(generics.ListCreateAPIView):
                 location='query',
                 description='Project ID',
                 required=True,
+            ),
+            OpenApiParameter(
+                name='language',
+                type=OpenApiTypes.STR,
+                location='query',
+                description='Language code for localized column titles and help text (e.g., "en", "zh")',
+                required=False,
             )
         ],
         responses={
@@ -455,7 +463,7 @@ class TaskListAPI(generics.ListCreateAPIView):
                                     'title': 'Completed',
                                     'type': 'Datetime',
                                     'target': 'tasks',
-                                    'help': 'Last annotation date',
+                                    'help': _('Last annotation date'),
                                     'visibility_defaults': {'explore': True, 'labeling': False},
                                     'project_defined': False,
                                 },
@@ -482,7 +490,7 @@ class ProjectColumnsAPI(APIView):
         project = generics.get_object_or_404(Project, pk=pk)
         self.check_object_permissions(request, project)
         GET_ALL_COLUMNS = load_func(settings.DATA_MANAGER_GET_ALL_COLUMNS)
-        data = GET_ALL_COLUMNS(project, request.user)
+        data = GET_ALL_COLUMNS(project, request.user, request)
         return Response(data)
 
 

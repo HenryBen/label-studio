@@ -10,6 +10,7 @@ from core.utils.common import int_from_request
 from data_manager.models import View
 from data_manager.prepare_params import PrepareParams
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 from rest_framework.generics import get_object_or_404
 from tasks.models import Task
 
@@ -21,8 +22,29 @@ class DataManagerException(Exception):
     pass
 
 
-def get_all_columns(project, *_):
+def get_all_columns(project, *args):
     """Make columns info for the frontend data manager"""
+    from django.utils import translation
+    from django.utils.translation import gettext as _
+    
+    # Extract language parameter from args if provided
+    language = None
+    request = None
+    
+    # args[0] is user, args[1] is request (if provided)
+    if len(args) >= 2:
+        request = args[1]
+        if hasattr(request, 'GET'):
+            language = request.GET.get('language', 'en')
+    
+    # Default to English if no language specified
+    if not language:
+        language = 'en'
+    
+    # Activate the requested language
+    if language:
+        translation.activate(language)
+    
     result = {'columns': []}
 
     # frontend uses MST data model, so we need two directional referencing parent <-> child
@@ -83,9 +105,9 @@ def get_all_columns(project, *_):
         # --- Tasks ---
         {
             'id': 'id',
-            'title': 'ID',
+            'title': _('ID'),
             'type': 'Number',
-            'help': 'Task ID',
+            'help': _('Task ID'),
             'target': 'tasks',
             'visibility_defaults': {'explore': True, 'labeling': False},
             'project_defined': False,
@@ -95,9 +117,9 @@ def get_all_columns(project, *_):
     result['columns'] += [
         {
             'id': 'inner_id',
-            'title': 'Inner ID',
+            'title': _('Inner ID'),
             'type': 'Number',
-            'help': 'Internal task ID starting from 1 for the current project',
+            'help': _('Internal task ID starting from 1 for the current project'),
             'target': 'tasks',
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,
@@ -109,156 +131,156 @@ def get_all_columns(project, *_):
     result['columns'] += [
         {
             'id': 'completed_at',
-            'title': 'Completed',
+            'title': _('Completed'),
             'type': 'Datetime',
             'target': 'tasks',
-            'help': 'Last annotation date',
+            'help': _('Last annotation date'),
             'visibility_defaults': {'explore': True, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'total_annotations',
-            'title': 'Annotations',
+            'title': _('Annotations'),
             'type': 'Number',
             'target': 'tasks',
-            'help': 'Total annotations per task',
+            'help': _('Total annotations per task'),
             'visibility_defaults': {'explore': True, 'labeling': True},
             'project_defined': False,
         },
         {
             'id': 'cancelled_annotations',
-            'title': 'Cancelled',
+            'title': _('Cancelled'),
             'type': 'Number',
             'target': 'tasks',
-            'help': 'Total cancelled (skipped) annotations',
+            'help': _('Total cancelled (skipped) annotations'),
             'visibility_defaults': {'explore': True, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'total_predictions',
-            'title': 'Predictions',
+            'title': _('Predictions'),
             'type': 'Number',
             'target': 'tasks',
-            'help': 'Total predictions per task',
+            'help': _('Total predictions per task'),
             'visibility_defaults': {'explore': True, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'annotators',
-            'title': 'Annotated by',
+            'title': _('Annotated by'),
             'type': 'List',
             'target': 'tasks',
-            'help': 'All users who completed the task',
+            'help': _('All users who completed the task'),
             'schema': {'items': project_members},
             'visibility_defaults': {'explore': True, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'annotations_results',
-            'title': 'Annotation results',
+            'title': _('Annotation results'),
             'type': 'String',
             'target': 'tasks',
-            'help': 'Annotation results stacked over all annotations',
+            'help': _('Annotation results stacked over all annotations'),
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'annotations_ids',
-            'title': 'Annotation IDs',
+            'title': _('Annotation IDs'),
             'type': 'String',
             'target': 'tasks',
-            'help': 'Annotation IDs stacked over all annotations',
+            'help': _('Annotation IDs stacked over all annotations'),
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'predictions_score',
-            'title': 'Prediction score',
+            'title': _('Prediction score'),
             'type': 'Number',
             'target': 'tasks',
-            'help': 'Average prediction score over all task predictions',
+            'help': _('Average prediction score over all task predictions'),
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'predictions_model_versions',
-            'title': 'Prediction model versions',
+            'title': _('Prediction model versions'),
             'type': 'List',
             'target': 'tasks',
-            'help': 'Model versions aggregated over all predictions',
+            'help': _('Model versions aggregated over all predictions'),
             'schema': {'items': project.get_model_versions(), 'multiple': True},
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'predictions_results',
-            'title': 'Prediction results',
+            'title': _('Prediction results'),
             'type': 'String',
             'target': 'tasks',
-            'help': 'Prediction results stacked over all predictions',
+            'help': _('Prediction results stacked over all predictions'),
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'file_upload',
-            'title': 'Upload filename',
+            'title': _('Upload filename'),
             'type': 'String',
             'target': 'tasks',
-            'help': 'Filename of uploaded file',
+            'help': _('Filename of uploaded file'),
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'storage_filename',
-            'title': 'Storage filename',
+            'title': _('Storage filename'),
             'type': 'String',
             'target': 'tasks',
-            'help': 'Filename from import storage',
+            'help': _('Filename from import storage'),
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'created_at',
-            'title': 'Created at',
+            'title': _('Created at'),
             'type': 'Datetime',
             'target': 'tasks',
-            'help': 'Task creation time',
+            'help': _('Task creation time'),
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'updated_at',
-            'title': 'Updated at',
+            'title': _('Updated at'),
             'type': 'Datetime',
             'target': 'tasks',
-            'help': 'Task update time',
+            'help': _('Task update time'),
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'updated_by',
-            'title': 'Updated by',
+            'title': _('Updated by'),
             'type': 'List',
             'target': 'tasks',
-            'help': 'User who did the last task update',
+            'help': _('User who did the last task update'),
             'schema': {'items': project_members},
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'avg_lead_time',
-            'title': 'Lead Time',
+            'title': _('Lead Time'),
             'type': 'Number',
-            'help': 'Average lead time over all annotations (seconds)',
+            'help': _('Average lead time over all annotations (seconds)'),
             'target': 'tasks',
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,
         },
         {
             'id': 'draft_exists',
-            'title': 'Drafts',
+            'title': _('Drafts'),
             'type': 'Boolean',
-            'help': 'True if at least one draft exists for the task',
+            'help': _('True if at least one draft exists for the task'),
             'target': 'tasks',
             'visibility_defaults': {'explore': False, 'labeling': False},
             'project_defined': False,

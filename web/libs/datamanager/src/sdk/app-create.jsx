@@ -34,7 +34,18 @@ const createDynamicModels = (columns) => {
 export const createApp = async (rootNode, datamanager) => {
   const isLabelStream = datamanager.mode === "labelstream";
 
-  const response = await datamanager.api.columns();
+  // Get current language from localStorage or default to 'en'
+  let currentLanguage = 'en';
+  try {
+    const stored = localStorage.getItem('i18nextLng');
+    if (stored && (stored === 'en' || stored === 'zh')) {
+      currentLanguage = stored;
+    }
+  } catch (e) {
+    // Fallback to 'en' if localStorage is not available
+  }
+
+  const response = await datamanager.api.columns({ language: currentLanguage });
 
   if (!response || response.error) {
     const message = `

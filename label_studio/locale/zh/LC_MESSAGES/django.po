@@ -42,7 +42,7 @@ msgstr ""
 #: io_storages/base_models.py:56 projects/models.py:1531
 #: projects/models.py:1564 users/product_tours/models.py:10
 msgid "Completed"
-msgstr ""
+msgstr "已完成"
 
 #: data_export/models.py:37 io_storages/base_models.py:298 ml/models.py:62
 #: ml_models/models.py:32 ml_models/models.py:64 projects/models.py:130
@@ -191,9 +191,9 @@ msgid ""
 "annotations."
 msgstr ""
 
-#: data_manager/api.py:459 data_manager/functions.py:116
+#: data_manager/api.py:465 data_manager/functions.py:137
 msgid "Last annotation date"
-msgstr ""
+msgstr "最后标注日期"
 
 #: data_manager/models.py:10
 msgid "data"
@@ -1197,3 +1197,140 @@ msgstr ""
 #: webhooks/models.py:259
 msgid "Action value"
 msgstr ""
+
+# Data Manager Columns
+#: data_manager/functions.py
+msgid "ID"
+msgstr "ID"
+
+#: data_manager/functions.py
+msgid "Task ID"
+msgstr "任务ID"
+
+#: data_manager/functions.py
+msgid "Inner ID"
+msgstr "内部ID"
+
+#: data_manager/functions.py
+msgid "Internal task ID starting from 1 for the current project"
+msgstr "当前项目从1开始的内部任务ID"
+
+#: data_manager/functions.py
+msgid "Annotations"
+msgstr "标注"
+
+#: data_manager/functions.py
+msgid "Total annotations per task"
+msgstr "每个任务的总标注数"
+
+#: data_manager/functions.py
+msgid "Cancelled"
+msgstr "已取消"
+
+#: data_manager/functions.py
+msgid "Total cancelled (skipped) annotations"
+msgstr "总取消（跳过）标注数"
+
+#: data_manager/functions.py
+msgid "Predictions"
+msgstr "预测"
+
+#: data_manager/functions.py
+msgid "Total predictions per task"
+msgstr "每个任务的总预测数"
+
+#: data_manager/functions.py
+msgid "Annotated by"
+msgstr "标注者"
+
+#: data_manager/functions.py
+msgid "All users who completed the task"
+msgstr "完成任务的所有用户"
+
+#: data_manager/functions.py
+msgid "Annotation results"
+msgstr "标注结果"
+
+#: data_manager/functions.py
+msgid "Annotation results stacked over all annotations"
+msgstr "所有标注的堆叠标注结果"
+
+#: data_manager/functions.py
+msgid "Annotation IDs"
+msgstr "标注ID"
+
+#: data_manager/functions.py
+msgid "Annotation IDs stacked over all annotations"
+msgstr "所有标注的堆叠标注ID"
+
+#: data_manager/functions.py
+msgid "Prediction score"
+msgstr "预测分数"
+
+#: data_manager/functions.py
+msgid "Average prediction score over all task predictions"
+msgstr "所有任务预测的平均预测分数"
+
+#: data_manager/functions.py
+msgid "Prediction model versions"
+msgstr "预测模型版本"
+
+#: data_manager/functions.py
+msgid "Model versions aggregated over all predictions"
+msgstr "所有预测的聚合模型版本"
+
+#: data_manager/functions.py
+msgid "Prediction results"
+msgstr "预测结果"
+
+#: data_manager/functions.py
+msgid "Prediction results stacked over all predictions"
+msgstr "所有预测的堆叠预测结果"
+
+#: data_manager/functions.py
+msgid "Upload filename"
+msgstr "上传文件名"
+
+#: data_manager/functions.py
+msgid "Filename of uploaded file"
+msgstr "上传文件的文件名"
+
+#: data_manager/functions.py
+msgid "Storage filename"
+msgstr "存储文件名"
+
+#: data_manager/functions.py
+msgid "Filename from import storage"
+msgstr "从导入存储的文件名"
+
+#: data_manager/functions.py
+msgid "Task creation time"
+msgstr "任务创建时间"
+
+#: data_manager/functions.py
+msgid "Task update time"
+msgstr "任务更新时间"
+
+#: data_manager/functions.py
+msgid "Updated by"
+msgstr "更新者"
+
+#: data_manager/functions.py
+msgid "User who did the last task update"
+msgstr "最后更新任务的用户"
+
+#: data_manager/functions.py
+msgid "Lead Time"
+msgstr "处理时间"
+
+#: data_manager/functions.py
+msgid "Average lead time over all annotations (seconds)"
+msgstr "所有标注的平均处理时间（秒）"
+
+#: data_manager/functions.py
+msgid "Drafts"
+msgstr "草稿"
+
+#: data_manager/functions.py
+msgid "True if at least one draft exists for the task"
+msgstr "如果任务至少存在一个草稿则为真"
